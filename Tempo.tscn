@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Adiantar Tempo.gd" type="Script" id=1]
+
+[node name="Tempo" type="Node2D"]
+
+[node name="Adiantar Tempo" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Adiantar"
+script = ExtResource( 1 )
+
+[connection signal="button_up" from="Adiantar Tempo" to="Adiantar Tempo" method="Adiantar_Tempo"]
