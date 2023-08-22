@@ -5,6 +5,7 @@
 [ext_resource path="res://Tempo.tscn" type="PackedScene" id=3]
 
 [node name="Cenário" type="Node2D"]
+position = Vector2( 38, 4 )
 
 [node name="Sequência de Ação" type="Label" parent="."]
 margin_left = 4.0
