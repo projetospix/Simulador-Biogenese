@@ -2,7 +2,7 @@ extends Node2D
 
 var texto1 = ''
 var texto2 = ''
-export var nome_frasco = 'Bilola'
+export var nome_frasco = 'Frasco'
 
 var Estado_Atual = {
 	'tampado': false,
