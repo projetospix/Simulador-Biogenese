@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Frasco.gd" type="Script" id=1]
 [ext_resource path="res://sprites/botões/btn_ferver.png" type="Texture" id=2]
 [ext_resource path="res://sprites/botões/btn_ferver_hover.png" type="Texture" id=3]
 [ext_resource path="res://sprites/botões/btn_tampa.png" type="Texture" id=4]
+[ext_resource path="res://sprites/botões/btn_novo.png" type="Texture" id=5]
 
 [node name="Frasco" type="Node2D" groups=["Frascos"]]
 script = ExtResource( 1 )
@@ -18,7 +19,7 @@ size_flags_vertical = 3
 
 [node name="Nome do frasco" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
-margin_right = 218.0
+margin_right = 183.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -27,30 +28,32 @@ text = "Nome do frasco"
 [node name="Estado Atual" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 margin_top = 18.0
-margin_right = 218.0
+margin_right = 183.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Estado Atual"
 
 [node name="Ferver" type="TextureButton" parent="VBoxContainer"]
-margin_left = 65.0
+margin_left = 48.0
 margin_top = 36.0
-margin_right = 152.0
+margin_right = 135.0
 margin_bottom = 123.0
 size_flags_horizontal = 4
 size_flags_vertical = 3
 texture_normal = ExtResource( 2 )
 texture_hover = ExtResource( 3 )
 
-[node name="Tampar" type="CheckButton" parent="VBoxContainer"]
+[node name="Tampar" type="TextureButton" parent="VBoxContainer"]
+margin_left = 48.0
 margin_top = 127.0
-margin_right = 218.0
-margin_bottom = 222.0
-size_flags_horizontal = 3
+margin_right = 135.0
+margin_bottom = 214.0
+size_flags_horizontal = 6
 size_flags_vertical = 3
-text = "Tampar"
-icon = ExtResource( 4 )
+toggle_mode = true
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
 
 [connection signal="button_up" from="VBoxContainer/Ferver" to="." method="Ferver"]
 [connection signal="toggled" from="VBoxContainer/Tampar" to="." method="Tampar_Destampar"]
