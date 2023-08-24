@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Frasco.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Label_Sequencia.gd" type="Script" id=2]
-[ext_resource path="res://Tempo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://cenas/Frasco.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Label_Sequencia.gd" type="Script" id=2]
+[ext_resource path="res://cenas/Tempo.tscn" type="PackedScene" id=3]
 
 [node name="Cenário" type="Node2D"]
 position = Vector2( 38, 4 )
@@ -17,10 +17,11 @@ script = ExtResource( 2 )
 
 [node name="Frasco" parent="." instance=ExtResource( 1 )]
 position = Vector2( -3, 69 )
+nome_frasco = "Frasco 1"
 
 [node name="Frasco2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 226, 70 )
-nome_frasco = "Benga"
+nome_frasco = "Frasco 2"
 
 [node name="Tempo" parent="." instance=ExtResource( 3 )]
-position = Vector2( 182, 255 )
+position = Vector2( 182, 332 )

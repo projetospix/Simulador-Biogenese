@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/btn_novo.png-b685ab9c96fa25d346f462ae3a15c74f.stex"
+path="res://.import/btn_ferver.png-dbbc3e8a98a51f95700ec09177bbf073.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://btn_novo.png"
-dest_files=[ "res://.import/btn_novo.png-b685ab9c96fa25d346f462ae3a15c74f.stex" ]
+source_file="res://sprites/botões/btn_ferver.png"
+dest_files=[ "res://.import/btn_ferver.png-dbbc3e8a98a51f95700ec09177bbf073.stex" ]
 
 [params]
 

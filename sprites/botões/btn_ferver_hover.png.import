@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/btn_tampa.png-4b8e5ea75fad48e360d0b5ffaa458648.stex"
+path="res://.import/btn_ferver_hover.png-5c3283705e6831a782b140d883c71836.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://btn_tampa.png"
-dest_files=[ "res://.import/btn_tampa.png-4b8e5ea75fad48e360d0b5ffaa458648.stex" ]
+source_file="res://sprites/botões/btn_ferver_hover.png"
+dest_files=[ "res://.import/btn_ferver_hover.png-5c3283705e6831a782b140d883c71836.stex" ]
 
 [params]
 

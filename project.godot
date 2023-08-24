@@ -21,12 +21,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Simulador Biogenese"
-run/main_scene="res://Cenário.tscn"
+run/main_scene="res://cenas/Cenário.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Globais="*res://Globais.gd"
+Globais="*res://scripts/Globais.gd"
 
 [editor]
 
