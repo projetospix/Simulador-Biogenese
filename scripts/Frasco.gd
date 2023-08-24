@@ -13,6 +13,7 @@ func _ready():
 	Globais.Sequencia_Acao[nome_frasco] = []
 	$"%Nome do frasco".text = nome_frasco
 
+# código temporário para atualizar label de estado
 # warning-ignore:unused_argument
 func _process(delta):
 	if Estado_Atual.tampado == false:

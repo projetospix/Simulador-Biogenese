@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/btn_tampa.png-8888f59a0c3a0d64a925c17660721b29.stex"
+path="res://.import/btn_destampar.png-186717141d33a9c7bd6b18460433fbc2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/botões/btn_tampa.png"
-dest_files=[ "res://.import/btn_tampa.png-8888f59a0c3a0d64a925c17660721b29.stex" ]
+source_file="res://sprites/botões/btn_destampar.png"
+dest_files=[ "res://.import/btn_destampar.png-186717141d33a9c7bd6b18460433fbc2.stex" ]
 
 [params]
 

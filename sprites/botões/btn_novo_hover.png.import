@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/btn_ferver_active.png-537963f2d53a60c0403206a2368f31a5.stex"
+path="res://.import/btn_novo_hover.png-7f932c701b4164885505554888c70a5f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/botões/btn_ferver_active.png"
-dest_files=[ "res://.import/btn_ferver_active.png-537963f2d53a60c0403206a2368f31a5.stex" ]
+source_file="res://sprites/botões/btn_novo_hover.png"
+dest_files=[ "res://.import/btn_novo_hover.png-7f932c701b4164885505554888c70a5f.stex" ]
 
 [params]
 
