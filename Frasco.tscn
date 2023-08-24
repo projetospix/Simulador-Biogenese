@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Frasco.gd" type="Script" id=1]
+[ext_resource path="res://btn_ferver.png" type="Texture" id=2]
 
 [node name="Frasco" type="Node2D" groups=["Frascos"]]
 script = ExtResource( 1 )
@@ -17,23 +18,23 @@ alignment = 1
 [node name="Estado Atual" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 margin_right = 183.0
-margin_bottom = 41.0
+margin_bottom = 14.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Estado Atual"
 
-[node name="Ferver" type="Button" parent="VBoxContainer"]
-margin_top = 45.0
+[node name="Ferver" type="TextureButton" parent="VBoxContainer"]
+margin_top = 18.0
 margin_right = 183.0
-margin_bottom = 87.0
+margin_bottom = 105.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Ferver"
+texture_normal = ExtResource( 2 )
 
 [node name="Tampar" type="CheckButton" parent="VBoxContainer"]
-margin_top = 91.0
+margin_top = 109.0
 margin_right = 183.0
-margin_bottom = 133.0
+margin_bottom = 149.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Tampar"
