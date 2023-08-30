@@ -12,6 +12,7 @@ var Estado_Atual = {
 func _ready():
 	Globais.Sequencia_Acao[nome_frasco] = []
 	$"%Nome do frasco".text = nome_frasco
+	$SpriteFrasco/Rolha.visible = false
 
 # código temporário para atualizar label de estado
 # warning-ignore:unused_argument
@@ -38,9 +39,11 @@ func Passar_Tempo():
 func Tampar_Destampar(button_pressed):
 	if button_pressed:
 		Estado_Atual.tampado = true
+		$SpriteFrasco/Rolha.visible = true
 		Globais.Sequencia_Acao[nome_frasco].append('Tampou')
 	else:
 		Estado_Atual.tampado = false
+		$SpriteFrasco/Rolha.visible = false
 		Globais.Sequencia_Acao[nome_frasco].append('Destampou')
 		if Estado_Atual.contaminado != 'contaminado':
 			Estado_Atual.contaminado = 'pré contaminado'
