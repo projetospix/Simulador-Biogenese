@@ -33,6 +33,8 @@ func Ferver():
 func Passar_Tempo():
 	if Estado_Atual.contaminado == 'pré contaminado':
 		Estado_Atual.contaminado = 'contaminado'
+	if Estado_Atual.contaminado == 'estéril' and Estado_Atual.tampado == false:
+		Estado_Atual.contaminado = 'contaminado'
 	Globais.Sequencia_Acao[nome_frasco].append('Passou o Tempo')
 
 
