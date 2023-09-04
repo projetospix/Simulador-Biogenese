@@ -24,11 +24,11 @@ scale = Vector2( 0.32619, 0.321429 )
 texture = ExtResource( 5 )
 
 [node name="Frasco" parent="." instance=ExtResource( 1 )]
-position = Vector2( 117, 394 )
+position = Vector2( 214, 394 )
 nome_frasco = "Frasco 1"
 
 [node name="Frasco2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 270, 392 )
+position = Vector2( 367, 394 )
 nome_frasco = "Frasco 2"
 
 [node name="Tempo" parent="." instance=ExtResource( 3 )]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frasco com líquido.png-794a7a7905d31552181508312560daf3.stex"
+path="res://.import/tripé@3x.png.PNG-01e724ed7060ee34ff8be734b05af3a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/frasco com líquido.png"
-dest_files=[ "res://.import/frasco com líquido.png-794a7a7905d31552181508312560daf3.stex" ]
+source_file="res://sprites/tripé@3x.png.PNG"
+dest_files=[ "res://.import/tripé@3x.png.PNG-01e724ed7060ee34ff8be734b05af3a6.stex" ]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=false
+flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true

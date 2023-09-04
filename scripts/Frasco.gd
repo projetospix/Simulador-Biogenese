@@ -1,7 +1,5 @@
 extends Node2D
 
-var texto1 = ''
-var texto2 = ''
 export var nome_frasco = 'Frasco'
 
 var Estado_Atual = {
@@ -11,21 +9,14 @@ var Estado_Atual = {
 
 func _ready():
 	Globais.Sequencia_Acao[nome_frasco] = []
-	$"%Nome do frasco".text = nome_frasco
 	$SpriteFrasco/Rolha.visible = false
-
-# código temporário para atualizar label de estado
-# warning-ignore:unused_argument
-func _process(delta):
-	if Estado_Atual.tampado == false:
-		texto1 = 'destampado'
-	else:
-		texto1 = 'tampado'
-
-	$"%Estado Atual".text = texto1 + ' e ' + Estado_Atual.contaminado
+	$"%Bolhas".emitting = false
+	$"%Fogo".emitting = false
 
 
 func Ferver():
+	get_tree().call_group('Botoes', 'travar')
+	$AnimationPlayer.play("ferver")
 	Estado_Atual.contaminado = 'estéril'
 	Globais.Sequencia_Acao[nome_frasco].append('Ferveu')
 
@@ -49,3 +40,7 @@ func Tampar_Destampar(button_pressed):
 		Globais.Sequencia_Acao[nome_frasco].append('Destampou')
 		if Estado_Atual.contaminado != 'contaminado':
 			Estado_Atual.contaminado = 'pré contaminado'
+
+
+func _on_animation_finished(anim_name: String) -> void:
+	get_tree().call_group('Botoes', 'destravar') # Replace with function body.
