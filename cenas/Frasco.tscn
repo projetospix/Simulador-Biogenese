@@ -120,7 +120,7 @@ position = Vector2( 0, -196.97 )
 scale = Vector2( 0.909091, 0.909091 )
 texture = ExtResource( 7 )
 
-[node name="Bunsen" type="Position2D" parent="SpriteFrasco"]
+[node name="Bunsen" type="Node2D" parent="SpriteFrasco"]
 
 [node name="Fogo" type="CPUParticles2D" parent="SpriteFrasco/Bunsen"]
 unique_name_in_owner = true
