@@ -1,13 +1,74 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scripts/Adiantar Tempo.gd" type="Script" id=1]
+[ext_resource path="res://cenas/Tempo.gd" type="Script" id=1]
+[ext_resource path="res://sprites/clock.png" type="Texture" id=2]
+[ext_resource path="res://scripts/botoesGenerico.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Passagem_Tempo"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Relogio/Ponteiro Hora:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 720.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Relogio/Ponteiro Minuto:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2880.0 ]
+}
 
 [node name="Tempo" type="Node2D"]
-
-[node name="Adiantar Tempo" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
-text = "Adiantar"
 script = ExtResource( 1 )
 
-[connection signal="button_up" from="Adiantar Tempo" to="Adiantar Tempo" method="Adiantar_Tempo"]
+[node name="Relogio" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="Ponteiro Hora" type="Position2D" parent="Relogio"]
+rotation = 12.5664
+
+[node name="ColorRect" type="ColorRect" parent="Relogio/Ponteiro Hora"]
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 103.0
+margin_bottom = 20.0
+color = Color( 0.117647, 0.639216, 0.117647, 1 )
+
+[node name="Ponteiro Minuto" type="Position2D" parent="Relogio"]
+rotation = 50.2655
+
+[node name="ColorRect" type="ColorRect" parent="Relogio/Ponteiro Minuto"]
+margin_left = -19.0
+margin_top = -19.0
+margin_right = 17.0
+margin_bottom = 110.0
+color = Color( 0.827451, 0.101961, 0.172549, 1 )
+
+[node name="Adiantar Tempo" type="Button" parent="." groups=["Botoes"]]
+margin_left = -35.0
+margin_top = 70.0
+margin_right = 30.0
+margin_bottom = 90.0
+text = "Adiantar"
+script = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Passagem_Tempo = SubResource( 1 )
+
+[connection signal="button_up" from="Adiantar Tempo" to="." method="Adiantar_Tempo"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="Terminou_Animacao"]

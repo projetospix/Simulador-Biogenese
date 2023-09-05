@@ -43,4 +43,4 @@ func Tampar_Destampar(button_pressed):
 
 
 func _on_animation_finished(anim_name: String) -> void:
-	get_tree().call_group('Botoes', 'destravar') # Replace with function body.
+	get_tree().call_group('Botoes', 'destravar')
