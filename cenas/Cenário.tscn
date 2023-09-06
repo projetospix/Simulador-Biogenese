@@ -10,6 +10,11 @@
 [node name="Cenário" type="Node2D"]
 position = Vector2( 38, 4 )
 
+[node name="TesteSpriteMesa" type="Sprite" parent="."]
+visible = false
+position = Vector2( 477, 299 )
+texture = ExtResource( 4 )
+
 [node name="Sequência de Ação" type="Label" parent="."]
 margin_left = 4.0
 margin_top = 6.0
@@ -32,12 +37,7 @@ position = Vector2( 367, 394 )
 nome_frasco = "Frasco 2"
 
 [node name="Tempo" parent="." instance=ExtResource( 3 )]
-position = Vector2( 523, 352 )
-
-[node name="TesteSpriteMesa" type="Sprite" parent="."]
-visible = false
-position = Vector2( 477, 299 )
-texture = ExtResource( 4 )
+position = Vector2( 70, 93 )
 
 [node name="Microscopio" type="Sprite" parent="."]
 position = Vector2( 66.425, 317.046 )
