@@ -126,7 +126,6 @@ texture = ExtResource( 7 )
 unique_name_in_owner = true
 modulate = Color( 5, 4, 4, 1 )
 position = Vector2( 0, 148.485 )
-emitting = false
 amount = 40
 explosiveness = 0.05
 randomness = 0.04
@@ -154,6 +153,21 @@ texture = ExtResource( 8 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ferver = ExtResource( 11 )
 
+[node name="Button" type="Button" parent="."]
+margin_left = -36.0
+margin_top = 37.0
+margin_right = 37.0
+margin_bottom = 57.0
+text = "REMOVER"
+
+[node name="Etiqueta" type="Label" parent="."]
+margin_left = -54.0
+margin_top = 20.0
+margin_right = 64.0
+margin_bottom = 34.0
+text = "PEGA NO MEU PAI"
+
 [connection signal="toggled" from="Tampar" to="." method="Tampar_Destampar"]
 [connection signal="button_up" from="Ferver" to="." method="Ferver"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
+[connection signal="button_up" from="Button" to="." method="RemoverFrasco"]
