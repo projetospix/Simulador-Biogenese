@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/AdicionarFrasco.gd" type="Script" id=1]
 [ext_resource path="res://sprites/botões/btn_novo_hover.png" type="Texture" id=2]
@@ -6,14 +6,19 @@
 [ext_resource path="res://scripts/botoesGenerico.gd" type="Script" id=12]
 
 [sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0, 0.996503 )
-colors = PoolColorArray( 0.145098, 0.776471, 0.290196, 0, 0.145098, 0.776471, 0.290196, 0.392157 )
+offsets = PoolRealArray( 0, 0.643357, 1 )
+colors = PoolColorArray( 0.145098, 0.776471, 0.290196, 0, 0.149924, 0.794669, 0.298095, 0.143772, 0.157761, 0.824219, 0.310922, 0.377238 )
 
 [sub_resource type="GradientTexture2D" id=2]
 gradient = SubResource( 1 )
-height = 96
+width = 90
+height = 120
 fill_from = Vector2( 0.5, 0 )
 fill_to = Vector2( 0.5, 1 )
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.276224, 0.58042, 0.951049 )
+colors = PoolColorArray( 0.388235, 0.737255, 0.388235, 0, 0.388235, 0.737255, 0.388235, 0.105882, 0.478431, 0.776471, 0.478431, 0.156863, 0.945098, 0.976471, 0.945098, 0 )
 
 [node name="Adicionar Frasco" type="Node2D" groups=["Frascos"]]
 position = Vector2( 219, 253 )
@@ -31,7 +36,29 @@ texture_hover = ExtResource( 2 )
 script = ExtResource( 12 )
 
 [node name="Gradiente" type="Sprite" parent="."]
-position = Vector2( 0, -48 )
+modulate = Color( 1, 1, 1, 0.54902 )
+position = Vector2( 0, -62 )
 texture = SubResource( 2 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Gradiente"]
+position = Vector2( 0, 45 )
+amount = 5
+lifetime = 2.0
+preprocess = 1.94
+speed_scale = 0.5
+randomness = 0.66
+lifetime_randomness = 0.36
+emission_shape = 2
+emission_rect_extents = Vector2( 40, 15 )
+direction = Vector2( 0, -1 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 35.0
+initial_velocity_random = 0.5
+damping = 2.47
+damping_random = 0.27
+scale_amount = 4.0
+scale_amount_random = 0.45
+color_ramp = SubResource( 3 )
 
 [connection signal="button_up" from="Botao Mais" to="." method="AdicionarFrasco"]

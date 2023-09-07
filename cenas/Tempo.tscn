@@ -6,7 +6,6 @@
 [ext_resource path="res://sprites/ponteiro_hora.png" type="Texture" id=4]
 [ext_resource path="res://sprites/ponteiro_minutos.png" type="Texture" id=5]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "Passagem_Tempo"
 length = 3.5
