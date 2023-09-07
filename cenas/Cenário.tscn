@@ -17,12 +17,6 @@
 anchor_bottom = 1.0
 margin_right = 1024.0
 
-[node name="Tempo" parent="." instance=ExtResource( 3 )]
-margin_left = 103.0
-margin_top = 102.0
-margin_right = 103.0
-margin_bottom = 102.0
-
 [node name="TesteSpriteMesa" type="Sprite" parent="."]
 visible = false
 position = Vector2( 477, 299 )
@@ -134,6 +128,12 @@ margin_bottom = 572.0
 texture_normal = ExtResource( 9 )
 texture_hover = ExtResource( 10 )
 flip_h = true
+
+[node name="Tempo" parent="." instance=ExtResource( 3 )]
+margin_left = 103.0
+margin_top = 102.0
+margin_right = 103.0
+margin_bottom = 102.0
 
 [connection signal="button_up" from="Microscopio/SpriteMicro" to="Microscopio" method="ObservarFrasco"]
 [connection signal="button_up" from="Microscopio/Botao Micro" to="Microscopio" method="ObservarFrasco"]
