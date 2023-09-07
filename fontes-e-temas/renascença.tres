@@ -1,0 +1,62 @@
+[gd_resource type="Theme" load_steps=8 format=2]
+
+[ext_resource path="res://fontes-e-temas/fonteMacondo.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fontes-e-temas/Macondo-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.278431, 0.278431, 0.278431, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+shadow_color = Color( 0, 0, 0, 0.698039 )
+shadow_offset = Vector2( 0, -5 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.313726, 0.231373, 0.192157, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+shadow_color = Color( 0, 0, 0, 0.698039 )
+shadow_offset = Vector2( 0, -5 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.596078, 0.439216, 0.34902, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+shadow_color = Color( 0, 0, 0, 0.698039 )
+shadow_offset = Vector2( 0, -5 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.360784, 0.266667, 0.215686, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+shadow_color = Color( 0, 0, 0, 0.698039 )
+shadow_offset = Vector2( 0, -5 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[resource]
+Button/colors/font_color = Color( 0.0784314, 0.054902, 0.0235294, 1 )
+Button/fonts/font = ExtResource( 1 )
+Button/styles/disabled = SubResource( 4 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 1 )
+Button/styles/pressed = SubResource( 5 )
+Fonts/fonts/normal = SubResource( 2 )
+Label/colors/font_color = Color( 0.0784314, 0.054902, 0.0235294, 1 )
+Label/fonts/font = ExtResource( 1 )

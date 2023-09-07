@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scripts/Frasco.gd" type="Script" id=1]
 [ext_resource path="res://sprites/botões/btn_ferver.png" type="Texture" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://scripts/botoesGenerico.gd" type="Script" id=12]
 [ext_resource path="res://sprites/botões/btn_ferver_disabled.png" type="Texture" id=13]
 [ext_resource path="res://sprites/botões/btn_tampar_disabled.png" type="Texture" id=14]
+[ext_resource path="res://sprites/plaquinha.png" type="Texture" id=15]
+[ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=16]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.273381, 0.755396, 1 )
@@ -53,6 +55,24 @@ _data = [ Vector2( 0, 0.611818 ), 0.0, 8.4023, 0, 0, Vector2( 0.466019, 15.2955 
 [sub_resource type="Gradient" id=5]
 offsets = PoolRealArray( 0.15035, 0.454545, 0.804196, 1 )
 colors = PoolColorArray( 1, 0, 0, 0.552941, 0.988235, 0.14902, 0.00392157, 1, 0.937255, 0.823529, 0.0156863, 0.780392, 0.686275, 0.698039, 0.509804, 0 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.721569, 0.223529, 0.223529, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 7
+expand_margin_top = 1.0
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.584314, 0.580392, 0.580392, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 7
+expand_margin_top = 1.0
 
 [node name="Frasco" type="Node2D" groups=["Frascos"]]
 position = Vector2( 219, 253 )
@@ -125,6 +145,7 @@ texture = ExtResource( 7 )
 unique_name_in_owner = true
 modulate = Color( 5, 4, 4, 1 )
 position = Vector2( 0, 148.485 )
+emitting = false
 amount = 40
 explosiveness = 0.05
 randomness = 0.04
@@ -149,15 +170,41 @@ color_ramp = SubResource( 5 )
 [node name="SpriteBunsen" type="Sprite" parent="SpriteFrasco/Bunsen"]
 texture = ExtResource( 8 )
 
+[node name="NinePatchRect" type="NinePatchRect" parent="SpriteFrasco"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -287.0
+margin_top = -207.939
+margin_right = -1.0
+margin_bottom = -113.939
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource( 15 )
+patch_margin_left = 21
+patch_margin_top = 24
+patch_margin_right = 27
+patch_margin_bottom = 23
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ferver = ExtResource( 11 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = -36.0
-margin_top = 37.0
-margin_right = 37.0
-margin_bottom = 57.0
-text = "REMOVER"
+margin_left = -55.0
+margin_top = 1.0
+margin_right = -32.0
+margin_bottom = 23.0
+rect_rotation = -16.4719
+rect_scale = Vector2( 0.7, 0.7 )
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.768627, 0.690196, 0.596078, 1 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 12 )
+text = "X"
 
 [node name="Etiqueta" type="Label" parent="."]
 anchor_left = 0.5
@@ -165,11 +212,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -59.0
-margin_top = 13.0
+margin_top = 15.0
 margin_right = 59.0
-margin_bottom = 27.0
+margin_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource( 16 )
 text = "Nome"
 align = 1
 
