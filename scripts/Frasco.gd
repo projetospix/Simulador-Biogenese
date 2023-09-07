@@ -57,6 +57,7 @@ func _on_animation_finished(_anim_name: String) -> void:
 func RemoverFrasco():
 	var instancia_adicionar = adicionar_frasco.instance()
 	instancia_adicionar.position = self.position
+	instancia_adicionar.nome_frasco = self.nome_frasco
 	self.get_parent().add_child(instancia_adicionar)
 	Globais.Sequencia_Acao.erase(nome_frasco)
 	queue_free()
