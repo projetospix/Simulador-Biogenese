@@ -22,8 +22,11 @@ func ObservarFrasco():
 		if Globais.Sequencia_Acao.has("Frasco 3"):
 			$"Frasco 3".visible = true
 
-func _process(delta):
+func _process(_delta):
 	if Globais.Sequencia_Acao.empty():
 		$"Botao Micro".visible = false
+		$"SpriteMicro".disabled = true
+		
 	else:
+		$"SpriteMicro".disabled = false		
 		$"Botao Micro".visible = true

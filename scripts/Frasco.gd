@@ -50,7 +50,7 @@ func Tampar_Destampar(button_pressed):
 			Estado_Atual.contaminado = 'pré contaminado'
 
 
-func _on_animation_finished(anim_name: String) -> void:
+func _on_animation_finished(_anim_name: String) -> void:
 	get_tree().call_group('Botoes', 'destravar')
 
 

@@ -8,5 +8,5 @@ func Adiantar_Tempo():
 	$AnimationPlayer.play("Passagem_Tempo")
 
 
-func Terminou_Animacao(anim_name):
+func Terminou_Animacao(_anim_name):
 	get_tree().call_group('Botoes', 'destravar')
