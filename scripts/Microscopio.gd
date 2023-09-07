@@ -16,6 +16,7 @@ func ObservarFrasco():
 				print(Globais.Estado[nome_frasco])
 		else:	
 			# TODO: CONFERIR SE ESTÁ CONTAMINADO APÓS APERTAR O BOTÃO
+			get_tree().call_group('Botoes', 'travar')
 			$Selecione.visible = true
 			if Globais.Sequencia_Acao.has("Frasco 1"):
 				$"Frasco 1".visible = true
