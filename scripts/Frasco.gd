@@ -12,14 +12,19 @@ var adicionar_frasco = load("res://cenas/AdicionarFrasco.tscn")
 func _ready():
 	Globais.Sequencia_Acao[nome_frasco] = []
 	Globais.Estado[nome_frasco] = true
-	$SpriteFrasco/Rolha.visible = false
+	$Sprites/Rolha.visible = false
+	$Sprites/SpriteFrasco.visible = true
+	$Sprites/SpriteFrascoCisne.visible = false	
 	$"%Bolhas".emitting = false
 	$"%Fogo".emitting = false
+	$"%VaporFrascoAberto".emitting = false
+	$"%VaporFrascoAberto".visible = true
+	$"%VaporCisne".emitting = false
 	$Etiqueta.text = nome_frasco
 
 
 func Ferver():
-	get_tree().call_group('Botoes', 'travar')
+	get_tree().call_group('Botoes', 'travar')		
 	$AnimationPlayer.play("ferver")
 	Estado_Atual.contaminado = 'estéril'
 	Globais.Sequencia_Acao[nome_frasco].append('Ferveu')
@@ -40,11 +45,15 @@ func Passar_Tempo():
 func Tampar_Destampar(button_pressed):
 	if button_pressed:
 		Estado_Atual.tampado = true
-		$SpriteFrasco/Rolha.visible = true
+		$Sprites/Rolha.visible = true
+		$"%VaporFrascoAberto".visible = false
+		#$Sprites/SpriteFrasco.visible = false		
 		Globais.Sequencia_Acao[nome_frasco].append('Tampou')
 	else:
 		Estado_Atual.tampado = false
-		$SpriteFrasco/Rolha.visible = false
+		$Sprites/Rolha.visible = false
+		$"%VaporFrascoAberto".visible = true	
+		#$Sprites/SpriteFrasco.visible = true
 		Globais.Sequencia_Acao[nome_frasco].append('Destampou')
 		if Estado_Atual.contaminado != 'contaminado':
 			Estado_Atual.contaminado = 'pré contaminado'

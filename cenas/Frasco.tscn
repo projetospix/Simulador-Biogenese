@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scripts/Frasco.gd" type="Script" id=1]
 [ext_resource path="res://sprites/botões/btn_ferver.png" type="Texture" id=2]
@@ -16,13 +16,42 @@
 [ext_resource path="res://sprites/botões/btn_tampar_disabled.png" type="Texture" id=14]
 [ext_resource path="res://sprites/plaquinha.png" type="Texture" id=15]
 [ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=16]
+[ext_resource path="res://sprites/frasco_cisne@3x.png" type="Texture" id=17]
 
 [sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 1, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture2D" id=14]
+gradient = SubResource( 1 )
+width = 10
+height = 10
+fill = 1
+fill_from = Vector2( 0.504167, 0.505208 )
+fill_to = Vector2( 1, 0.508333 )
+
+[sub_resource type="Curve" id=15]
+max_value = 3.0
+_data = [ Vector2( 0, 0.681818 ), 0.0, 0.0, 0, 0, Vector2( 0.257246, 1.24229 ), 0.0, 0.0, 0, 0, Vector2( 1, 2.30592 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=16]
+offsets = PoolRealArray( 0.0302457, 0.136106, 0.875236 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.286275, 1, 1, 1, 0 )
+
+[sub_resource type="Curve" id=18]
+max_value = 3.0
+_data = [ Vector2( 0, 0.681818 ), 0.0, 0.0, 0, 0, Vector2( 1, 2.30592 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=19]
+offsets = PoolRealArray( 0.0302457, 0.136106, 0.967864 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.286275, 1, 1, 1, 0 )
+
+[sub_resource type="Gradient" id=17]
 offsets = PoolRealArray( 0.273381, 0.755396, 1 )
 colors = PoolColorArray( 1, 0.831373, 0.564706, 0.368627, 0.990234, 0.780314, 0.479645, 1, 0.992157, 0.945098, 0.87451, 0 )
 
 [sub_resource type="GradientTexture2D" id=7]
-gradient = SubResource( 1 )
+gradient = SubResource( 17 )
 fill = 1
 fill_from = Vector2( 0.5, 0.5 )
 fill_to = Vector2( 1, 0.5 )
@@ -103,12 +132,69 @@ texture_hover = ExtResource( 3 )
 texture_disabled = ExtResource( 13 )
 script = ExtResource( 12 )
 
-[node name="SpriteFrasco" type="Sprite" parent="."]
+[node name="Sprites" type="Node2D" parent="."]
 position = Vector2( 0, -70 )
 scale = Vector2( 0.33, 0.33 )
+
+[node name="SpriteFrasco" type="Sprite" parent="Sprites"]
 texture = ExtResource( 6 )
 
-[node name="Bolhas" type="CPUParticles2D" parent="SpriteFrasco"]
+[node name="VaporFrascoAberto" type="CPUParticles2D" parent="Sprites/SpriteFrasco"]
+unique_name_in_owner = true
+position = Vector2( 0, -178.788 )
+emitting = false
+amount = 30
+lifetime = 1.5
+speed_scale = 0.6
+explosiveness = 0.04
+randomness = 0.1
+lifetime_randomness = 0.16
+texture = SubResource( 14 )
+emission_shape = 2
+emission_rect_extents = Vector2( 22, 1 )
+direction = Vector2( 0, -1 )
+spread = 51.85
+gravity = Vector2( 0, -98 )
+initial_velocity = 15.0
+initial_velocity_random = 0.07
+linear_accel = 42.96
+radial_accel = 12.68
+scale_amount = 4.0
+scale_amount_random = 0.21
+scale_amount_curve = SubResource( 15 )
+color = Color( 0.886275, 0.854902, 0.803922, 1 )
+color_ramp = SubResource( 16 )
+
+[node name="SpriteFrascoCisne" type="Sprite" parent="Sprites"]
+visible = false
+position = Vector2( 106.061, -51.5151 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 17 )
+
+[node name="VaporCisne" type="CPUParticles2D" parent="Sprites/SpriteFrascoCisne"]
+unique_name_in_owner = true
+position = Vector2( 148.485, -72.7273 )
+amount = 50
+lifetime = 2.0
+explosiveness = 0.04
+randomness = 0.1
+lifetime_randomness = 0.16
+texture = SubResource( 14 )
+emission_shape = 1
+emission_sphere_radius = 3.7
+direction = Vector2( 0, -1 )
+spread = 22.06
+gravity = Vector2( 0, -98 )
+initial_velocity = 15.0
+linear_accel = 32.4
+radial_accel = -37.32
+scale_amount = 3.0
+scale_amount_random = 0.21
+scale_amount_curve = SubResource( 18 )
+color = Color( 0.886275, 0.854902, 0.803922, 1 )
+color_ramp = SubResource( 19 )
+
+[node name="Bolhas" type="CPUParticles2D" parent="Sprites"]
 unique_name_in_owner = true
 position = Vector2( -3.03027, 93.9394 )
 emitting = false
@@ -131,17 +217,18 @@ scale_amount_random = 0.04
 scale_amount_curve = SubResource( 9 )
 color_ramp = SubResource( 10 )
 
-[node name="Tripé" type="Sprite" parent="SpriteFrasco"]
+[node name="Tripé" type="Sprite" parent="Sprites"]
 texture = ExtResource( 9 )
 
-[node name="Rolha" type="Sprite" parent="SpriteFrasco"]
+[node name="Rolha" type="Sprite" parent="Sprites"]
+visible = false
 position = Vector2( 0, -194.394 )
 scale = Vector2( 1.12554, 0.843043 )
 texture = ExtResource( 7 )
 
-[node name="Bunsen" type="Node2D" parent="SpriteFrasco"]
+[node name="Bunsen" type="Node2D" parent="Sprites"]
 
-[node name="Fogo" type="CPUParticles2D" parent="SpriteFrasco/Bunsen"]
+[node name="Fogo" type="CPUParticles2D" parent="Sprites/Bunsen"]
 unique_name_in_owner = true
 modulate = Color( 5, 4, 4, 1 )
 position = Vector2( 0, 148.485 )
@@ -167,18 +254,24 @@ scale_amount_random = 0.07
 scale_amount_curve = SubResource( 4 )
 color_ramp = SubResource( 5 )
 
-[node name="SpriteBunsen" type="Sprite" parent="SpriteFrasco/Bunsen"]
+[node name="SpriteBunsen" type="Sprite" parent="Sprites/Bunsen"]
 texture = ExtResource( 8 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="SpriteFrasco"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ferver = ExtResource( 11 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -287.0
-margin_top = -207.939
-margin_right = -1.0
-margin_bottom = -113.939
+margin_left = -47.0
+margin_top = 4.0
+margin_right = 87.0
+margin_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.7, 0.7 )
 size_flags_horizontal = 6
 size_flags_vertical = 6
 texture = ExtResource( 15 )
@@ -186,9 +279,6 @@ patch_margin_left = 21
 patch_margin_top = 24
 patch_margin_right = 27
 patch_margin_bottom = 23
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ferver = ExtResource( 11 )
 
 [node name="Remover" type="Button" parent="." groups=["Botoes"]]
 margin_left = -55.0
