@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/Microscopio.gd" type="Script" id=1]
 [ext_resource path="res://scripts/Label_Sequencia.gd" type="Script" id=2]
 [ext_resource path="res://cenas/Tempo.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sprites/teste_sprite_mesa.jpeg" type="Texture" id=4]
 [ext_resource path="res://sprites/bancada@3x.png" type="Texture" id=5]
 [ext_resource path="res://sprites/microscopio.png" type="Texture" id=6]
 [ext_resource path="res://cenas/AdicionarFrasco.tscn" type="PackedScene" id=7]
@@ -20,11 +19,6 @@
 [node name="Cenário" type="Control"]
 anchor_bottom = 1.0
 margin_right = 1024.0
-
-[node name="TesteSpriteMesa" type="Sprite" parent="."]
-visible = false
-position = Vector2( 477, 299 )
-texture = ExtResource( 4 )
 
 [node name="Sequência de Ação" type="Label" parent="."]
 margin_left = 4.0
