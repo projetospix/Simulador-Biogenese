@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/Microscopio.gd" type="Script" id=1]
 [ext_resource path="res://scripts/Label_Sequencia.gd" type="Script" id=2]
@@ -15,6 +15,24 @@
 [ext_resource path="res://sprites/plaquinha.png" type="Texture" id=14]
 [ext_resource path="res://scripts/botoesGenerico.gd" type="Script" id=15]
 [ext_resource path="res://sprites/botões/btn_mic_disabled.png" type="Texture" id=16]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.721569, 0.223529, 0.223529, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 7
+expand_margin_top = 1.0
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.584314, 0.580392, 0.580392, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 7
+expand_margin_top = 1.0
 
 [node name="Cenário" type="Control"]
 anchor_bottom = 1.0
@@ -99,6 +117,22 @@ theme = ExtResource( 13 )
 text = "SELECIONE UMA AMOSTRA"
 align = 1
 
+[node name="Remover" type="Button" parent="Microscopio/Selecione"]
+margin_left = -7.00002
+margin_top = 1.0
+margin_right = 16.0
+margin_bottom = 23.0
+rect_rotation = -16.4719
+rect_scale = Vector2( 0.7, 0.7 )
+theme = ExtResource( 13 )
+custom_colors/font_color = Color( 0.768627, 0.690196, 0.596078, 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
+text = "X"
+
 [node name="Frasco 1" type="TextureButton" parent="Microscopio"]
 margin_left = 235.0
 margin_top = 167.0
@@ -155,5 +189,33 @@ margin_top = 102.0
 margin_right = 103.0
 margin_bottom = 102.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Observando" type="Node2D" parent="CanvasLayer"]
+z_index = 310
+
+[node name="PopUp" type="PopupDialog" parent="CanvasLayer/Observando"]
+unique_name_in_owner = true
+visible = true
+margin_left = 668.0
+margin_top = 92.0
+margin_right = 785.0
+margin_bottom = 156.0
+
+[node name="EstadoFrasco" type="Label" parent="CanvasLayer/Observando/PopUp"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "FSAGFGGGSG"
+align = 1
+valign = 1
+
 [connection signal="button_up" from="Microscopio/SpriteMicro" to="Microscopio" method="ObservarFrasco"]
+[connection signal="button_up" from="Microscopio/Selecione/Remover" to="Microscopio" method="DesistirMicro"]
+[connection signal="button_up" from="Microscopio/Frasco 1" to="Microscopio" method="MostrarResultado" binds= [ "Frasco 1" ]]
+[connection signal="button_up" from="Microscopio/Frasco 2" to="Microscopio" method="MostrarResultado" binds= [ "Frasco 2" ]]
+[connection signal="button_up" from="Microscopio/Frasco 3" to="Microscopio" method="MostrarResultado" binds= [ "Frasco 3" ]]
 [connection signal="button_up" from="Microscopio/Botao Micro" to="Microscopio" method="ObservarFrasco"]

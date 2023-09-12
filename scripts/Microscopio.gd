@@ -35,3 +35,14 @@ func _process(_delta):
 		$"Botao Micro".visible = true
 		
 
+func DesistirMicro():
+		get_tree().call_group('Botoes', 'destravar')
+		$Selecione.visible = false
+		$"Frasco 1".visible = false
+		$"Frasco 2".visible = false
+		$"Frasco 3".visible = false
+
+func MostrarResultado(frasco):
+	$"%EstadoFrasco".text = str(Globais.Estado[frasco]) 
+	$"%PopUp".popup_centered()
+	DesistirMicro()

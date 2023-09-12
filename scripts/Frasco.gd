@@ -3,7 +3,7 @@ extends Node2D
 export var nome_frasco = 'Frasco'
 
 var Estado_Atual = {
-	'tampado': false,
+	'tampado': 'destampado',
 	'contaminado': 'contaminado'
 }
 
@@ -21,6 +21,9 @@ func _ready():
 	$"%VaporFrascoAberto".visible = true
 	$"%VaporCisne".emitting = false
 	$Etiqueta.text = nome_frasco
+	$Popup.visible = false
+	$Destampar.visible = false
+	$Quebrar.visible = false
 
 
 func Ferver():
@@ -41,23 +44,30 @@ func Passar_Tempo():
 	Globais.Sequencia_Acao[nome_frasco].append('Passou o Tempo')
 	
 
+func Mostrar_PopUp():
+	$Popup.visible = true
+	get_tree().call_group('Botoes', 'travar')		
+	
+func Rolha():
+	$Popup.visible = false
+	Estado_Atual.tampado = 'Rolha'
+	$Sprites/Rolha.visible = true
+	$"%VaporFrascoAberto".visible = false
+	get_tree().call_group('Botoes', 'destravar')		
+	#$Sprites/SpriteFrasco.visible = false		
+	Globais.Sequencia_Acao[nome_frasco].append('Tampou com Rolha')
+	$Destampar.visible = true
+	$Tampar.visible = false
 
-func Tampar_Destampar(button_pressed):
-	if button_pressed:
-		Estado_Atual.tampado = true
-		$Sprites/Rolha.visible = true
-		$"%VaporFrascoAberto".visible = false
-		#$Sprites/SpriteFrasco.visible = false		
-		Globais.Sequencia_Acao[nome_frasco].append('Tampou')
-	else:
-		Estado_Atual.tampado = false
-		$Sprites/Rolha.visible = false
-		$"%VaporFrascoAberto".visible = true	
-		#$Sprites/SpriteFrasco.visible = true
-		Globais.Sequencia_Acao[nome_frasco].append('Destampou')
-		if Estado_Atual.contaminado != 'contaminado':
-			Estado_Atual.contaminado = 'pré contaminado'
-
+func Cisne():
+	$Sprites/SpriteFrasco.visible = false
+	$Sprites/SpriteFrascoCisne.visible = true
+	$Popup.visible = false
+	get_tree().call_group('Botoes', 'destravar')
+	Estado_Atual.tampado = 'Cisne'
+	Globais.Sequencia_Acao[nome_frasco].append('Tampou com Cisne')
+	$Quebrar.visible = true
+	$Tampar.visible = false
 
 func _on_animation_finished(_anim_name: String) -> void:
 	get_tree().call_group('Botoes', 'destravar')
@@ -70,3 +80,23 @@ func RemoverFrasco():
 	self.get_parent().add_child(instancia_adicionar)
 	Globais.Sequencia_Acao.erase(nome_frasco)
 	queue_free()
+
+
+func Destampar():
+	Estado_Atual.tampado = 'destampado'
+	$Sprites/Rolha.visible = false
+	$"%VaporFrascoAberto".visible = true
+	Globais.Sequencia_Acao[nome_frasco].append('Destampou')
+	$Destampar.visible = false
+	$Tampar.visible = true
+	if Estado_Atual.contaminado != 'contaminado':
+		Estado_Atual.contaminado = 'pré contaminado'
+	
+
+func Quebrar():
+	Estado_Atual.tampado = 'quebrado'
+	$"%VaporFrascoAberto".visible = true
+	Globais.Sequencia_Acao[nome_frasco].append('Quebrou')
+	$Quebrar.visible = false
+	if Estado_Atual.contaminado != 'contaminado':
+		Estado_Atual.contaminado = 'pré contaminado'
