@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://scripts/Frasco.gd" type="Script" id=1]
 [ext_resource path="res://sprites/botões/btn_ferver.png" type="Texture" id=2]
@@ -18,7 +18,14 @@
 [ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=16]
 [ext_resource path="res://sprites/frasco_cisne@3x.png" type="Texture" id=17]
 [ext_resource path="res://sprites/botões/btn_destampar_hover.png" type="Texture" id=18]
-[ext_resource path="res://sprites/botões/btn_mic.png" type="Texture" id=19]
+[ext_resource path="res://sprites/botões/btn_quebrar.png" type="Texture" id=19]
+[ext_resource path="res://sprites/botões/btn_quebrar_hover.png" type="Texture" id=20]
+[ext_resource path="res://sprites/botões/btn_bico_cisne_hover.png" type="Texture" id=21]
+[ext_resource path="res://sprites/botões/btn_bico_cisne.png" type="Texture" id=22]
+[ext_resource path="res://sprites/botões/btn_rolha_hover.png" type="Texture" id=23]
+[ext_resource path="res://sprites/botões/btn_rolha.png" type="Texture" id=24]
+[ext_resource path="res://sprites/placona.png" type="Texture" id=25]
+[ext_resource path="res://sprites/frasco_cisne@3x_quebrado.png" type="Texture" id=26]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 1, 1 )
@@ -140,6 +147,7 @@ margin_bottom = 207.0
 size_flags_horizontal = 6
 size_flags_vertical = 3
 texture_normal = ExtResource( 19 )
+texture_hover = ExtResource( 20 )
 texture_disabled = ExtResource( 18 )
 script = ExtResource( 12 )
 
@@ -165,7 +173,6 @@ texture = ExtResource( 6 )
 [node name="VaporFrascoAberto" type="CPUParticles2D" parent="Sprites/SpriteFrasco"]
 unique_name_in_owner = true
 position = Vector2( 0, -178.788 )
-emitting = false
 amount = 30
 lifetime = 1.5
 speed_scale = 0.6
@@ -189,7 +196,6 @@ color = Color( 0.886275, 0.854902, 0.803922, 1 )
 color_ramp = SubResource( 16 )
 
 [node name="SpriteFrascoCisne" type="Sprite" parent="Sprites"]
-visible = false
 position = Vector2( 106.061, -51.5151 )
 texture = ExtResource( 17 )
 
@@ -216,10 +222,39 @@ scale_amount_curve = SubResource( 18 )
 color = Color( 0.886275, 0.854902, 0.803922, 1 )
 color_ramp = SubResource( 19 )
 
+[node name="SpriteFrascoQuebrado" type="Sprite" parent="Sprites"]
+position = Vector2( 106.061, -51.5151 )
+texture = ExtResource( 26 )
+
+[node name="VaporFrascoQuebrado" type="CPUParticles2D" parent="Sprites/SpriteFrascoQuebrado"]
+unique_name_in_owner = true
+position = Vector2( -106.061, -115.152 )
+scale = Vector2( 1, 1 )
+amount = 30
+lifetime = 1.5
+speed_scale = 0.6
+explosiveness = 0.04
+randomness = 0.1
+lifetime_randomness = 0.16
+texture = SubResource( 14 )
+emission_shape = 2
+emission_rect_extents = Vector2( 22, 1 )
+direction = Vector2( 0, -1 )
+spread = 51.85
+gravity = Vector2( 0, -98 )
+initial_velocity = 15.0
+initial_velocity_random = 0.07
+linear_accel = 42.96
+radial_accel = 12.68
+scale_amount = 4.0
+scale_amount_random = 0.21
+scale_amount_curve = SubResource( 15 )
+color = Color( 0.886275, 0.854902, 0.803922, 1 )
+color_ramp = SubResource( 16 )
+
 [node name="Bolhas" type="CPUParticles2D" parent="Sprites"]
 unique_name_in_owner = true
 position = Vector2( -3.03027, 93.9394 )
-emitting = false
 amount = 7
 lifetime = 2.0
 randomness = 0.1
@@ -254,7 +289,6 @@ texture = ExtResource( 7 )
 unique_name_in_owner = true
 modulate = Color( 5, 4, 4, 1 )
 position = Vector2( 0, 148.485 )
-emitting = false
 amount = 40
 explosiveness = 0.05
 randomness = 0.04
@@ -335,27 +369,59 @@ text = "Nome"
 align = 1
 
 [node name="Popup" type="NinePatchRect" parent="."]
-margin_left = -115.0
-margin_top = -256.0
-margin_right = 130.0
-margin_bottom = -129.0
+margin_left = -144.0
+margin_top = -277.0
+margin_right = 164.0
+margin_bottom = -119.0
+rect_scale = Vector2( 0.712189, 0.712189 )
+rect_pivot_offset = Vector2( 122, 63 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Popup"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Popup"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -3.0
+margin_top = -7.0
+margin_right = 2.0
+margin_bottom = 8.0
+texture = ExtResource( 25 )
+patch_margin_left = 19
+patch_margin_top = 18
+patch_margin_right = 21
+patch_margin_bottom = 18
 
-[node name="Cisne" type="Button" parent="Popup/HBoxContainer"]
-margin_right = 120.0
-margin_bottom = 127.0
-size_flags_horizontal = 3
-text = "CISNE"
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -139.0
+margin_top = -57.0
+margin_right = 138.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 122, 63 )
 
-[node name="Rolha" type="Button" parent="Popup/HBoxContainer"]
-margin_left = 124.0
-margin_right = 245.0
-margin_bottom = 127.0
-size_flags_horizontal = 3
-text = "ROLHA"
+[node name="Cisne" type="TextureButton" parent="Popup/HBoxContainer"]
+margin_right = 136.0
+margin_bottom = 113.0
+size_flags_horizontal = 7
+size_flags_vertical = 5
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 21 )
+texture_hover = ExtResource( 21 )
+expand = true
+stretch_mode = 5
+
+[node name="Rolha" type="TextureButton" parent="Popup/HBoxContainer"]
+margin_left = 140.0
+margin_right = 277.0
+margin_bottom = 113.0
+size_flags_horizontal = 7
+size_flags_vertical = 5
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 23 )
+expand = true
+stretch_mode = 5
 
 [connection signal="button_up" from="Tampar" to="." method="Mostrar_PopUp"]
 [connection signal="button_up" from="Destampar" to="." method="Destampar"]

@@ -14,12 +14,14 @@ func _ready():
 	Globais.Estado[nome_frasco] = true
 	$Sprites/Rolha.visible = false
 	$Sprites/SpriteFrasco.visible = true
-	$Sprites/SpriteFrascoCisne.visible = false	
+	$Sprites/SpriteFrascoCisne.visible = false
+	$Sprites/SpriteFrascoQuebrado.visible = false
 	$"%Bolhas".emitting = false
 	$"%Fogo".emitting = false
 	$"%VaporFrascoAberto".emitting = false
 	$"%VaporFrascoAberto".visible = true
 	$"%VaporCisne".emitting = false
+	$"%VaporFrascoQuebrado".emitting = false
 	$Etiqueta.text = nome_frasco
 	$Popup.visible = false
 	$Destampar.visible = false
@@ -98,5 +100,7 @@ func Quebrar():
 	$"%VaporFrascoAberto".visible = true
 	Globais.Sequencia_Acao[nome_frasco].append('Quebrou')
 	$Quebrar.visible = false
+	$Sprites/SpriteFrascoQuebrado.visible = true
+	$Sprites/SpriteFrascoCisne.visible = false
 	if Estado_Atual.contaminado != 'contaminado':
 		Estado_Atual.contaminado = 'pré contaminado'
