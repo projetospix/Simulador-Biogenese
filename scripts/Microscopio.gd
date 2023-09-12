@@ -13,7 +13,7 @@ func ObservarFrasco():
 		# NÃO PRECISA SELECIONAR O FRASCO SE SÓ HOUVER UM FRASCO, NÃO É MESMO?
 		if Globais.Sequencia_Acao.size() == 1:
 			for nome_frasco in Globais.Sequencia_Acao:
-				print(Globais.Estado[nome_frasco])
+				MostrarResultado(nome_frasco)
 		else:	
 			# TODO: CONFERIR SE ESTÁ CONTAMINADO APÓS APERTAR O BOTÃO
 			get_tree().call_group('Botoes', 'travar')
