@@ -106,12 +106,12 @@ script = ExtResource( 2 )
 margin_left = 273.0
 margin_top = 97.0
 margin_right = 532.0
-margin_bottom = 155.0
+margin_bottom = 197.0
 texture = ExtResource( 15 )
-patch_margin_left = 28
-patch_margin_top = 19
-patch_margin_right = 20
-patch_margin_bottom = 18
+patch_margin_left = 53
+patch_margin_top = 50
+patch_margin_right = 75
+patch_margin_bottom = 50
 
 [node name="Selecione" type="Label" parent="Microscopio/Selecione"]
 anchor_left = 0.5
@@ -200,18 +200,30 @@ layer = 2
 [node name="Observando" type="Node2D" parent="CanvasLayer"]
 z_index = 310
 
-[node name="PopUp" type="PopupDialog" parent="CanvasLayer/Observando"]
+[node name="PopUp" type="Popup" parent="CanvasLayer/Observando"]
 unique_name_in_owner = true
 visible = true
 margin_left = 668.0
 margin_top = 92.0
-margin_right = 785.0
+margin_right = 930.0
 margin_bottom = 156.0
+theme = ExtResource( 6 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Observando/PopUp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 15 )
+patch_margin_left = 59
+patch_margin_top = 49
+patch_margin_right = 52
+patch_margin_bottom = 53
 
 [node name="EstadoFrasco" type="Label" parent="CanvasLayer/Observando/PopUp"]
 unique_name_in_owner = true
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 1.526
+margin_top = 20.0
+margin_bottom = -13.664
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "FSAGFGGGSG"
