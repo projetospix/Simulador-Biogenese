@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Tempo.gd" type="Script" id=1]
 [ext_resource path="res://sprites/relogio_corpo.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=6]
 [ext_resource path="res://sprites/Noite.jpeg" type="Texture" id=7]
 [ext_resource path="res://sprites/Dia.jpeg" type="Texture" id=8]
+[ext_resource path="res://sprites/moldura_janela.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Passagem_Tempo"
@@ -60,6 +61,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.839216, 0.384314, 0.0196078, 1 ), Color( 0.835294, 0.462745, 0.0666667, 1 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("escurecerCenario:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2, 0.9, 1.2, 1.9, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.792157, 0.717647, 0.643137, 1 ), Color( 0.478431, 0.584314, 0.776471, 1 ), Color( 0.478431, 0.584314, 0.776471, 1 ), Color( 0.835294, 0.811765, 0.784314, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Tempo" type="Control"]
 script = ExtResource( 1 )
@@ -68,9 +81,6 @@ script = ExtResource( 1 )
 position = Vector2( 0, 4 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Passagem_Tempo = SubResource( 1 )
 
 [node name="Ponteiro Hora" type="Position2D" parent="."]
 scale = Vector2( 0.3, 0.3 )
@@ -104,7 +114,7 @@ text = "Adiantar"
 script = ExtResource( 3 )
 
 [node name="Janela" type="Node2D" parent="."]
-modulate = Color( 1, 1, 1, 0.784314 )
+modulate = Color( 1, 1, 1, 0.733333 )
 position = Vector2( 361.123, 43.8419 )
 scale = Vector2( 0.499101, 0.499101 )
 
@@ -115,5 +125,15 @@ texture = ExtResource( 8 )
 modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 7 )
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="Terminou_Animacao"]
+[node name="Moldura" type="Sprite" parent="."]
+position = Vector2( 361.123, 43.8419 )
+scale = Vector2( 0.559706, 0.559706 )
+texture = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Passagem_Tempo = SubResource( 1 )
+
+[node name="escurecerCenario" type="CanvasModulate" parent="."]
+
 [connection signal="button_up" from="Adiantar Tempo" to="." method="Adiantar_Tempo"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="Terminou_Animacao"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/AdicionarFrasco.gd" type="Script" id=1]
 [ext_resource path="res://sprites/botões/btn_novo_hover.png" type="Texture" id=2]
@@ -9,7 +9,7 @@
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.643357, 1 )
-colors = PoolColorArray( 0.145098, 0.776471, 0.290196, 0, 0.149924, 0.794669, 0.298095, 0.143772, 0.157761, 0.824219, 0.310922, 0.377238 )
+colors = PoolColorArray( 0.145098, 0.776471, 0.290196, 0, 0.149924, 0.794669, 0.298095, 0.143772, 0.156863, 0.823529, 0.309804, 0.517647 )
 
 [sub_resource type="GradientTexture2D" id=2]
 gradient = SubResource( 1 )
@@ -18,9 +18,12 @@ height = 120
 fill_from = Vector2( 0.5, 0 )
 fill_to = Vector2( 0.5, 1 )
 
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0.454545 ), 0.0, 0.0, 0, 0, Vector2( 0.134557, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.718654, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.281818 ), 0.0, 0.0, 0, 0 ]
+
 [sub_resource type="Gradient" id=3]
-offsets = PoolRealArray( 0, 0.289157, 0.582329, 0.951049 )
-colors = PoolColorArray( 0.388235, 0.737255, 0.388235, 0, 0.388235, 0.737255, 0.388235, 0.137255, 0.478431, 0.776471, 0.478431, 0.341176, 0.945098, 0.976471, 0.945098, 0 )
+offsets = PoolRealArray( 0, 0.289157, 0.582329, 0.730263, 0.951049 )
+colors = PoolColorArray( 0.388235, 0.737255, 0.388235, 0, 0.447059, 0.870588, 0.447059, 0.596078, 0.615686, 1, 0.615686, 0.215686, 0.815442, 0.985732, 0.815442, 0.15744, 0.945098, 0.976471, 0.945098, 0 )
 
 [node name="Adicionar Frasco" type="Node2D" groups=["Frascos"]]
 position = Vector2( 219, 253 )
@@ -39,7 +42,7 @@ texture_disabled = ExtResource( 4 )
 script = ExtResource( 12 )
 
 [node name="Gradiente" type="Sprite" parent="." groups=["Botoes"]]
-modulate = Color( 1, 1, 1, 0.54902 )
+self_modulate = Color( 1, 1, 1, 0.4 )
 position = Vector2( 0, -62 )
 texture = SubResource( 2 )
 script = ExtResource( 5 )
@@ -48,8 +51,8 @@ script = ExtResource( 5 )
 position = Vector2( 0, 45 )
 amount = 5
 lifetime = 2.0
-preprocess = 1.94
-speed_scale = 0.5
+preprocess = 1.0
+speed_scale = 0.3
 randomness = 0.66
 lifetime_randomness = 0.36
 emission_shape = 2
@@ -61,8 +64,11 @@ initial_velocity = 35.0
 initial_velocity_random = 0.5
 damping = 2.47
 damping_random = 0.27
-scale_amount = 4.0
+scale_amount = 5.0
 scale_amount_random = 0.45
+scale_amount_curve = SubResource( 4 )
 color_ramp = SubResource( 3 )
 
 [connection signal="button_up" from="Botao Mais" to="." method="AdicionarFrasco"]
+[connection signal="mouse_entered" from="Botao Mais" to="." method="_on_Botao_Mais_mouse_entered"]
+[connection signal="mouse_exited" from="Botao Mais" to="." method="_on_Botao_Mais_mouse_exited"]
