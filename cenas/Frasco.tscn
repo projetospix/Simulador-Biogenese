@@ -229,7 +229,6 @@ texture = ExtResource( 26 )
 [node name="VaporFrascoQuebrado" type="CPUParticles2D" parent="Sprites/SpriteFrascoQuebrado"]
 unique_name_in_owner = true
 position = Vector2( -106.061, -115.152 )
-scale = Vector2( 1, 1 )
 amount = 30
 lifetime = 1.5
 speed_scale = 0.6
@@ -384,10 +383,10 @@ margin_top = -7.0
 margin_right = 2.0
 margin_bottom = 8.0
 texture = ExtResource( 25 )
-patch_margin_left = 19
-patch_margin_top = 18
-patch_margin_right = 21
-patch_margin_bottom = 18
+patch_margin_left = 56
+patch_margin_top = 50
+patch_margin_right = 55
+patch_margin_bottom = 45
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Popup"]
 anchor_left = 0.5

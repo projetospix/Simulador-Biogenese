@@ -31,7 +31,10 @@ func _ready():
 func Ferver():
 	get_tree().call_group('Botoes', 'travar')		
 	$AnimationPlayer.play("ferver")
-	Estado_Atual.contaminado = 'estéril'
+	if Estado_Atual.tampado == 'destampado' or Estado_Atual.tampado == 'quebrado':
+		Estado_Atual.contaminado = 'pré contaminado'
+	else:
+		Estado_Atual.contaminado = 'estéril'
 	Globais.Sequencia_Acao[nome_frasco].append('Ferveu')
 	Globais.Estado[nome_frasco] = false
 
@@ -40,7 +43,7 @@ func Passar_Tempo():
 	if Estado_Atual.contaminado == 'pré contaminado':
 		Estado_Atual.contaminado = 'contaminado'
 		Globais.Estado[nome_frasco] = true
-	if Estado_Atual.contaminado == 'estéril' and Estado_Atual.tampado == false:
+	if Estado_Atual.contaminado == 'estéril' and Estado_Atual.tampado == 'rolha':
 		Estado_Atual.contaminado = 'contaminado'
 		Globais.Estado[nome_frasco] = true
 	Globais.Sequencia_Acao[nome_frasco].append('Passou o Tempo')
@@ -82,6 +85,7 @@ func RemoverFrasco():
 	self.get_parent().add_child(instancia_adicionar)
 	Globais.Sequencia_Acao.erase(nome_frasco)
 	queue_free()
+	
 
 
 func Destampar():
