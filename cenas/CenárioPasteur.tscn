@@ -110,15 +110,36 @@ expand = true
 flip_h = true
 script = ExtResource( 2 )
 
+[node name="Botao Micro" type="TextureButton" parent="Microscopio" groups=["Botoes"]]
+margin_left = 50.0
+margin_top = 469.0
+margin_right = 153.0
+margin_bottom = 572.0
+texture_normal = ExtResource( 14 )
+texture_hover = ExtResource( 12 )
+texture_disabled = ExtResource( 10 )
+flip_h = true
+script = ExtResource( 2 )
+
+[node name="dim" type="ColorRect" parent="Microscopio"]
+modulate = Color( 1, 1, 1, 0.784314 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1026.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="Selecione" type="NinePatchRect" parent="Microscopio"]
-margin_left = 273.0
-margin_top = 97.0
-margin_right = 532.0
-margin_bottom = 197.0
+margin_left = 246.0
+margin_top = 56.0
+margin_right = 563.0
+margin_bottom = 156.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
 texture = ExtResource( 15 )
 patch_margin_left = 53
 patch_margin_top = 50
-patch_margin_right = 75
+patch_margin_right = 52
 patch_margin_bottom = 50
 
 [node name="Selecione" type="Label" parent="Microscopio/Selecione"]
@@ -133,8 +154,9 @@ margin_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource( 6 )
-text = "SELECIONE UMA AMOSTRA"
+text = "Selecione uma amostra"
 align = 1
+valign = 1
 
 [node name="Remover" type="Button" parent="Microscopio/Selecione"]
 margin_left = -7.00002
@@ -191,17 +213,6 @@ texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 13 )
 expand = true
 
-[node name="Botao Micro" type="TextureButton" parent="Microscopio" groups=["Botoes"]]
-margin_left = 50.0
-margin_top = 469.0
-margin_right = 153.0
-margin_bottom = 572.0
-texture_normal = ExtResource( 14 )
-texture_hover = ExtResource( 12 )
-texture_disabled = ExtResource( 10 )
-flip_h = true
-script = ExtResource( 2 )
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
 
@@ -239,8 +250,8 @@ align = 1
 valign = 1
 
 [connection signal="button_up" from="Microscopio/SpriteMicro" to="Microscopio" method="ObservarFrasco"]
+[connection signal="button_up" from="Microscopio/Botao Micro" to="Microscopio" method="ObservarFrasco"]
 [connection signal="button_up" from="Microscopio/Selecione/Remover" to="Microscopio" method="DesistirMicro"]
 [connection signal="button_up" from="Microscopio/Frasco 1" to="Microscopio" method="MostrarResultado" binds= [ "Frasco 1" ]]
 [connection signal="button_up" from="Microscopio/Frasco 2" to="Microscopio" method="MostrarResultado" binds= [ "Frasco 2" ]]
 [connection signal="button_up" from="Microscopio/Frasco 3" to="Microscopio" method="MostrarResultado" binds= [ "Frasco 3" ]]
-[connection signal="button_up" from="Microscopio/Botao Micro" to="Microscopio" method="ObservarFrasco"]

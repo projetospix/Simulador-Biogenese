@@ -7,9 +7,11 @@ func _ready():
 	$"Frasco 1".visible = false
 	$"Frasco 2".visible = false
 	$"Frasco 3".visible = false
+	$dim.visible = false
 
 func ObservarFrasco():
 	if not observando: #evitar ação duplicada
+		$dim.visible = true
 		# NÃO PRECISA SELECIONAR O FRASCO SE SÓ HOUVER UM FRASCO, NÃO É MESMO?
 		if Globais.Sequencia_Acao.size() == 1:
 			for nome_frasco in Globais.Sequencia_Acao:
@@ -36,11 +38,12 @@ func _process(_delta):
 		
 
 func DesistirMicro():
-		get_tree().call_group('Botoes', 'destravar')
-		$Selecione.visible = false
-		$"Frasco 1".visible = false
-		$"Frasco 2".visible = false
-		$"Frasco 3".visible = false
+	get_tree().call_group('Botoes', 'destravar')
+	$Selecione.visible = false
+	$"Frasco 1".visible = false
+	$"Frasco 2".visible = false
+	$"Frasco 3".visible = false
+	$dim.visible = false
 
 func MostrarResultado(frasco):
 	$"%EstadoFrasco".text = str(Globais.Estado[frasco]) 

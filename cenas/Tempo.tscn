@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Tempo.gd" type="Script" id=1]
 [ext_resource path="res://sprites/relogio_corpo.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://sprites/Noite.jpeg" type="Texture" id=7]
 [ext_resource path="res://sprites/Dia.jpeg" type="Texture" id=8]
 [ext_resource path="res://sprites/moldura_janela.png" type="Texture" id=9]
+[ext_resource path="res://sprites/prateleira.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Passagem_Tempo"
@@ -77,6 +78,11 @@ tracks/4/keys = {
 [node name="Tempo" type="Control"]
 script = ExtResource( 1 )
 
+[node name="Prateleira" type="Sprite" parent="."]
+position = Vector2( 21.4509, 86.82 )
+scale = Vector2( 1, 0.506109 )
+texture = ExtResource( 10 )
+
 [node name="Relogio" type="Sprite" parent="."]
 position = Vector2( 0, 4 )
 scale = Vector2( 0.3, 0.3 )
@@ -106,17 +112,32 @@ texture = ExtResource( 5 )
 
 [node name="Adiantar Tempo" type="Button" parent="." groups=["Botoes"]]
 margin_left = -33.0
-margin_top = 81.0
+margin_top = 89.6765
 margin_right = 32.0
-margin_bottom = 101.0
+margin_bottom = 111.676
 theme = ExtResource( 6 )
 text = "Adiantar"
 script = ExtResource( 3 )
 
+[node name="fundo janela" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 281.0
+margin_top = -46.0
+margin_right = 545.0
+margin_bottom = 134.0
+color = Color( 0.670588, 0.635294, 0.54902, 1 )
+__meta__ = {
+"_editor_description_": "para que a leve transparência não pegue o papel de parede"
+}
+
 [node name="Janela" type="Node2D" parent="."]
 modulate = Color( 1, 1, 1, 0.733333 )
-position = Vector2( 361.123, 43.8419 )
+position = Vector2( 409.123, 43.8419 )
 scale = Vector2( 0.499101, 0.499101 )
+__meta__ = {
+"_editor_description_": "parte do fundo que fica levemente transparente"
+}
 
 [node name="Dia" type="Sprite" parent="Janela"]
 texture = ExtResource( 8 )
@@ -126,7 +147,7 @@ modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 7 )
 
 [node name="Moldura" type="Sprite" parent="."]
-position = Vector2( 361.123, 43.8419 )
+position = Vector2( 409.123, 43.8419 )
 scale = Vector2( 0.559706, 0.559706 )
 texture = ExtResource( 9 )
 

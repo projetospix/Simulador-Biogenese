@@ -1,12 +1,39 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/MenuInicial.gd" type="Script" id=1]
 [ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=2]
 [ext_resource path="res://fontes-e-temas/Macondo-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://sprites/frasco@3x.png.PNG" type="Texture" id=5]
+[ext_resource path="res://sprites/tripé@3x.png.PNG" type="Texture" id=6]
+[ext_resource path="res://sprites/microscopio.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
 font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+font_data = ExtResource( 3 )
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 1, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture2D" id=4]
+gradient = SubResource( 3 )
+width = 10
+height = 10
+fill = 1
+fill_from = Vector2( 0.504167, 0.505208 )
+fill_to = Vector2( 1, 0.508333 )
+
+[sub_resource type="Curve" id=5]
+max_value = 3.0
+_data = [ Vector2( 0, 0.681818 ), 0.0, 0.0, 0, 0, Vector2( 0.257246, 1.24229 ), 0.0, 0.0, 0, 0, Vector2( 1, 2.30592 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0.0302457, 0.136106, 0.875236 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.286275, 1, 1, 1, 0 )
 
 [node name="Menu Inicial" type="Control"]
 anchor_right = 1.0
@@ -20,12 +47,15 @@ anchor_bottom = 1.0
 color = Color( 0.670588, 0.635294, 0.54902, 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 127.0
-margin_top = 98.0
-margin_right = 884.0
-margin_bottom = 170.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -378.5
+margin_top = 102.0
+margin_right = 378.5
+margin_bottom = 174.0
 custom_fonts/font = SubResource( 1 )
-text = "SIMULADOR DE BIOGÊNESE"
+text = "Biogênese vs Abiogênese"
+align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -33,21 +63,72 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -167.0
-margin_top = -56.0
+margin_top = -45.0
 margin_right = 167.0
-margin_bottom = 44.0
-
-[node name="Jogar Pasteur" type="Button" parent="VBoxContainer"]
-margin_right = 334.0
-margin_bottom = 48.0
-size_flags_vertical = 3
-text = "JOGAR PASTEUR"
+margin_bottom = 178.0
+custom_constants/separation = 16
+alignment = 1
 
 [node name="Jogar Redi" type="Button" parent="VBoxContainer"]
-margin_top = 52.0
 margin_right = 334.0
-margin_bottom = 100.0
+margin_bottom = 63.0
 size_flags_vertical = 3
-text = "JOGAR REDI"
+custom_fonts/font = SubResource( 2 )
+text = "Simulador Redi"
+
+[node name="Jogar Pasteur" type="Button" parent="VBoxContainer"]
+margin_top = 79.0
+margin_right = 334.0
+margin_bottom = 143.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Simulador Pasteur"
+
+[node name="Jogar Pasteur2" type="Button" parent="VBoxContainer"]
+margin_top = 159.0
+margin_right = 334.0
+margin_bottom = 223.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Modo campanha"
+
+[node name="Frasco3xpng" type="Sprite" parent="."]
+position = Vector2( 154, 502 )
+scale = Vector2( 0.486111, 0.486111 )
+texture = ExtResource( 5 )
+
+[node name="Tripé3xpng" type="Sprite" parent="Frasco3xpng"]
+texture = ExtResource( 6 )
+
+[node name="VaporFrascoAberto" type="CPUParticles2D" parent="Frasco3xpng"]
+unique_name_in_owner = true
+position = Vector2( 0, -178.788 )
+amount = 30
+lifetime = 1.5
+speed_scale = 0.6
+explosiveness = 0.04
+randomness = 0.1
+lifetime_randomness = 0.16
+texture = SubResource( 4 )
+emission_shape = 2
+emission_rect_extents = Vector2( 22, 1 )
+direction = Vector2( 0, -1 )
+spread = 51.85
+gravity = Vector2( 0, -98 )
+initial_velocity = 15.0
+initial_velocity_random = 0.07
+linear_accel = 42.96
+radial_accel = 12.68
+scale_amount = 4.0
+scale_amount_random = 0.21
+scale_amount_curve = SubResource( 5 )
+color = Color( 0.886275, 0.854902, 0.803922, 1 )
+color_ramp = SubResource( 6 )
+
+[node name="Microscopio" type="Sprite" parent="."]
+position = Vector2( 901, 497.183 )
+scale = Vector2( 0.529817, 0.529817 )
+texture = ExtResource( 7 )
 
 [connection signal="button_up" from="VBoxContainer/Jogar Pasteur" to="." method="MudarCenaPasteur"]
+[connection signal="button_up" from="VBoxContainer/Jogar Pasteur2" to="." method="MudarCenaPasteur"]
