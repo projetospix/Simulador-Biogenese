@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Tempo.gd" type="Script" id=1]
 [ext_resource path="res://sprites/relogio_corpo.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://sprites/ponteiro_hora.png" type="Texture" id=4]
 [ext_resource path="res://sprites/ponteiro_minutos.png" type="Texture" id=5]
 [ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=6]
+[ext_resource path="res://sprites/Noite.jpeg" type="Texture" id=7]
+[ext_resource path="res://sprites/Dia.jpeg" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Passagem_Tempo"
@@ -33,6 +35,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 2880.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Janela/Noite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.75, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [node name="Tempo" type="Control"]
@@ -78,6 +92,17 @@ margin_bottom = 101.0
 theme = ExtResource( 6 )
 text = "Adiantar"
 script = ExtResource( 3 )
+
+[node name="Janela" type="Node2D" parent="."]
+position = Vector2( 380, 58 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Dia" type="Sprite" parent="Janela"]
+texture = ExtResource( 8 )
+
+[node name="Noite" type="Sprite" parent="Janela"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 7 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="Terminou_Animacao"]
 [connection signal="button_up" from="Adiantar Tempo" to="." method="Adiantar_Tempo"]
