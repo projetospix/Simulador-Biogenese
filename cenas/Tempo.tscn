@@ -43,10 +43,22 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1.75, 3.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0.4, 1, 1.7, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Janela/Dia:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2, 0.9, 1.8, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.839216, 0.384314, 0.0196078, 1 ), Color( 0.835294, 0.462745, 0.0666667, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="Tempo" type="Control"]
@@ -61,7 +73,6 @@ texture = ExtResource( 2 )
 anims/Passagem_Tempo = SubResource( 1 )
 
 [node name="Ponteiro Hora" type="Position2D" parent="."]
-rotation = 2.89599e-05
 scale = Vector2( 0.3, 0.3 )
 
 [node name="Position2D" type="Position2D" parent="Ponteiro Hora"]
@@ -73,7 +84,6 @@ scale = Vector2( 0.72467, 0.640143 )
 texture = ExtResource( 4 )
 
 [node name="Ponteiro Minuto" type="Position2D" parent="."]
-rotation = 1.66576e-05
 scale = Vector2( 0.3, 0.3 )
 
 [node name="Position2D" type="Position2D" parent="Ponteiro Minuto"]
@@ -94,8 +104,9 @@ text = "Adiantar"
 script = ExtResource( 3 )
 
 [node name="Janela" type="Node2D" parent="."]
-position = Vector2( 380, 58 )
-scale = Vector2( 0.4, 0.4 )
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 361.123, 43.8419 )
+scale = Vector2( 0.499101, 0.499101 )
 
 [node name="Dia" type="Sprite" parent="Janela"]
 texture = ExtResource( 8 )
