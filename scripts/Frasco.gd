@@ -10,6 +10,7 @@ var Estado_Atual = {
 var adicionar_frasco = load("res://cenas/AdicionarFrasco.tscn")
 
 func _ready():
+	$NovoFX.emitting = true
 	Globais.Sequencia_Acao[nome_frasco] = []
 	Globais.Estado[nome_frasco] = true
 	$Sprites/Rolha.visible = false
