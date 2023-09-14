@@ -111,10 +111,10 @@ scale = Vector2( 0.956291, 0.792832 )
 texture = ExtResource( 5 )
 
 [node name="Adiantar Tempo" type="Button" parent="." groups=["Botoes"]]
-margin_left = -33.0
-margin_top = 89.6765
-margin_right = 32.0
-margin_bottom = 111.676
+margin_left = -32.2906
+margin_top = 47.9337
+margin_right = 32.7094
+margin_bottom = 69.9337
 theme = ExtResource( 6 )
 text = "Adiantar"
 script = ExtResource( 3 )

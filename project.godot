@@ -28,6 +28,11 @@ config/icon="res://icon.png"
 
 Globais="*res://scripts/Globais.gd"
 
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [editor]
 
 version_control_autoload_on_startup=true

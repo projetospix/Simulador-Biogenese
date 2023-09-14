@@ -377,19 +377,11 @@ margin_right = 164.0
 margin_bottom = -119.0
 rect_scale = Vector2( 0.712189, 0.712189 )
 rect_pivot_offset = Vector2( 122, 63 )
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Popup"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -3.0
-margin_top = -7.0
-margin_right = 2.0
-margin_bottom = 8.0
 texture = ExtResource( 25 )
-patch_margin_left = 56
+patch_margin_left = 47
 patch_margin_top = 50
-patch_margin_right = 55
-patch_margin_bottom = 45
+patch_margin_right = 48
+patch_margin_bottom = 47
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Popup"]
 anchor_left = 0.5
@@ -402,20 +394,8 @@ margin_right = 138.0
 margin_bottom = 56.0
 rect_pivot_offset = Vector2( 122, 63 )
 
-[node name="Cisne" type="TextureButton" parent="Popup/HBoxContainer"]
-margin_right = 136.0
-margin_bottom = 113.0
-size_flags_horizontal = 7
-size_flags_vertical = 5
-texture_normal = ExtResource( 22 )
-texture_pressed = ExtResource( 21 )
-texture_hover = ExtResource( 21 )
-expand = true
-stretch_mode = 5
-
 [node name="Rolha" type="TextureButton" parent="Popup/HBoxContainer"]
-margin_left = 140.0
-margin_right = 277.0
+margin_right = 136.0
 margin_bottom = 113.0
 size_flags_horizontal = 7
 size_flags_vertical = 5
@@ -425,11 +405,23 @@ texture_hover = ExtResource( 23 )
 expand = true
 stretch_mode = 5
 
+[node name="Cisne" type="TextureButton" parent="Popup/HBoxContainer"]
+margin_left = 140.0
+margin_right = 277.0
+margin_bottom = 113.0
+size_flags_horizontal = 7
+size_flags_vertical = 5
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 21 )
+texture_hover = ExtResource( 21 )
+expand = true
+stretch_mode = 5
+
 [connection signal="button_up" from="Tampar" to="." method="Mostrar_PopUp"]
 [connection signal="button_up" from="Destampar" to="." method="Destampar"]
 [connection signal="button_up" from="Quebrar" to="." method="Quebrar"]
 [connection signal="button_up" from="Ferver" to="." method="Ferver"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="button_up" from="Remover" to="." method="RemoverFrasco"]
-[connection signal="button_up" from="Popup/HBoxContainer/Cisne" to="." method="Cisne"]
 [connection signal="button_up" from="Popup/HBoxContainer/Rolha" to="." method="Rolha"]
+[connection signal="button_up" from="Popup/HBoxContainer/Cisne" to="." method="Cisne"]
