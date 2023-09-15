@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "CanvasLayer",
+"class": "Colorblindness",
+"language": "GDScript",
+"path": "res://addons/paulloz.colorblindness/colorblindness.gd"
+}, {
 "base": "EditorVCSInterface",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
 } ]
 _global_script_class_icons={
+"Colorblindness": "res://addons/paulloz.colorblindness/colorblindness.svg",
 "GitAPI": ""
 }
 
@@ -37,6 +43,10 @@ window/stretch/aspect="keep"
 
 version_control_autoload_on_startup=true
 version_control_plugin_name="GitAPI"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/paulloz.colorblindness/plugin.cfg" )
 
 [gui]
 

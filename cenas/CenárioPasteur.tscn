@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/Microscopio.gd" type="Script" id=1]
 [ext_resource path="res://scripts/botoesGenerico.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://sprites/placona.png" type="Texture" id=15]
 [ext_resource path="res://sprites/papel_de_parede.png" type="Texture" id=16]
 [ext_resource path="res://fontes-e-temas/Macondo-Regular.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://addons/paulloz.colorblindness/colorblindness.gd" type="Script" id=18]
 
 [sub_resource type="DynamicFont" id=3]
 size = 27
@@ -252,6 +253,9 @@ size_flags_vertical = 6
 text = "FSAGFGGGSG"
 align = 1
 valign = 1
+
+[node name="Colorblindness" type="CanvasLayer" parent="."]
+script = ExtResource( 18 )
 
 [connection signal="button_up" from="Microscopio/SpriteMicro" to="Microscopio" method="ObservarFrasco"]
 [connection signal="button_up" from="Microscopio/Botao Micro" to="Microscopio" method="ObservarFrasco"]

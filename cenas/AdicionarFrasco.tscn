@@ -19,7 +19,7 @@ fill_from = Vector2( 0.5, 0 )
 fill_to = Vector2( 0.5, 1 )
 
 [sub_resource type="Curve" id=4]
-_data = [ Vector2( 0, 0.454545 ), 0.0, 0.0, 0, 0, Vector2( 0.134557, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.718654, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.281818 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0.454545 ), 0.0, 0.0, 0, 0, Vector2( 0.310606, 0.979545 ), 0.0, 0.0, 0, 0, Vector2( 0.560606, 0.970455 ), -0.0152545, -0.0152545, 0, 0, Vector2( 1, 0.281818 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0, 0.289157, 0.582329, 0.730263, 0.951049 )
