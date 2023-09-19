@@ -38,6 +38,7 @@ func Ferver():
 		Estado_Atual.contaminado = 'estéril'
 	Globais.Sequencia_Acao[nome_frasco].append('Ferveu')
 	Globais.Estado[nome_frasco] = false
+	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
 
 
 func Passar_Tempo():
