@@ -19,27 +19,31 @@ margin_left = 10.0
 margin_top = 8.0
 margin_right = 90.0
 margin_bottom = 30.0
-text = "HIPÓTESE"
+text = "Hipótese"
 
 [node name="Metodo" type="Label" parent="Control"]
 margin_left = 9.0
 margin_top = 68.0
 margin_right = 83.0
 margin_bottom = 90.0
-text = "MÉTODO"
+text = "Método"
 
 [node name="HBoxContainer" parent="Control/Metodo" instance=ExtResource( 1 )]
+margin_left = -1.0
+margin_top = 21.0
+margin_right = 301.0
+margin_bottom = 43.0
 
 [node name="Resultado" type="Label" parent="Control"]
 margin_left = 6.0
 margin_top = 202.0
 margin_right = 103.0
 margin_bottom = 224.0
-text = "RESULTADO"
+text = "Resultado"
 
 [node name="Discussao" type="Label" parent="Control"]
 margin_left = 5.0
 margin_top = 315.0
 margin_right = 97.0
 margin_bottom = 337.0
-text = "DISCUSSÃO"
+text = "Discussão"
