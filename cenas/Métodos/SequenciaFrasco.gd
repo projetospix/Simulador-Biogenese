@@ -9,6 +9,10 @@ var metodo_destampou = preload("res://cenas/Métodos/MétodoDestampou.tscn")
 var metodo_quebrou = preload("res://cenas/Métodos/MétodoQuebrou.tscn")
 var metodo_passou_o_tempo= preload("res://cenas/Métodos/MétodoPassouOTempo.tscn")
 
+func _ready():
+	$"%Label".text = frasco
+
+
 func EscreverMetodo(nome_frasco):
 	if nome_frasco == frasco:
 		print(Globais.Sequencia_Acao[frasco][-1])
