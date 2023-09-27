@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://sprites/botões/btn_bico_cisne.png" type="Texture" id=1]
+[ext_resource path="res://sprites/métodos/metodo_cisne.png" type="Texture" id=1]
 [ext_resource path="res://cenas/BaseMetodo.tscn" type="PackedScene" id=2]
 
 [node name="Cisne" instance=ExtResource( 2 )]
