@@ -11,27 +11,37 @@ var metodo_passou_o_tempo= preload("res://cenas/Métodos/MétodoPassouOTempo.tsc
 
 func _ready():
 	$"%Label".text = frasco
+	self.visible = false
 
 
 func EscreverMetodo(nome_frasco):
-	if nome_frasco == frasco:
-		print(Globais.Sequencia_Acao[frasco][-1])
+	if nome_frasco == frasco and len(Globais.Sequencia_Acao[frasco]) < 8:
 		match Globais.Sequencia_Acao[frasco][-1]:
 			"Ferveu":
 				var instancia_ferveu = metodo_ferver.instance()
-				add_child(instancia_ferveu)
+				$Icones.add_child(instancia_ferveu)
 			"Tampou com Rolha":
 				var instancia_t_rolha = metodo_t_rolha.instance()
-				add_child(instancia_t_rolha)
+				$Icones.add_child(instancia_t_rolha)
 			"Tampou com Cisne":
 				var instancia_t_cisne = metodo_t_cisne.instance()
-				add_child(instancia_t_cisne)
+				$Icones.add_child(instancia_t_cisne)
 			"Destampou":
 				var instancia_destampou = metodo_destampou.instance()
-				add_child(instancia_destampou)
+				$Icones.add_child(instancia_destampou)
 			"Quebrou":
 				var instancia_quebrou = metodo_quebrou.instance()
-				add_child(instancia_quebrou)
+				$Icones.add_child(instancia_quebrou)
 			"Passou o Tempo":
 				var instancia_tempo = metodo_passou_o_tempo.instance()
-				add_child(instancia_tempo)
+				$Icones.add_child(instancia_tempo)
+
+func LimpaIconesFrasco(nome_frasco):
+	if nome_frasco == frasco:
+		for icone in $Icones.get_children():
+			icone.queue_free()
+		self.visible = false
+		
+func AparecerFrasco(nome_frasco):
+	if nome_frasco == frasco:
+		self.visible = true
