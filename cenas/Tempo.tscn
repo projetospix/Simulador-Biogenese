@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/Tempo.gd" type="Script" id=1]
 [ext_resource path="res://sprites/relogio_corpo.png" type="Texture" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://sprites/Dia.jpeg" type="Texture" id=8]
 [ext_resource path="res://sprites/moldura_janela.png" type="Texture" id=9]
 [ext_resource path="res://sprites/prateleira.png" type="Texture" id=10]
+[ext_resource path="res://sprites/botões/btn_tempo.png" type="Texture" id=11]
+[ext_resource path="res://sprites/botões/btn_tempo_hover.png" type="Texture" id=12]
+[ext_resource path="res://sprites/botões/btn_tempo_pressed.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Passagem_Tempo"
@@ -84,8 +87,8 @@ scale = Vector2( 1, 0.506109 )
 texture = ExtResource( 10 )
 
 [node name="Relogio" type="Sprite" parent="."]
-position = Vector2( 0, 4 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 0, 5 )
+scale = Vector2( 0.746563, 0.746562 )
 texture = ExtResource( 2 )
 
 [node name="Ponteiro Hora" type="Position2D" parent="."]
@@ -110,13 +113,21 @@ position = Vector2( -0.960461, -48.2077 )
 scale = Vector2( 0.956291, 0.792832 )
 texture = ExtResource( 5 )
 
-[node name="Adiantar Tempo" type="Button" parent="." groups=["Botoes"]]
-margin_left = -32.2906
-margin_top = 47.9337
-margin_right = 32.7094
-margin_bottom = 69.9337
+[node name="Adiantar Tempo" type="TextureButton" parent="." groups=["Botoes"]]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -22.5
+margin_top = 42.0265
+margin_right = 22.5
+margin_bottom = 71.0265
 theme = ExtResource( 6 )
-text = "Adiantar"
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 12 )
+expand = true
+stretch_mode = 5
 script = ExtResource( 3 )
 
 [node name="fundo janela" type="ColorRect" parent="."]
@@ -148,7 +159,6 @@ texture = ExtResource( 7 )
 
 [node name="Moldura" type="Sprite" parent="."]
 position = Vector2( 409.123, 43.8419 )
-scale = Vector2( 0.559706, 0.559706 )
 texture = ExtResource( 9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
