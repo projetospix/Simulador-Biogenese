@@ -166,51 +166,61 @@ color = Color( 0.584314, 0.803922, 0.584314, 1 )
 color_ramp = SubResource( 21 )
 
 [node name="Tampar" type="TextureButton" parent="." groups=["Botoes"]]
-margin_left = -52.0
-margin_top = 103.0
-margin_right = 52.0
-margin_bottom = 207.0
+margin_left = -30.0
+margin_top = 125.0
+margin_right = 30.0
+margin_bottom = 185.0
 size_flags_horizontal = 6
 size_flags_vertical = 3
 texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 29 )
 texture_disabled = ExtResource( 14 )
+expand = true
+stretch_mode = 5
 script = ExtResource( 12 )
 
 [node name="Destampar" type="TextureButton" parent="." groups=["Botoes"]]
-margin_left = -52.0
-margin_top = 103.0
-margin_right = 52.0
-margin_bottom = 207.0
+margin_left = -30.0
+margin_top = 125.0
+margin_right = 30.0
+margin_bottom = 185.0
 size_flags_horizontal = 6
 size_flags_vertical = 3
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 18 )
 texture_disabled = ExtResource( 27 )
+expand = true
+stretch_mode = 5
 script = ExtResource( 12 )
 
 [node name="Quebrar" type="TextureButton" parent="." groups=["Botoes"]]
-margin_left = -52.0
-margin_top = 103.0
-margin_right = 52.0
-margin_bottom = 207.0
+margin_left = -30.0
+margin_top = 125.0
+margin_right = 30.0
+margin_bottom = 185.0
 size_flags_horizontal = 6
 size_flags_vertical = 3
 texture_normal = ExtResource( 19 )
 texture_hover = ExtResource( 20 )
 texture_disabled = ExtResource( 28 )
+expand = true
+stretch_mode = 5
 script = ExtResource( 12 )
 
 [node name="Ferver" type="TextureButton" parent="." groups=["Botoes"]]
-margin_left = -52.0
-margin_top = 39.0
-margin_right = 51.0
-margin_bottom = 143.0
+margin_left = -30.0
+margin_top = 61.0
+margin_right = 30.0
+margin_bottom = 122.0
 size_flags_horizontal = 4
 size_flags_vertical = 3
 texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
 texture_hover = ExtResource( 3 )
 texture_disabled = ExtResource( 13 )
+expand = true
+stretch_mode = 5
 script = ExtResource( 12 )
 
 [node name="Sprites" type="Node2D" parent="."]
@@ -447,7 +457,7 @@ margin_bottom = 113.0
 size_flags_horizontal = 7
 size_flags_vertical = 5
 texture_normal = ExtResource( 24 )
-texture_pressed = ExtResource( 23 )
+texture_pressed = ExtResource( 24 )
 texture_hover = ExtResource( 23 )
 expand = true
 stretch_mode = 5
@@ -459,7 +469,7 @@ margin_bottom = 113.0
 size_flags_horizontal = 7
 size_flags_vertical = 5
 texture_normal = ExtResource( 22 )
-texture_pressed = ExtResource( 21 )
+texture_pressed = ExtResource( 22 )
 texture_hover = ExtResource( 21 )
 expand = true
 stretch_mode = 5

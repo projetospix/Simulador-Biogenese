@@ -11,7 +11,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 theme = ExtResource( 2 )
 
-[node name="ColorRect" type="TextureRect" parent="Control"]
+[node name="Fundo caderno" type="TextureRect" parent="Control"]
 margin_left = -2.0
 margin_top = -6.0
 margin_right = 329.0
