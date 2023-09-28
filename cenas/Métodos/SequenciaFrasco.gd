@@ -11,37 +11,48 @@ var metodo_passou_o_tempo= preload("res://cenas/Métodos/MétodoPassouOTempo.tsc
 
 func _ready():
 	$"%Label".text = frasco
-	self.visible = false
+	$"%Label".percent_visible = 0.0
+#	self.visible = false
 
 
 func EscreverMetodo(nome_frasco):
 	if nome_frasco == frasco and len(Globais.Sequencia_Acao[frasco]) < 8:
+		var instancia = null
 		match Globais.Sequencia_Acao[frasco][-1]:
 			"Ferveu":
-				var instancia_ferveu = metodo_ferver.instance()
-				$Icones.add_child(instancia_ferveu)
+				instancia = metodo_ferver.instance()
+				$Icones.add_child(instancia)
 			"Tampou com Rolha":
-				var instancia_t_rolha = metodo_t_rolha.instance()
-				$Icones.add_child(instancia_t_rolha)
+				instancia = metodo_t_rolha.instance()
+				$Icones.add_child(instancia)
 			"Tampou com Cisne":
-				var instancia_t_cisne = metodo_t_cisne.instance()
-				$Icones.add_child(instancia_t_cisne)
+				instancia = metodo_t_cisne.instance()
+				$Icones.add_child(instancia)
 			"Destampou":
-				var instancia_destampou = metodo_destampou.instance()
-				$Icones.add_child(instancia_destampou)
+				instancia = metodo_destampou.instance()
+				$Icones.add_child(instancia)
 			"Quebrou":
-				var instancia_quebrou = metodo_quebrou.instance()
-				$Icones.add_child(instancia_quebrou)
+				instancia = metodo_quebrou.instance()
+				$Icones.add_child(instancia)
 			"Passou o Tempo":
-				var instancia_tempo = metodo_passou_o_tempo.instance()
-				$Icones.add_child(instancia_tempo)
+				instancia = metodo_passou_o_tempo.instance()
+				$Icones.add_child(instancia)
+		var tween = create_tween()
+		tween.tween_property(instancia, "modulate", Color.white, 0.3).set_delay(0.2)
 
 func LimpaIconesFrasco(nome_frasco):
 	if nome_frasco == frasco:
 		for icone in $Icones.get_children():
-			icone.queue_free()
-		self.visible = false
-		
+			var tween = create_tween()
+			tween.tween_property(icone, "modulate", Color.transparent, 0.3)
+			tween.tween_callback(icone, "queue_free")
+		var tween = create_tween()
+		tween.tween_property($"%Label","percent_visible",0.0,0.3)
+		#self.visible = false
+
 func AparecerFrasco(nome_frasco):
-	if nome_frasco == frasco:
-		self.visible = true
+	if nome_frasco == frasco:		
+		#self.visible = true
+		var tween = create_tween()		
+		tween.tween_property($"%Label","percent_visible",1.0,0.3)
+		
