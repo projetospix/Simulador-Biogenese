@@ -12,6 +12,7 @@ var adicionar_frasco = load("res://cenas/AdicionarFrasco.tscn")
 func _ready():
 	$NovoFX.emitting = true
 	Globais.Sequencia_Acao[nome_frasco] = []
+	Globais.Microscopio[nome_frasco] = []
 	Globais.Estado[nome_frasco] = true
 	$Sprites/Rolha.visible = false
 	$Sprites/SpriteFrasco.visible = true
@@ -92,6 +93,7 @@ func RemoverFrasco():
 	instancia_adicionar.nome_frasco = self.nome_frasco
 	self.get_parent().add_child(instancia_adicionar)
 	Globais.Sequencia_Acao.erase(nome_frasco)
+	Globais.Microscopio.erase(nome_frasco)
 	get_tree().call_group('MetodosNoCaderno', 'LimpaIconesFrasco', nome_frasco)
 	queue_free()
 	
@@ -123,8 +125,8 @@ func Quebrar():
 		Estado_Atual.contaminado = 'pré contaminado'
 	
 # Função que desativa interações com o frasco após lotar os métodos
-func EscreverMetodo(nome_frasco_acao):
-	if nome_frasco == nome_frasco_acao and len(Globais.Sequencia_Acao[nome_frasco]) >= 8:
+func _process(delta):
+	if len(Globais.Sequencia_Acao[nome_frasco]) >= 8:
 		$Destampar.disabled = true
 		$Quebrar.disabled = true
 		$Destampar.disabled = true

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://cenas/Métodos/MetodoMicroscopio.tscn" type="PackedScene" id=1]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect2" parent="." instance=ExtResource( 1 )]
+margin_right = 25.0
+margin_bottom = 40.0
+
+[node name="Contaminado" type="Label" parent="."]
+margin_left = 29.0
+margin_top = 13.0
+margin_right = 131.0
+margin_bottom = 27.0
+text = "CONTAMINADO"

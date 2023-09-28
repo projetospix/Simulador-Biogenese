@@ -8,6 +8,7 @@ var metodo_t_cisne = preload("res://cenas/Métodos/MétodoTampouComCisne.tscn")
 var metodo_destampou = preload("res://cenas/Métodos/MétodoDestampou.tscn")
 var metodo_quebrou = preload("res://cenas/Métodos/MétodoQuebrou.tscn")
 var metodo_passou_o_tempo= preload("res://cenas/Métodos/MétodoPassouOTempo.tscn")
+var metodo_microscopio= preload("res://cenas/Métodos/MetodoMicroscopio.tscn")
 
 func _ready():
 	$"%Label".text = frasco
@@ -15,7 +16,7 @@ func _ready():
 
 
 func EscreverMetodo(nome_frasco):
-	if nome_frasco == frasco and len(Globais.Sequencia_Acao[frasco]) < 8:
+	if nome_frasco == frasco and len(Globais.Sequencia_Acao[frasco]) < 9:
 		var instancia = null
 		match Globais.Sequencia_Acao[frasco][-1]:
 			"Ferveu":
@@ -35,6 +36,10 @@ func EscreverMetodo(nome_frasco):
 				$Icones.add_child(instancia)
 			"Passou o Tempo":
 				instancia = metodo_passou_o_tempo.instance()
+				$Icones.add_child(instancia)
+			"Viu no Microscópio":
+				instancia = metodo_microscopio.instance()
+				instancia.get_child(0).text = str(len(Globais.Microscopio[frasco]))
 				$Icones.add_child(instancia)
 		var tween = create_tween()
 		tween.tween_property(instancia, "modulate", Color.white, 0.3).set_delay(0.2)

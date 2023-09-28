@@ -58,5 +58,9 @@ func DesistirMicro():
 
 func MostrarResultado(frasco):
 	$"%EstadoFrasco".text = str(Globais.Estado[frasco]) 
+	Globais.Microscopio[frasco].append(Globais.Estado[frasco])
+	Globais.Sequencia_Acao[frasco].append('Viu no Microscópio')
+	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', frasco)
+	get_tree().call_group('Resultados', 'InstanciaResultado', frasco)
 	$"%PopUp".popup_centered()
 	DesistirMicro()
