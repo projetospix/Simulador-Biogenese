@@ -12,7 +12,6 @@ var metodo_passou_o_tempo= preload("res://cenas/Métodos/MétodoPassouOTempo.tsc
 func _ready():
 	$"%Label".text = frasco
 	$"%Label".percent_visible = 0.0
-#	self.visible = false
 
 
 func EscreverMetodo(nome_frasco):
@@ -47,12 +46,10 @@ func LimpaIconesFrasco(nome_frasco):
 			tween.tween_property(icone, "modulate", Color.transparent, 0.3)
 			tween.tween_callback(icone, "queue_free")
 		var tween = create_tween()
-		tween.tween_property($"%Label","percent_visible",0.0,0.3)
-		#self.visible = false
+		tween.tween_property($"%Label","percent_visible",0.0,0.3).set_delay(0.4)
 
 func AparecerFrasco(nome_frasco):
 	if nome_frasco == frasco:		
-		#self.visible = true
 		var tween = create_tween()		
-		tween.tween_property($"%Label","percent_visible",1.0,0.3)
+		tween.tween_property($"%Label","percent_visible",1.0,0.3).set_delay(0.3)
 		

@@ -13,15 +13,9 @@ _global_script_classes=[ {
 "class": "Colorblindness",
 "language": "GDScript",
 "path": "res://addons/paulloz.colorblindness/colorblindness.gd"
-}, {
-"base": "EditorVCSInterface",
-"class": "GitAPI",
-"language": "NativeScript",
-"path": "res://addons/godot-git-plugin/git_api.gdns"
 } ]
 _global_script_class_icons={
-"Colorblindness": "res://addons/paulloz.colorblindness/colorblindness.svg",
-"GitAPI": ""
+"Colorblindness": "res://addons/paulloz.colorblindness/colorblindness.svg"
 }
 
 [application]

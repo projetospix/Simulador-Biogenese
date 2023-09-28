@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://cenas/Métodos/SequenciaFrasco.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=2]
+[ext_resource path="res://sprites/caderno.png" type="Texture" id=3]
 
 [node name="Caderno" type="Node2D"]
 
@@ -10,22 +11,26 @@ margin_right = 40.0
 margin_bottom = 40.0
 theme = ExtResource( 2 )
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-margin_right = 318.0
+[node name="ColorRect" type="TextureRect" parent="Control"]
+margin_left = -2.0
+margin_top = -6.0
+margin_right = 329.0
 margin_bottom = 445.0
+texture = ExtResource( 3 )
+expand = true
 
 [node name="Hipotese" type="Label" parent="Control"]
-margin_left = 10.0
-margin_top = 8.0
-margin_right = 90.0
-margin_bottom = 30.0
+margin_left = 20.0
+margin_top = 29.0
+margin_right = 100.0
+margin_bottom = 51.0
 text = "Hipótese"
 
 [node name="Metodo" type="Label" parent="Control"]
-margin_left = 9.0
-margin_top = 80.0
-margin_right = 83.0
-margin_bottom = 102.0
+margin_left = 19.0
+margin_top = 101.0
+margin_right = 93.0
+margin_bottom = 123.0
 text = "Método"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/Metodo"]
@@ -55,15 +60,15 @@ margin_bottom = 98.0
 frasco = "Frasco 3"
 
 [node name="Resultado" type="Label" parent="Control"]
-margin_left = 6.0
-margin_top = 202.0
-margin_right = 103.0
-margin_bottom = 224.0
+margin_left = 16.0
+margin_top = 227.0
+margin_right = 113.0
+margin_bottom = 249.0
 text = "Resultado"
 
 [node name="Discussao" type="Label" parent="Control"]
-margin_left = 5.0
-margin_top = 315.0
-margin_right = 97.0
-margin_bottom = 337.0
+margin_left = 15.0
+margin_top = 336.0
+margin_right = 107.0
+margin_bottom = 358.0
 text = "Discussão"

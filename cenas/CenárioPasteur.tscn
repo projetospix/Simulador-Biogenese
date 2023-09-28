@@ -6,7 +6,7 @@
 [ext_resource path="res://cenas/Tempo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://cenas/AdicionarFrasco.tscn" type="PackedScene" id=5]
 [ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=6]
-[ext_resource path="res://sprites/bancada@3x.png" type="Texture" id=7]
+[ext_resource path="res://sprites/bancada.png" type="Texture" id=7]
 [ext_resource path="res://sprites/microscopio.png" type="Texture" id=8]
 [ext_resource path="res://sprites/botões/contaGotas_pressed.png" type="Texture" id=9]
 [ext_resource path="res://sprites/botões/btn_mic_disabled.png" type="Texture" id=10]
@@ -78,7 +78,6 @@ margin_bottom = 102.0
 
 [node name="BancadaSprite" type="Sprite" parent="Bancada"]
 position = Vector2( 342.5, 499.25 )
-scale = Vector2( 0.32619, 0.321429 )
 texture = ExtResource( 7 )
 
 [node name="Add 3" parent="Bancada" instance=ExtResource( 5 )]

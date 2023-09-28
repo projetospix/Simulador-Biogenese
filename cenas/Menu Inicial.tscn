@@ -126,8 +126,7 @@ color = Color( 0.886275, 0.854902, 0.803922, 1 )
 color_ramp = SubResource( 6 )
 
 [node name="Microscopio" type="Sprite" parent="."]
-position = Vector2( 901, 497.183 )
-scale = Vector2( 0.529817, 0.529817 )
+position = Vector2( 905, 530 )
 texture = ExtResource( 7 )
 
 [connection signal="button_up" from="VBoxContainer/Jogar Pasteur" to="." method="MudarCenaPasteur"]

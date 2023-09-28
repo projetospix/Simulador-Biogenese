@@ -6,9 +6,9 @@
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 80.0
 margin_bottom = 80.0
-rect_min_size = Vector2( 30, 30 )
+rect_min_size = Vector2( 25, 25 )
 size_flags_horizontal = 5
 size_flags_vertical = 5
 texture = ExtResource( 1 )
 expand = true
-stretch_mode = 5
+stretch_mode = 6
