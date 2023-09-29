@@ -90,15 +90,15 @@ texture = ExtResource( 7 )
 
 [node name="Add 3" parent="Bancada" instance=ExtResource( 5 )]
 position = Vector2( 554, 400 )
-nome_frasco = "Frasco 3"
+nome_frasco = "Frasco C"
 
 [node name="Add 2" parent="Bancada" instance=ExtResource( 5 )]
 position = Vector2( 401, 400 )
-nome_frasco = "Frasco 2"
+nome_frasco = "Frasco B"
 
 [node name="Add 1" parent="Bancada" instance=ExtResource( 5 )]
 position = Vector2( 250, 400 )
-nome_frasco = "Frasco 1"
+nome_frasco = "Frasco A"
 
 [node name="Microscopio" type="Control" parent="."]
 anchor_top = 1.0
@@ -264,11 +264,11 @@ valign = 1
 
 [node name="Caderno" parent="." instance=ExtResource( 19 )]
 position = Vector2( 696, 80 )
-rotation = -0.0428189
+rotation = -0.0361738
 
 [connection signal="button_up" from="Microscopio/SpriteMicro" to="Microscopio" method="ObservarFrasco"]
 [connection signal="button_up" from="Microscopio/Botao Micro" to="Microscopio" method="ObservarFrasco"]
 [connection signal="button_up" from="Microscopio/Selecione/Remover" to="Microscopio" method="DesistirMicro"]
-[connection signal="button_up" from="Microscopio/Frasco 1" to="Microscopio" method="MostrarResultado" binds= [ "Frasco 1" ]]
-[connection signal="button_up" from="Microscopio/Frasco 2" to="Microscopio" method="MostrarResultado" binds= [ "Frasco 2" ]]
-[connection signal="button_up" from="Microscopio/Frasco 3" to="Microscopio" method="MostrarResultado" binds= [ "Frasco 3" ]]
+[connection signal="button_up" from="Microscopio/Frasco 1" to="Microscopio" method="MostrarResultado" binds= [ "Frasco A" ]]
+[connection signal="button_up" from="Microscopio/Frasco 2" to="Microscopio" method="MostrarResultado" binds= [ "Frasco B" ]]
+[connection signal="button_up" from="Microscopio/Frasco 3" to="Microscopio" method="MostrarResultado" binds= [ "Frasco C" ]]

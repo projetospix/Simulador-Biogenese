@@ -95,6 +95,7 @@ func RemoverFrasco():
 	Globais.Sequencia_Acao.erase(nome_frasco)
 	Globais.Microscopio.erase(nome_frasco)
 	get_tree().call_group('MetodosNoCaderno', 'LimpaIconesFrasco', nome_frasco)
+	get_tree().call_group('ResultadosNoCaderno', 'LimpaIconesFrasco', nome_frasco)	
 	queue_free()
 	
 
@@ -125,7 +126,7 @@ func Quebrar():
 		Estado_Atual.contaminado = 'pré contaminado'
 	
 # Função que desativa interações com o frasco após lotar os métodos
-func _process(delta):
+func _process(_delta):
 	if len(Globais.Sequencia_Acao[nome_frasco]) >= 8:
 		$Destampar.disabled = true
 		$Quebrar.disabled = true

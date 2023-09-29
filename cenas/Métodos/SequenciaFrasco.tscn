@@ -13,6 +13,7 @@ margin_top = 5.0
 margin_right = 671.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 0, 30 )
+custom_constants/separation = 10
 script = ExtResource( 3 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -30,6 +31,7 @@ text = "ESCAPEEEE"
 align = 1
 
 [node name="Icones" type="HBoxContainer" parent="."]
-margin_left = 94.0
-margin_right = 94.0
+margin_left = 100.0
+margin_right = 100.0
 margin_bottom = 195.0
+custom_constants/separation = 2

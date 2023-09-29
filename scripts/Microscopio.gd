@@ -23,15 +23,15 @@ func ObservarFrasco():
 			var tween = create_tween()
 			tween.tween_property($Selecione,"rect_position",Vector2(246,50),0.2)
 			tween.parallel().tween_property($dim,"modulate",Color.white,0.2)
-			if Globais.Sequencia_Acao.has("Frasco 1"):
+			if Globais.Sequencia_Acao.has("Frasco A"):
 				$"Frasco 1".rect_position.y -= 20
 				$"Frasco 1".visible = true
 				tween.parallel().tween_property($"Frasco 1","rect_position:y", $"Frasco 1".rect_position.y+20 ,0.2)	
-			if Globais.Sequencia_Acao.has("Frasco 2"):
+			if Globais.Sequencia_Acao.has("Frasco B"):
 				$"Frasco 2".rect_position.y -= 20
 				$"Frasco 2".visible = true
 				tween.parallel().tween_property($"Frasco 2","rect_position:y", $"Frasco 2".rect_position.y+20 ,0.2)
-			if Globais.Sequencia_Acao.has("Frasco 3"):
+			if Globais.Sequencia_Acao.has("Frasco C"):
 				$"Frasco 3".rect_position.y -= 20
 				$"Frasco 3".visible = true
 				tween.parallel().tween_property($"Frasco 3","rect_position:y", $"Frasco 3".rect_position.y+20 ,0.2)
@@ -57,10 +57,11 @@ func DesistirMicro():
 	$dim.visible = false
 
 func MostrarResultado(frasco):
+	get_tree().call_group('ResultadosNoCaderno', 'AparecerFrasco', frasco)
 	$"%EstadoFrasco".text = str(Globais.Estado[frasco]) 
 	Globais.Microscopio[frasco].append(Globais.Estado[frasco])
 	Globais.Sequencia_Acao[frasco].append('Viu no Microscópio')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', frasco)
-	get_tree().call_group('Resultados', 'InstanciaResultado', frasco)
+	get_tree().call_group('ResultadosNoCaderno', 'InstanciaResultado', frasco)
 	$"%PopUp".popup_centered()
 	DesistirMicro()
