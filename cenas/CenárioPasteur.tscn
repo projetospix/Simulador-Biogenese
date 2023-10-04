@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scripts/Microscopio.gd" type="Script" id=1]
 [ext_resource path="res://scripts/botoesGenerico.gd" type="Script" id=2]
+[ext_resource path="res://scripts/CenárioPasteur.gd" type="Script" id=3]
 [ext_resource path="res://cenas/Tempo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://cenas/AdicionarFrasco.tscn" type="PackedScene" id=5]
 [ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=6]
@@ -54,6 +55,7 @@ expand_margin_top = 1.0
 [node name="Cenário Pasteur" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -266,9 +268,77 @@ valign = 1
 position = Vector2( 696, 80 )
 rotation = -0.0361738
 
+[node name="EscolhaHipotese" type="Popup" parent="."]
+unique_name_in_owner = true
+visible = true
+margin_left = -590.0
+margin_top = -35.0
+margin_right = -9.0
+margin_bottom = 152.0
+theme = ExtResource( 6 )
+popup_exclusive = true
+
+[node name="ColorRect" type="ColorRect" parent="EscolhaHipotese"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 612.0
+margin_bottom = 400.0
+color = Color( 0, 0, 0, 0.894118 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="EscolhaHipotese"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 15 )
+patch_margin_left = 47
+patch_margin_top = 51
+patch_margin_right = 45
+patch_margin_bottom = 51
+
+[node name="Label" type="Label" parent="EscolhaHipotese"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -80.5
+margin_top = 32.0
+margin_right = 80.5
+margin_bottom = 54.0
+text = "Escolha uma Hipótese"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EscolhaHipotese"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 127.0
+margin_top = -124.0
+margin_right = -121.0
+margin_bottom = -38.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Bio" type="Button" parent="EscolhaHipotese/VBoxContainer"]
+unique_name_in_owner = true
+margin_right = 333.0
+margin_bottom = 38.0
+size_flags_vertical = 3
+text = "Vida NÃO pode surgir espontaneamente"
+
+[node name="Abio" type="Button" parent="EscolhaHipotese/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 48.0
+margin_right = 333.0
+margin_bottom = 86.0
+size_flags_vertical = 3
+text = "Vida PODE surgir espontaneamente"
+
+[connection signal="AtualizaHipotese" from="." to="Caderno" method="AtualizaHipotese"]
 [connection signal="button_up" from="Microscopio/SpriteMicro" to="Microscopio" method="ObservarFrasco"]
 [connection signal="button_up" from="Microscopio/Botao Micro" to="Microscopio" method="ObservarFrasco"]
 [connection signal="button_up" from="Microscopio/Selecione/Remover" to="Microscopio" method="DesistirMicro"]
 [connection signal="button_up" from="Microscopio/Frasco 1" to="Microscopio" method="MostrarResultado" binds= [ "Frasco A" ]]
 [connection signal="button_up" from="Microscopio/Frasco 2" to="Microscopio" method="MostrarResultado" binds= [ "Frasco B" ]]
 [connection signal="button_up" from="Microscopio/Frasco 3" to="Microscopio" method="MostrarResultado" binds= [ "Frasco C" ]]
+[connection signal="button_up" from="EscolhaHipotese/VBoxContainer/Bio" to="." method="Biogenese"]
+[connection signal="button_up" from="EscolhaHipotese/VBoxContainer/Abio" to="." method="Abiogenese"]
