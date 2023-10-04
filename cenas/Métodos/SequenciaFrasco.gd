@@ -19,28 +19,32 @@ func EscreverMetodo(nome_frasco):
 	if nome_frasco == frasco and len(Globais.Sequencia_Acao[frasco]) < 9:
 		var instancia = null
 		match Globais.Sequencia_Acao[frasco][-1]:
-			"Ferveu":
+			"f":
 				instancia = metodo_ferver.instance()
 				$Icones.add_child(instancia)
-			"Tampou com Rolha":
+			"r":
 				instancia = metodo_t_rolha.instance()
 				$Icones.add_child(instancia)
-			"Tampou com Cisne":
+			"c":
 				instancia = metodo_t_cisne.instance()
 				$Icones.add_child(instancia)
-			"Destampou":
+			"d":
 				instancia = metodo_destampou.instance()
 				$Icones.add_child(instancia)
-			"Quebrou":
+			"q":
 				instancia = metodo_quebrou.instance()
 				$Icones.add_child(instancia)
-			"Passou o Tempo":
+			"p":
 				instancia = metodo_passou_o_tempo.instance()
 				$Icones.add_child(instancia)
-			"Viu no Microscópio":
+			"1":
 				instancia = metodo_microscopio.instance()
 				instancia.get_child(0).text = str(len(Globais.Microscopio[frasco]))
 				$Icones.add_child(instancia)
+			"2":
+				instancia = metodo_microscopio.instance()
+				instancia.get_child(0).text = str(len(Globais.Microscopio[frasco]))
+				$Icones.add_child(instancia)	
 		var tween = create_tween()
 		tween.tween_property(instancia, "modulate", Color.white, 0.3).set_delay(0.2)
 

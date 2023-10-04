@@ -60,7 +60,10 @@ func MostrarResultado(frasco):
 	get_tree().call_group('ResultadosNoCaderno', 'AparecerFrasco', frasco)
 	$"%EstadoFrasco".text = str(Globais.Estado[frasco]) 
 	Globais.Microscopio[frasco].append(Globais.Estado[frasco])
-	Globais.Sequencia_Acao[frasco].append('Viu no Microscópio')
+	if Globais.Estado[frasco] == true:
+		Globais.Sequencia_Acao[frasco].append('1')
+	else:
+		Globais.Sequencia_Acao[frasco].append('2')	
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', frasco)
 	get_tree().call_group('ResultadosNoCaderno', 'InstanciaResultado', frasco)
 	$"%PopUp".popup_centered()

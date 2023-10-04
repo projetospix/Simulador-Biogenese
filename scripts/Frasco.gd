@@ -38,7 +38,7 @@ func Ferver():
 		Estado_Atual.contaminado = 'pré contaminado'
 	else:
 		Estado_Atual.contaminado = 'estéril'
-	Globais.Sequencia_Acao[nome_frasco].append('Ferveu')
+	Globais.Sequencia_Acao[nome_frasco].append('f')
 	Globais.Estado[nome_frasco] = false
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
 
@@ -50,7 +50,7 @@ func Passar_Tempo():
 	if Estado_Atual.contaminado == 'estéril' and Estado_Atual.tampado == 'rolha':
 		Estado_Atual.contaminado = 'contaminado'
 		Globais.Estado[nome_frasco] = true
-	Globais.Sequencia_Acao[nome_frasco].append('Passou o Tempo')
+	Globais.Sequencia_Acao[nome_frasco].append('p')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
 	
 	
@@ -66,7 +66,7 @@ func Rolha():
 	$"%VaporFrascoAberto".visible = false
 	get_tree().call_group('Botoes', 'destravar')
 	#$Sprites/SpriteFrasco.visible = false
-	Globais.Sequencia_Acao[nome_frasco].append('Tampou com Rolha')
+	Globais.Sequencia_Acao[nome_frasco].append('r')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
 	$Destampar.visible = true
 	$Tampar.visible = false
@@ -77,7 +77,7 @@ func Cisne():
 	$Popup.visible = false
 	get_tree().call_group('Botoes', 'destravar')
 	Estado_Atual.tampado = 'Cisne'
-	Globais.Sequencia_Acao[nome_frasco].append('Tampou com Cisne')
+	Globais.Sequencia_Acao[nome_frasco].append('c')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
 	
 	$Quebrar.visible = true
@@ -104,7 +104,7 @@ func Destampar():
 	Estado_Atual.tampado = 'destampado'
 	$Sprites/Rolha.visible = false
 	$"%VaporFrascoAberto".visible = true
-	Globais.Sequencia_Acao[nome_frasco].append('Destampou')
+	Globais.Sequencia_Acao[nome_frasco].append('d')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
 	
 	
@@ -117,7 +117,7 @@ func Destampar():
 func Quebrar():
 	Estado_Atual.tampado = 'quebrado'
 	$"%VaporFrascoAberto".visible = true
-	Globais.Sequencia_Acao[nome_frasco].append('Quebrou')
+	Globais.Sequencia_Acao[nome_frasco].append('q')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)	
 	$Quebrar.visible = false
 	$Sprites/SpriteFrascoQuebrado.visible = true
