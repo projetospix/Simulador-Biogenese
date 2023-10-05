@@ -8,7 +8,8 @@ var metodo_t_cisne = preload("res://cenas/Métodos/MétodoTampouComCisne.tscn")
 var metodo_destampou = preload("res://cenas/Métodos/MétodoDestampou.tscn")
 var metodo_quebrou = preload("res://cenas/Métodos/MétodoQuebrou.tscn")
 var metodo_passou_o_tempo= preload("res://cenas/Métodos/MétodoPassouOTempo.tscn")
-var metodo_microscopio= preload("res://cenas/Métodos/MetodoMicroscopio.tscn")
+var metodo_contaminado= preload("res://cenas/Métodos/MétodoContaminado.tscn")
+var metodo_descontaminado = preload("res://cenas/Métodos/MétodoDescontaminado.tscn")
 
 func _ready():
 	$"%Label".text = frasco
@@ -38,12 +39,10 @@ func EscreverMetodo(nome_frasco):
 				instancia = metodo_passou_o_tempo.instance()
 				$Icones.add_child(instancia)
 			"1":
-				instancia = metodo_microscopio.instance()
-				instancia.get_child(0).text = str(len(Globais.Microscopio[frasco]))
+				instancia = metodo_contaminado.instance()
 				$Icones.add_child(instancia)
 			"2":
-				instancia = metodo_microscopio.instance()
-				instancia.get_child(0).text = str(len(Globais.Microscopio[frasco]))
+				instancia = metodo_descontaminado.instance()
 				$Icones.add_child(instancia)	
 		var tween = create_tween()
 		tween.tween_property(instancia, "modulate", Color.white, 0.3).set_delay(0.2)
