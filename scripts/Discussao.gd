@@ -1,8 +1,8 @@
 extends Label
 
 var logicaParaFrases = {
-	"Conclusao1": "1f[^p]*2",
-	"Conclusao2": "rp*f+2p+2"
+	"Conclusao1": "1f[^p]*2", #Frasco fervido fica descontaminado
+	"Conclusao2": "r[^d]*2+p+2" #Frasco permanece descontaminado se estiver tampado
 }
 
 var regex = RegEx.new()
