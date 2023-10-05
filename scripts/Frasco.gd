@@ -2,7 +2,7 @@ extends Node2D
 
 export var nome_frasco = 'Frasco'
 
-var Estado_Atual = {
+export var Estado_Atual = {
 	'tampado': 'destampado',
 	'contaminado': 'contaminado'
 }

@@ -46,6 +46,7 @@ func EscreverMetodo(nome_frasco):
 				$Icones.add_child(instancia)	
 		var tween = create_tween()
 		tween.tween_property(instancia, "modulate", Color.white, 0.3).set_delay(0.2)
+		get_tree().call_group("Discussao", "AcharFrase")
 
 func LimpaIconesFrasco(nome_frasco):
 	if nome_frasco == frasco:
