@@ -3,16 +3,13 @@
 [ext_resource path="res://scripts/MenuInicial.gd" type="Script" id=1]
 [ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=2]
 [ext_resource path="res://fontes-e-temas/Macondo-Regular.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://sprites/frasco@3x.png.PNG" type="Texture" id=5]
-[ext_resource path="res://sprites/tripé@3x.png.PNG" type="Texture" id=6]
+[ext_resource path="res://sprites/papel_de_parede.png" type="Texture" id=4]
+[ext_resource path="res://sprites/frasco.png" type="Texture" id=5]
+[ext_resource path="res://sprites/tripé.png" type="Texture" id=6]
 [ext_resource path="res://sprites/microscopio.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 28
 font_data = ExtResource( 3 )
 
 [sub_resource type="Gradient" id=3]
@@ -44,7 +41,18 @@ script = ExtResource( 1 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 329, 0 )
 color = Color( 0.670588, 0.635294, 0.54902, 1 )
+
+[node name="papel de parede" type="Sprite" parent="."]
+modulate = Color( 0.509804, 0.34902, 0.160784, 0.0666667 )
+position = Vector2( 512, 300 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1024, 600 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
@@ -62,39 +70,35 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -167.0
+margin_left = -130.0
 margin_top = -45.0
-margin_right = 167.0
+margin_right = 130.0
 margin_bottom = 178.0
-custom_constants/separation = 16
+custom_constants/separation = 20
 alignment = 1
 
 [node name="Jogar Redi" type="Button" parent="VBoxContainer"]
-margin_right = 334.0
-margin_bottom = 63.0
+margin_right = 260.0
+margin_bottom = 61.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
 text = "Simulador Redi"
 
 [node name="Jogar Pasteur" type="Button" parent="VBoxContainer"]
-margin_top = 79.0
-margin_right = 334.0
-margin_bottom = 143.0
+margin_top = 81.0
+margin_right = 260.0
+margin_bottom = 142.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
 text = "Simulador Pasteur"
 
 [node name="Jogar Pasteur2" type="Button" parent="VBoxContainer"]
-margin_top = 159.0
-margin_right = 334.0
+margin_top = 162.0
+margin_right = 260.0
 margin_bottom = 223.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
 text = "Modo campanha"
 
 [node name="Frasco3xpng" type="Sprite" parent="."]
-position = Vector2( 154, 502 )
-scale = Vector2( 0.486111, 0.486111 )
+position = Vector2( 153, 531 )
 texture = ExtResource( 5 )
 
 [node name="Tripé3xpng" type="Sprite" parent="Frasco3xpng"]
@@ -102,7 +106,8 @@ texture = ExtResource( 6 )
 
 [node name="VaporFrascoAberto" type="CPUParticles2D" parent="Frasco3xpng"]
 unique_name_in_owner = true
-position = Vector2( 0, -178.788 )
+position = Vector2( 0, -64 )
+scale = Vector2( 0.4, 1 )
 amount = 30
 lifetime = 1.5
 speed_scale = 0.6

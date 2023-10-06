@@ -5,16 +5,20 @@ var logicaParaFrases = {
 	"Conclusao2": "r[^d]*2+p+2" #Frasco permanece descontaminado se estiver tampado
 }
 
+var conclusoesQueJaForam = []
+
 var regex = RegEx.new()
 
 func AcharFrase():
 	for conclusao in logicaParaFrases:
-		regex.compile(logicaParaFrases[conclusao])
-		for frasco in Globais.Sequencia_Acao:
-			var termoBusca = PoolStringArray(Globais.Sequencia_Acao[frasco]).join("")
-			var resultadoBusca = regex.search(termoBusca)
-			if resultadoBusca:
-				AnimarFrase(conclusao)
+		if not conclusao in conclusoesQueJaForam:
+			regex.compile(logicaParaFrases[conclusao])
+			for frasco in Globais.Sequencia_Acao:
+				var termoBusca = PoolStringArray(Globais.Sequencia_Acao[frasco]).join("")
+				var resultadoBusca = regex.search(termoBusca)
+				if resultadoBusca:
+					conclusoesQueJaForam.append(conclusao)
+					AnimarFrase(conclusao)
 
 func AnimarFrase(conclusao):
 	var tween = create_tween()

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frasco@3x.png.PNG-57eb3f510b63ed3ef562f36d11593e8a.stex"
+path="res://.import/bunsen.png-a1aadbb901e19fa91a64dbd5e51a9d14.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/frasco@3x.png.PNG"
-dest_files=[ "res://.import/frasco@3x.png.PNG-57eb3f510b63ed3ef562f36d11593e8a.stex" ]
+source_file="res://sprites/bunsen.png"
+dest_files=[ "res://.import/bunsen.png-a1aadbb901e19fa91a64dbd5e51a9d14.stex" ]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=true
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true

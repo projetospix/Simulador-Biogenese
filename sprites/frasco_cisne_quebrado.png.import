@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bunsen@3x.png.PNG-6432f163d129cc1d2b21feb2e8ac5cb0.stex"
+path="res://.import/frasco_cisne_quebrado.png-ed34206dec9a601e597232dc1bf4a743.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bunsen@3x.png.PNG"
-dest_files=[ "res://.import/bunsen@3x.png.PNG-6432f163d129cc1d2b21feb2e8ac5cb0.stex" ]
+source_file="res://sprites/frasco_cisne_quebrado.png"
+dest_files=[ "res://.import/frasco_cisne_quebrado.png-ed34206dec9a601e597232dc1bf4a743.stex" ]
 
 [params]
 

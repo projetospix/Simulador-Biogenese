@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frasco_cisne@3x.png-24c78f85efcde1b023bdce7dbfef4d51.stex"
+path="res://.import/frasco.png-3bc27d577227a1ba6185f8859c2e7669.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/frasco_cisne@3x.png"
-dest_files=[ "res://.import/frasco_cisne@3x.png-24c78f85efcde1b023bdce7dbfef4d51.stex" ]
+source_file="res://sprites/frasco.png"
+dest_files=[ "res://.import/frasco.png-3bc27d577227a1ba6185f8859c2e7669.stex" ]
 
 [params]
 

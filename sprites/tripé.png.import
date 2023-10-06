@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tripé@3x.png.PNG-01e724ed7060ee34ff8be734b05af3a6.stex"
+path="res://.import/tripé.png-d57ac71f046396ffe819437d80952746.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tripé@3x.png.PNG"
-dest_files=[ "res://.import/tripé@3x.png.PNG-01e724ed7060ee34ff8be734b05af3a6.stex" ]
+source_file="res://sprites/tripé.png"
+dest_files=[ "res://.import/tripé.png-d57ac71f046396ffe819437d80952746.stex" ]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=true
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
