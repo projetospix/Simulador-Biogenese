@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprites/bac.webp" type="Texture" id=1]
+[ext_resource path="res://sprites/mic_light_mask.tres" type="Texture" id=2]
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0.00896861, 0.497758, 0.865471, 1 )
+colors = PoolColorArray( 0.870588, 0.564706, 0.341176, 1, 0.811124, 0.525836, 0.317747, 1, 0.46, 0.296317, 0.1794, 1, 0.18, 0.12969, 0.1026, 0 )
+
+[sub_resource type="GradientTexture2D" id=7]
+gradient = SubResource( 6 )
+width = 640
+height = 640
+fill = 1
+fill_from = Vector2( 0.5, 0.5 )
+fill_to = Vector2( 0.5, 0.2 )
+
+[sub_resource type="GDScript" id=9]
+script/source = "extends Node2D
+
+var rng = RandomNumberGenerator.new()
+
+func _ready() -> void:
+	$CPUParticles2D.emitting = false
+	rng.randomize()
+	var r = rng.randf_range(0.7, 1.2)
+	$CPUParticles2D.speed_scale = r
+	$CPUParticles2D.emitting = true
+
+func _on_Timer_timeout() -> void:
+	var random = rng.randi_range(0, 359)
+	rotation_degrees = random
+"
+
+[sub_resource type="CanvasItemMaterial" id=8]
+particles_animation = true
+particles_anim_h_frames = 6
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id=10]
+offsets = PoolRealArray( 0.73991, 0.874439 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.662745, 0.662745, 0.662745, 0 )
+
+[node name="bactérias" type="Node2D"]
+position = Vector2( -79, 221 )
+
+[node name="laranja" type="Sprite" parent="."]
+visible = false
+texture = SubResource( 7 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 2 )
+mode = 3
+range_item_cull_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D" type="Position2D" parent="."]
+rotation = -0.00238459
+script = SubResource( 9 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Position2D"]
+light_mask = 2
+material = SubResource( 8 )
+position = Vector2( 78.4862, -203.813 )
+emitting = false
+amount = 4
+lifetime = 7.0
+local_coords = false
+texture = ExtResource( 1 )
+flag_align_y = true
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 70.0
+angular_velocity = -3.0
+orbit_velocity_random = 0.12
+tangential_accel = 3.0
+scale_amount = 0.25
+scale_amount_random = 0.2
+color_ramp = SubResource( 10 )
+anim_speed = 25.4
+
+[node name="Timer" type="Timer" parent="Position2D"]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Position2D/Timer" to="Position2D" method="_on_Timer_timeout"]

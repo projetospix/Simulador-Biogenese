@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Simulador Biogenese"
-run/main_scene="res://cenas/Menu Inicial.tscn"
+run/main_scene="res://cenas/CenárioPasteur.tscn"
 config/icon="res://icon.png"
 
 [autoload]

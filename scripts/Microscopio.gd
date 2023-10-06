@@ -1,6 +1,7 @@
 extends Control
 
 var observando = false #para poder dispensar mic com esc
+signal VisaoMic(contaminado)
 
 func _ready():
 	$Selecione.visible = false
@@ -57,14 +58,11 @@ func DesistirMicro():
 	$dim.visible = false
 
 func MostrarResultado(frasco):
-	get_tree().call_group('ResultadosNoCaderno', 'AparecerFrasco', frasco)
-	$"%EstadoFrasco".text = str(Globais.Estado[frasco]) 
 	Globais.Microscopio[frasco].append(Globais.Estado[frasco])
 	if Globais.Estado[frasco] == true:
 		Globais.Sequencia_Acao[frasco].append('1')
 	else:
 		Globais.Sequencia_Acao[frasco].append('2')	
-	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', frasco)
-	get_tree().call_group('ResultadosNoCaderno', 'InstanciaResultado', frasco)
-	$"%PopUp".popup_centered()
+	emit_signal("VisaoMic", frasco)
+	
 	DesistirMicro()

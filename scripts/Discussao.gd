@@ -19,5 +19,5 @@ func AcharFrase():
 func AnimarFrase(conclusao):
 	var tween = create_tween()
 	var node = $VBox.get_node(conclusao)
-	tween.tween_property(node, "percent_visible", 1, 0.5)
+	tween.tween_property(node, "percent_visible", 1.0, 0.5).set_delay(1)
 	

@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://sprites/bac.webp" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=9]
+script/source = "extends Node2D
+
+var rng = RandomNumberGenerator.new()
+func _ready():
+	rng.randomize()
+	var random = rng.randf_range(0.08, 1.2)
+	print(random)
+	var random2 = random
+	if random > 1.0:
+		random2 = random * 1.5
+	var tween = create_tween().set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property($Bacteria, \"position\", Vector2(-1670,0),3*random).set_delay(random2/random)
+"
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 200, 45 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 45, 200, 45 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 90, 200, 45 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 135, 200, 45 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 180, 200, 45 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 225, 200, 45 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 270, 200, 45 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="bac1" type="Node2D"]
+position = Vector2( 665, 296 )
+scale = Vector2( 0.327778, 0.327778 )
+script = SubResource( 9 )
+
+[node name="Bacteria" type="AnimatedSprite" parent="."]
+light_mask = 2
+position = Vector2( 18.3051, -51.8644 )
+rotation = -0.0645522
+frames = SubResource( 8 )
+frame = 4
+speed_scale = 5.0
+playing = true
