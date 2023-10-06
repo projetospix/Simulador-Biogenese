@@ -118,7 +118,7 @@ nome_frasco = "Frasco A"
 
 [node name="Caderno" parent="." instance=ExtResource( 19 )]
 position = Vector2( 696, 80 )
-rotation = -0.0361738
+rotation = -0.014172
 
 [node name="Microscopio" type="Control" parent="."]
 anchor_top = 1.0

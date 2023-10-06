@@ -90,17 +90,27 @@ margin_bottom = 205.0
 custom_constants/separation = 10
 
 [node name="Conclusao1" type="Label" parent="Control/Discussao/VBox"]
-margin_right = 280.0
+margin_right = 288.0
 margin_bottom = 20.0
 custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
 custom_fonts/font = ExtResource( 4 )
 text = "Frasco fervido fica descontaminado "
 percent_visible = 0.0
 
-[node name="Conclusao2" type="Label" parent="Control/Discussao/VBox"]
+[node name="Conclusao3" type="Label" parent="Control/Discussao/VBox"]
 margin_top = 30.0
-margin_right = 280.0
-margin_bottom = 65.0
+margin_right = 288.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
+custom_constants/line_spacing = -5
+custom_fonts/font = ExtResource( 4 )
+text = "Frasco destampado contamina com o tempo"
+percent_visible = 0.0
+
+[node name="Conclusao2" type="Label" parent="Control/Discussao/VBox"]
+margin_top = 60.0
+margin_right = 288.0
+margin_bottom = 95.0
 custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
 custom_constants/line_spacing = -5
 custom_fonts/font = ExtResource( 4 )

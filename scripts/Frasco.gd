@@ -47,7 +47,7 @@ func Passar_Tempo():
 	if Estado_Atual.contaminado == 'pré contaminado':
 		Estado_Atual.contaminado = 'contaminado'
 		Globais.Estado[nome_frasco] = true
-	if Estado_Atual.contaminado == 'estéril' and Estado_Atual.tampado == 'rolha':
+	if Estado_Atual.contaminado == 'estéril' and Estado_Atual.tampado == 'destampado':
 		Estado_Atual.contaminado = 'contaminado'
 		Globais.Estado[nome_frasco] = true
 	Globais.Sequencia_Acao[nome_frasco].append('p')

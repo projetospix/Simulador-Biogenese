@@ -2,7 +2,9 @@ extends Label
 
 var logicaParaFrases = {
 	"Conclusao1": "1f[^p]*2", #Frasco fervido fica descontaminado
-	"Conclusao2": "r[^d]*2+p+2" #Frasco permanece descontaminado se estiver tampado
+	"Conclusao2": "r[^d]*2+p+2", #Frasco permanece descontaminado se estiver tampado
+	"Conclusao3": "2+p+1" #Frasco destampado contamina com o tempo
+	
 }
 
 var conclusoesQueJaForam = []
