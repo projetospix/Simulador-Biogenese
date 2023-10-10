@@ -15,3 +15,19 @@ func Abiogenese():
 	hipotese = $"%Abio".text
 	$"%EscolhaHipotese".visible = false
 	emit_signal("AtualizaHipotese", hipotese)
+
+
+func VoltarMenu():
+	$"%ConfirmationDialog".popup_centered()
+	
+
+func ConfirmouEscolha():
+	get_tree().change_scene("res://cenas/Menu Inicial.tscn")
+
+
+func MenuAcessibilidade():
+	MenuAcessibilidade.Abrir()
+	
+func TextoAcessivel(b):
+	if b:
+		self.add_font_override("Lexicon", load("res://fontes-e-temas/fonteLexend20.tres"))

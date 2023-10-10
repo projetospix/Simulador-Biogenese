@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scripts/Microscopio.gd" type="Script" id=1]
 [ext_resource path="res://scripts/botoesGenerico.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://sprites/botões/btn_mic.png" type="Texture" id=14]
 [ext_resource path="res://sprites/placona.png" type="Texture" id=15]
 [ext_resource path="res://sprites/papel_de_parede.png" type="Texture" id=16]
+[ext_resource path="res://sprites/livro_menu.png" type="Texture" id=17]
 [ext_resource path="res://fontes-e-temas/fonteArvo32.tres" type="DynamicFont" id=18]
 [ext_resource path="res://cenas/Caderno.tscn" type="PackedScene" id=19]
 [ext_resource path="res://cenas/bacterias.tscn" type="PackedScene" id=20]
@@ -65,7 +66,7 @@ fill = 1
 fill_from = Vector2( 0.5, 0.5 )
 fill_to = Vector2( 0.5, 0.2 )
 
-[node name="Cenário Pasteur" type="Control"]
+[node name="Cenário Pasteur" type="Control" groups=["Acessiveis"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
@@ -366,6 +367,31 @@ focus_mode = 1
 size_flags_vertical = 3
 text = "Vida PODE surgir espontaneamente"
 
+[node name="MenuPrateleira" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="VoltarMenu" type="TextureButton" parent="MenuPrateleira"]
+unique_name_in_owner = true
+margin_left = 199.0
+margin_top = 136.0
+margin_right = 298.0
+margin_bottom = 176.0
+texture_normal = ExtResource( 17 )
+expand = true
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="MenuPrateleira/VoltarMenu"]
+unique_name_in_owner = true
+margin_right = 200.0
+margin_bottom = 70.0
+theme = ExtResource( 6 )
+window_title = "Confirme Por Favor..."
+dialog_text = "Deseja voltar ao Menu Inicial?"
+
+[node name="MenuAcessibilidade" type="Button" parent="MenuPrateleira"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "MENU ACESSIBILIDADE"
+
 [connection signal="AtualizaHipotese" from="." to="Caderno" method="AtualizaHipotese"]
 [connection signal="VisaoMic" from="Microscopio" to="Observando" method="VisaoMic"]
 [connection signal="button_up" from="Microscopio/SpriteMicro" to="Microscopio" method="ObservarFrasco"]
@@ -376,3 +402,6 @@ text = "Vida PODE surgir espontaneamente"
 [connection signal="button_up" from="Microscopio/Frasco 3" to="Microscopio" method="MostrarResultado" binds= [ "Frasco C" ]]
 [connection signal="button_up" from="EscolhaHipotese/NinePatchRect/VBoxContainer/Bio" to="." method="Biogenese"]
 [connection signal="button_up" from="EscolhaHipotese/NinePatchRect/VBoxContainer/Abio" to="." method="Abiogenese"]
+[connection signal="button_up" from="MenuPrateleira/VoltarMenu" to="." method="VoltarMenu"]
+[connection signal="confirmed" from="MenuPrateleira/VoltarMenu/ConfirmationDialog" to="." method="ConfirmouEscolha"]
+[connection signal="button_up" from="MenuPrateleira/MenuAcessibilidade" to="." method="MenuAcessibilidade"]

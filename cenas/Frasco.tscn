@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://scripts/Frasco.gd" type="Script" id=1]
 [ext_resource path="res://sprites/botões/btn_ferver.png" type="Texture" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://sprites/botões/btn_destampar_disabled.png" type="Texture" id=27]
 [ext_resource path="res://sprites/botões/btn_quebrar_disabled.png" type="Texture" id=28]
 [ext_resource path="res://sprites/botões/btn_tampar_hover.png" type="Texture" id=29]
+[ext_resource path="res://scripts/MudarFonte.gd" type="Script" id=30]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 1, 1 )
@@ -485,7 +486,7 @@ custom_styles/normal = SubResource( 12 )
 text = "X"
 script = ExtResource( 12 )
 
-[node name="Etiqueta" type="Label" parent="."]
+[node name="Etiqueta" type="Label" parent="." groups=["Acessiveis"]]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -499,6 +500,7 @@ grow_vertical = 2
 theme = ExtResource( 16 )
 text = "Nome"
 align = 1
+script = ExtResource( 30 )
 
 [node name="Popup" type="NinePatchRect" parent="."]
 visible = false

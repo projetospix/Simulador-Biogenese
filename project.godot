@@ -27,6 +27,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Globais="*res://scripts/Globais.gd"
+MenuAcessibilidade="*res://cenas/MenuAcessibilidade.tscn"
 
 [display]
 

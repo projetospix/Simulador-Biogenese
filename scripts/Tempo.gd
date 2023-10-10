@@ -10,3 +10,5 @@ func Adiantar_Tempo():
 
 func Terminou_Animacao(_anim_name):
 	get_tree().call_group('Botoes', 'destravar')
+
+

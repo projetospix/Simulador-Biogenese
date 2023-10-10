@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=1]
+[ext_resource path="res://fontes-e-temas/fonteArvo32.tres" type="DynamicFont" id=2]
+[ext_resource path="res://sprites/placona.png" type="Texture" id=3]
+[ext_resource path="res://fontes-e-temas/fonteLexend20.tres" type="DynamicFont" id=4]
+[ext_resource path="res://scripts/MenuAcessibilidade.gd" type="Script" id=5]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 4
+script = ExtResource( 5 )
+
+[node name="Popup" type="Popup" parent="."]
+margin_left = 230.0
+margin_top = 150.0
+margin_right = 789.0
+margin_bottom = 443.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+patch_margin_left = 52
+patch_margin_top = 48
+patch_margin_right = 48
+patch_margin_bottom = 51
+
+[node name="MudarFonte" type="CheckButton" parent="Popup/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.5
+margin_top = -20.0
+margin_right = 160.5
+margin_bottom = 20.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Texto mais legível"
+
+[node name="Label" type="Label" parent="Popup/NinePatchRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -158.5
+margin_top = 77.0
+margin_right = 159.5
+margin_bottom = 105.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.890196, 0.188235, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Menu Acessibilidade"
+align = 1
+
+[node name="Button" type="Button" parent="Popup/NinePatchRect"]
+margin_left = 460.0
+margin_top = 68.0
+margin_right = 475.0
+margin_bottom = 93.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 0.729412, 0.164706, 0.0745098, 1 )
+text = "X"
+
+[connection signal="toggled" from="Popup/NinePatchRect/MudarFonte" to="." method="MudarFonte"]
+[connection signal="button_up" from="Popup/NinePatchRect/Button" to="." method="Fechar"]
