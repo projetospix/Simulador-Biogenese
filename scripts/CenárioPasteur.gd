@@ -4,7 +4,8 @@ var hipotese = ""
 signal AtualizaHipotese(texto)
 
 func _ready():
-	$EscolhaHipotese.popup_centered()
+	$"%EscolhaHipotese".popup_centered()
+	TextoAcessivel(MenuAcessibilidade.texto_acessivel)
 
 func Biogenese():
 	hipotese = $"%Bio".text
@@ -22,6 +23,7 @@ func VoltarMenu():
 	
 
 func ConfirmouEscolha():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://cenas/Menu Inicial.tscn")
 
 
@@ -30,4 +32,12 @@ func MenuAcessibilidade():
 	
 func TextoAcessivel(b):
 	if b:
-		self.add_font_override("Lexicon", load("res://fontes-e-temas/fonteLexend20.tres"))
+		self.theme = load("res://fontes-e-temas/Acessivel.tres")
+		$"%Popups".theme = load("res://fontes-e-temas/Acessivel.tres")
+		$Caderno.rotation_degrees = 0
+	else:
+		self.theme = load("res://fontes-e-temas/renascença.tres")
+		$"%Popups".theme = load("res://fontes-e-temas/renascença.tres")
+		$Caderno.rotation_degrees = -0.8
+		
+		

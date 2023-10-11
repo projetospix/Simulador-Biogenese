@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/MenuInicial.gd" type="Script" id=1]
 [ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://sprites/frasco.png" type="Texture" id=5]
 [ext_resource path="res://sprites/tripé.png" type="Texture" id=6]
 [ext_resource path="res://sprites/microscopio.png" type="Texture" id=7]
+[ext_resource path="res://sprites/botao acesso universal_hover.png" type="Texture" id=8]
+[ext_resource path="res://sprites/botao acesso universal.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -32,7 +34,7 @@ _data = [ Vector2( 0, 0.681818 ), 0.0, 0.0, 0, 0, Vector2( 0.257246, 1.24229 ), 
 offsets = PoolRealArray( 0.0302457, 0.136106, 0.875236 )
 colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.286275, 1, 1, 1, 0 )
 
-[node name="Menu Inicial" type="Control"]
+[node name="Menu Inicial" type="Control" groups=["Acessiveis"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
@@ -134,5 +136,20 @@ color_ramp = SubResource( 6 )
 position = Vector2( 905, 530 )
 texture = ExtResource( 7 )
 
+[node name="MenuAcessibilidade" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0.588235 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -81.0
+margin_right = 25.0
+margin_bottom = -31.0
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 8 )
+expand = true
+
 [connection signal="button_up" from="VBoxContainer/Jogar Pasteur" to="." method="MudarCenaPasteur"]
 [connection signal="button_up" from="VBoxContainer/Jogar Pasteur2" to="." method="MudarCenaPasteur"]
+[connection signal="button_up" from="MenuAcessibilidade" to="." method="MenuAcessibilidade"]

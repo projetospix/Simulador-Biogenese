@@ -7,7 +7,7 @@
 offsets = PoolRealArray( 0.00896861, 0.497758, 0.865471, 1 )
 colors = PoolColorArray( 0.870588, 0.564706, 0.341176, 1, 0.811124, 0.525836, 0.317747, 1, 0.46, 0.296317, 0.1794, 1, 0.18, 0.12969, 0.1026, 0 )
 
-[sub_resource type="GradientTexture2D" id=7]
+[sub_resource type="GradientTexture2D" id=11]
 gradient = SubResource( 6 )
 width = 640
 height = 640
@@ -15,7 +15,7 @@ fill = 1
 fill_from = Vector2( 0.5, 0.5 )
 fill_to = Vector2( 0.5, 0.2 )
 
-[sub_resource type="GDScript" id=9]
+[sub_resource type="GDScript" id=12]
 script/source = "extends Node2D
 
 var rng = RandomNumberGenerator.new()
@@ -32,7 +32,7 @@ func _on_Timer_timeout() -> void:
 	rotation_degrees = random
 "
 
-[sub_resource type="CanvasItemMaterial" id=8]
+[sub_resource type="CanvasItemMaterial" id=13]
 particles_animation = true
 particles_anim_h_frames = 6
 particles_anim_v_frames = 1
@@ -47,7 +47,7 @@ position = Vector2( -79, 221 )
 
 [node name="laranja" type="Sprite" parent="."]
 visible = false
-texture = SubResource( 7 )
+texture = SubResource( 11 )
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 2 )
@@ -59,11 +59,11 @@ __meta__ = {
 
 [node name="Position2D" type="Position2D" parent="."]
 rotation = -0.00238459
-script = SubResource( 9 )
+script = SubResource( 12 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Position2D"]
 light_mask = 2
-material = SubResource( 8 )
+material = SubResource( 13 )
 position = Vector2( 78.4862, -203.813 )
 emitting = false
 amount = 4

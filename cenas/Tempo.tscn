@@ -115,12 +115,13 @@ mesh = SubResource( 2 )
 texture = ExtResource( 10 )
 
 [node name="Relogio" type="MeshInstance2D" parent="."]
-position = Vector2( 0, 5 )
+position = Vector2( 109.135, 5 )
 scale = Vector2( 0.746563, 0.746562 )
 mesh = SubResource( 3 )
 texture = ExtResource( 2 )
 
 [node name="Ponteiro Hora" type="Position2D" parent="."]
+position = Vector2( 109.135, 0 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="Position2D" type="Position2D" parent="Ponteiro Hora"]
@@ -132,6 +133,7 @@ scale = Vector2( 0.72467, 0.640143 )
 texture = ExtResource( 4 )
 
 [node name="Ponteiro Minuto" type="Position2D" parent="."]
+position = Vector2( 109.135, 0 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="Position2D" type="Position2D" parent="Ponteiro Minuto"]
@@ -147,9 +149,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -22.5
+margin_left = 86.6351
 margin_top = 42.0265
-margin_right = 22.5
+margin_right = 131.635
 margin_bottom = 71.0265
 theme = ExtResource( 6 )
 texture_normal = ExtResource( 11 )

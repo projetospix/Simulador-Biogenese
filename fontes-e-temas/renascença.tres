@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=11 format=2]
 
 [ext_resource path="res://fontes-e-temas/fonteMacondo18.tres" type="DynamicFont" id=1]
-[ext_resource path="res://fontes-e-temas/Macondo-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://fontes-e-temas/fonteArvo20.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fontes-e-temas/Arvo-Bold.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.278431, 0.278431, 0.278431, 1 )
@@ -50,11 +50,23 @@ expand_margin_right = 5.0
 shadow_color = Color( 0, 0, 0, 0.698039 )
 shadow_offset = Vector2( 0, -5 )
 
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 2 )
+[sub_resource type="DynamicFont" id=7]
+size = 12
+use_filter = true
+font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.737255, 0.552941, 0.294118, 1 )
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.882812, 0.846225, 0.782806, 1 )
+border_width_left = 2
+border_width_top = 20
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.176471, 0.12549, 0.0980392, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 20.0
 
 [resource]
 Button/colors/font_color = Color( 0.176471, 0.12549, 0.0980392, 1 )
@@ -67,8 +79,10 @@ Button/styles/focus = SubResource( 6 )
 Button/styles/hover = SubResource( 3 )
 Button/styles/normal = SubResource( 1 )
 Button/styles/pressed = SubResource( 5 )
-Fonts/fonts/normal = SubResource( 2 )
 Label/colors/font_color = Color( 0.0784314, 0.054902, 0.0235294, 1 )
-Label/fonts/font = ExtResource( 1 )
-WindowDialog/fonts/title_font = ExtResource( 3 )
-WindowDialog/styles/panel = SubResource( 7 )
+Label/fonts/font = ExtResource( 3 )
+Manuscrito/base_type = "Label"
+Manuscrito/fonts/font = ExtResource( 1 )
+WindowDialog/colors/title_color = Color( 0.882812, 0.846225, 0.782806, 1 )
+WindowDialog/fonts/title_font = SubResource( 7 )
+WindowDialog/styles/panel = SubResource( 8 )

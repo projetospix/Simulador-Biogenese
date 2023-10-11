@@ -20,6 +20,7 @@ unique_name_in_owner = true
 margin_top = 90.0
 margin_right = 67.0
 margin_bottom = 104.0
+theme_type_variation = "Manuscrito"
 custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
 text = "ESCAPEEEE"
 align = 1

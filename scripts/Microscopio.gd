@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 var observando = false #para poder dispensar mic com esc
 signal VisaoMic(contaminado)

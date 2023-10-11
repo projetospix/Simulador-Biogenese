@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://scripts/Frasco.gd" type="Script" id=1]
 [ext_resource path="res://sprites/botões/btn_ferver.png" type="Texture" id=2]
@@ -29,7 +29,6 @@
 [ext_resource path="res://sprites/botões/btn_destampar_disabled.png" type="Texture" id=27]
 [ext_resource path="res://sprites/botões/btn_quebrar_disabled.png" type="Texture" id=28]
 [ext_resource path="res://sprites/botões/btn_tampar_hover.png" type="Texture" id=29]
-[ext_resource path="res://scripts/MudarFonte.gd" type="Script" id=30]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 1, 1 )
@@ -454,9 +453,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -47.0
+margin_left = -59.0
 margin_top = 4.0
-margin_right = 87.0
+margin_right = 110.0
 margin_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -470,10 +469,9 @@ patch_margin_right = 27
 patch_margin_bottom = 23
 
 [node name="Remover" type="Button" parent="." groups=["Botoes"]]
-margin_left = -55.0
-margin_top = 1.0
-margin_right = -32.0
-margin_bottom = 23.0
+margin_left = -65.0
+margin_right = -42.0
+margin_bottom = 25.0
 rect_rotation = -16.4719
 rect_scale = Vector2( 0.7, 0.7 )
 theme = ExtResource( 16 )
@@ -497,10 +495,9 @@ margin_right = 59.0
 margin_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource( 16 )
+theme_type_variation = "Manuscrito"
 text = "Nome"
 align = 1
-script = ExtResource( 30 )
 
 [node name="Popup" type="NinePatchRect" parent="."]
 visible = false

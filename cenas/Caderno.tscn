@@ -1,26 +1,25 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://cenas/Métodos/SequenciaFrasco.tscn" type="PackedScene" id=1]
-[ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=2]
 [ext_resource path="res://sprites/caderno.png" type="Texture" id=3]
 [ext_resource path="res://scripts/Caderno.gd" type="Script" id=5]
 [ext_resource path="res://scripts/Discussao.gd" type="Script" id=6]
-[ext_resource path="res://scripts/MudarFonte.gd" type="Script" id=7]
 
-[node name="Caderno" type="Node2D"]
+[node name="Caderno" type="Node2D" groups=["Acessiveis"]]
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_vertical_guides_": [ 328.0 ]
+}
 
 [node name="Control" type="Control" parent="." groups=["Acessiveis"]]
-margin_right = 40.0
-margin_bottom = 40.0
-theme = ExtResource( 2 )
-script = ExtResource( 7 )
-
-[node name="Fundo caderno" type="TextureRect" parent="Control"]
 margin_left = -2.0
 margin_top = -6.0
 margin_right = 329.0
 margin_bottom = 484.0
+
+[node name="Fundo caderno" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource( 3 )
 expand = true
 
@@ -29,6 +28,7 @@ margin_left = 22.0
 margin_top = 30.0
 margin_right = 102.0
 margin_bottom = 52.0
+theme_type_variation = "Manuscrito"
 text = "Hipótese"
 
 [node name="TextoHipotese" type="Label" parent="Control/Hipotese"]
@@ -38,6 +38,7 @@ margin_top = 28.0
 margin_right = 334.0
 margin_bottom = 62.0
 rect_scale = Vector2( 0.8, 0.8 )
+theme_type_variation = "Manuscrito"
 custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
 valign = 1
 
@@ -46,6 +47,7 @@ margin_left = 21.0
 margin_top = 102.0
 margin_right = 174.0
 margin_bottom = 124.0
+theme_type_variation = "Manuscrito"
 text = "Método e Resultados"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/Metodo"]
@@ -80,36 +82,40 @@ margin_left = 17.0
 margin_top = 244.0
 margin_right = 109.0
 margin_bottom = 266.0
+theme_type_variation = "Manuscrito"
 text = "Discussão"
 script = ExtResource( 6 )
 
 [node name="VBox" type="VBoxContainer" parent="Control/Discussao"]
 margin_left = 9.0
 margin_top = 30.0
-margin_right = 289.0
+margin_right = 334.0
 margin_bottom = 205.0
 custom_constants/separation = 10
 
 [node name="Conclusao1" type="Label" parent="Control/Discussao/VBox"]
 margin_right = 325.0
-margin_bottom = 22.0
+margin_bottom = 14.0
+theme_type_variation = "Manuscrito"
 custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
 text = "Frasco fervido fica descontaminado "
 percent_visible = 0.0
 
 [node name="Conclusao3" type="Label" parent="Control/Discussao/VBox"]
-margin_top = 32.0
+margin_top = 24.0
 margin_right = 325.0
-margin_bottom = 54.0
+margin_bottom = 38.0
+theme_type_variation = "Manuscrito"
 custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
 custom_constants/line_spacing = -5
 text = "Frasco destampado contamina com o tempo"
 percent_visible = 0.0
 
 [node name="Conclusao2" type="Label" parent="Control/Discussao/VBox"]
-margin_top = 64.0
+margin_top = 48.0
 margin_right = 325.0
-margin_bottom = 103.0
+margin_bottom = 71.0
+theme_type_variation = "Manuscrito"
 custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
 custom_constants/line_spacing = -5
 text = "Frasco permanece descontaminado
