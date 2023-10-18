@@ -14,6 +14,8 @@ func TextoAcessivel(b):
 	if b:
 		$Control.rect_position = Vector2(-74,-6)
 		$Control.rect_size = Vector2(403,490)
+		$"%VBox".rect_position = Vector2(-6, 30)
 	else:
 		$Control.rect_position = Vector2(-2,-6)
 		$Control.rect_size = Vector2(331,490)
+		$"%VBox".rect_position = Vector2(9, 30)

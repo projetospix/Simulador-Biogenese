@@ -78,20 +78,34 @@ margin_bottom = 98.0
 frasco = "Frasco C"
 
 [node name="Discussao" type="Label" parent="Control" groups=["Discussao"]]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
 margin_left = 17.0
-margin_top = 244.0
-margin_right = 109.0
-margin_bottom = 266.0
+margin_top = -1.0
+margin_right = -222.0
+margin_bottom = 21.0
 theme_type_variation = "Manuscrito"
 text = "Discussão"
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="VBox" type="VBoxContainer" parent="Control/Discussao"]
+unique_name_in_owner = true
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
 margin_left = 9.0
-margin_top = 30.0
-margin_right = 294.0
-margin_bottom = 205.0
+margin_top = 19.0
+margin_right = 202.0
+margin_bottom = 194.0
+size_flags_horizontal = 0
 custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Conclusao1" type="Label" parent="Control/Discussao/VBox"]
 margin_right = 285.0
@@ -105,18 +119,19 @@ percent_visible = 0.0
 [node name="Conclusao3" type="Label" parent="Control/Discussao/VBox"]
 margin_top = 24.0
 margin_right = 285.0
-margin_bottom = 38.0
+margin_bottom = 47.0
 size_flags_horizontal = 9
 theme_type_variation = "Manuscrito"
 custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
 custom_constants/line_spacing = -5
 text = "Frasco destampado contamina com o tempo"
+autowrap = true
 percent_visible = 0.0
 
 [node name="Conclusao2" type="Label" parent="Control/Discussao/VBox"]
-margin_top = 48.0
+margin_top = 57.0
 margin_right = 285.0
-margin_bottom = 71.0
+margin_bottom = 80.0
 size_flags_horizontal = 9
 theme_type_variation = "Manuscrito"
 custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
@@ -124,3 +139,29 @@ custom_constants/line_spacing = -5
 text = "Frasco permanece descontaminado
 se estiver tampado"
 percent_visible = 0.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_right = 20.0
+margin_bottom = 40.0
+text = "1"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+margin_left = 24.0
+margin_right = 44.0
+margin_bottom = 40.0
+text = "2"
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+margin_left = 48.0
+margin_right = 68.0
+margin_bottom = 40.0
+text = "3"
+
+[connection signal="button_up" from="HBoxContainer/Button" to="Control/Discussao" method="AnimarFrase" binds= [ "Conclusao1" ]]
+[connection signal="button_up" from="HBoxContainer/Button2" to="Control/Discussao" method="AnimarFrase" binds= [ "Conclusao2" ]]
+[connection signal="button_up" from="HBoxContainer/Button3" to="Control/Discussao" method="AnimarFrase" binds= [ "Conclusao3" ]]
