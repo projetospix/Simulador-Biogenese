@@ -1,8 +1,8 @@
 extends Node
 
-var Sequencia_Acao = {}
+export var Sequencia_Acao = {}
 
-var Estado = {
+export var Estado = {
 	
 }
 
