@@ -1,8 +1,11 @@
 extends Node2D
 
 export var nome_frasco := 'Frasco'
-var frasco := preload("res://cenas/Frasco.tscn")
+export var caminhoDaCena = "res://cenas/Frasco.tscn"
+var frasco := load(caminhoDaCena)
 
+func _ready():
+	frasco = load(caminhoDaCena)
 
 func AdicionarFrasco():
 	var instancia_frasco = frasco.instance()

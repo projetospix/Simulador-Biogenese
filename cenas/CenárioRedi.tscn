@@ -1,0 +1,413 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://scripts/Lupa.gd" type="Script" id=1]
+[ext_resource path="res://scripts/botoesGenerico.gd" type="Script" id=2]
+[ext_resource path="res://scripts/CenárioPasteur.gd" type="Script" id=3]
+[ext_resource path="res://cenas/Tempo Redi.tscn" type="PackedScene" id=4]
+[ext_resource path="res://cenas/AdicionarFrasco.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=6]
+[ext_resource path="res://sprites/bancada.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Redi/btn_lupa.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Redi/Lupa.png" type="Texture" id=9]
+[ext_resource path="res://sprites/placona.png" type="Texture" id=15]
+[ext_resource path="res://sprites/papel_de_parede.png" type="Texture" id=16]
+[ext_resource path="res://sprites/livro.png" type="Texture" id=17]
+[ext_resource path="res://fontes-e-temas/fonteArvo32.tres" type="DynamicFont" id=18]
+[ext_resource path="res://cenas/Caderno.tscn" type="PackedScene" id=19]
+[ext_resource path="res://cenas/bacterias.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scripts/Observando.gd" type="Script" id=21]
+[ext_resource path="res://sprites/botao acesso universal.png" type="Texture" id=23]
+[ext_resource path="res://sprites/botao acesso universal_hover.png" type="Texture" id=24]
+[ext_resource path="res://scripts/ConfirmationDialog.gd" type="Script" id=25]
+
+[sub_resource type="ArrayMesh" id=9]
+surfaces/0 = {
+"aabb": AABB( -342.5, -102.5, 0, 685, 205, 0 ),
+"array_data": PoolByteArray( 0, 0, 171, 67, 154, 153, 203, 194, 42, 208, 127, 63, 14, 200, 95, 59, 0, 64, 171, 67, 0, 0, 200, 194, 0, 0, 128, 63, 12, 206, 71, 60, 0, 64, 171, 67, 0, 0, 176, 194, 0, 0, 128, 63, 201, 219, 144, 61, 0, 0, 168, 67, 102, 102, 166, 194, 32, 146, 125, 63, 204, 207, 192, 61, 0, 0, 168, 67, 154, 153, 159, 194, 32, 146, 125, 63, 79, 199, 226, 61, 0, 128, 161, 67, 205, 204, 102, 194, 96, 182, 120, 63, 14, 200, 95, 62, 0, 128, 161, 67, 51, 51, 37, 194, 96, 182, 120, 63, 202, 217, 152, 62, 0, 128, 159, 67, 104, 102, 162, 193, 175, 55, 119, 63, 172, 76, 205, 62, 0, 0, 161, 67, 104, 102, 130, 193, 180, 86, 120, 63, 45, 74, 215, 62, 0, 0, 161, 67, 64, 51, 51, 192, 180, 86, 120, 63, 191, 1, 249, 62, 0, 0, 160, 67, 0, 205, 204, 62, 92, 151, 119, 63, 224, 127, 0, 63, 0, 0, 161, 67, 0, 0, 205, 66, 180, 86, 120, 63, 0, 0, 128, 63, 0, 64, 171, 195, 0, 0, 205, 66, 0, 0, 0, 0, 0, 0, 128, 63, 0, 64, 171, 195, 0, 0, 205, 194, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 67, 0, 0, 205, 194, 42, 208, 127, 63, 0, 0, 0, 0 ),
+"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 5, 0, 6, 0, 7, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, 12, 0, 13, 0, 14, 0, 0, 0, 2, 0, 3, 0, 7, 0, 9, 0, 10, 0, 12, 0, 14, 0, 0, 0, 0, 0, 3, 0, 5, 0, 7, 0, 10, 0, 12, 0, 12, 0, 0, 0, 5, 0, 5, 0, 7, 0, 12, 0 ),
+"blend_shape_data": [  ],
+"format": 262417,
+"index_count": 39,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 15
+}
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.721569, 0.223529, 0.223529, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 7
+expand_margin_top = 1.0
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.584314, 0.580392, 0.580392, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 7
+expand_margin_top = 1.0
+
+[sub_resource type="Gradient" id=8]
+offsets = PoolRealArray( 0.00896861, 0.497758, 0.865471, 1 )
+colors = PoolColorArray( 0.870588, 0.564706, 0.341176, 1, 0.811124, 0.525836, 0.317747, 1, 0.46, 0.296317, 0.1794, 1, 0.18, 0.12969, 0.1026, 0 )
+
+[sub_resource type="GradientTexture2D" id=7]
+gradient = SubResource( 8 )
+width = 640
+height = 640
+fill = 1
+fill_from = Vector2( 0.5, 0.5 )
+fill_to = Vector2( 0.5, 0.2 )
+
+[node name="Cenário Redi" type="Control" groups=["Acessiveis"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 6 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cor do Fundo" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.670588, 0.635294, 0.54902, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="papel de parede" type="Sprite" parent="."]
+modulate = Color( 0.509804, 0.34902, 0.160784, 0.121569 )
+position = Vector2( 512, 300 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1024, 600 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Tempo Redi" parent="." instance=ExtResource( 4 )]
+margin_left = 103.0
+margin_top = 102.0
+margin_right = 103.0
+margin_bottom = 102.0
+
+[node name="Bancada" type="Node2D" parent="."]
+
+[node name="BancadaSprite" type="MeshInstance2D" parent="Bancada"]
+position = Vector2( 342.5, 499.25 )
+mesh = SubResource( 9 )
+texture = ExtResource( 7 )
+
+[node name="Add 3" parent="Bancada" instance=ExtResource( 5 )]
+position = Vector2( 554, 400 )
+nome_frasco = "Bequer C"
+caminhoDaCena = "res://cenas/Bequer.tscn"
+
+[node name="Add 2" parent="Bancada" instance=ExtResource( 5 )]
+position = Vector2( 401, 400 )
+nome_frasco = "Bequer B"
+caminhoDaCena = "res://cenas/Bequer.tscn"
+
+[node name="Add 1" parent="Bancada" instance=ExtResource( 5 )]
+position = Vector2( 250, 400 )
+nome_frasco = "Bequer A"
+caminhoDaCena = "res://cenas/Bequer.tscn"
+
+[node name="Caderno" parent="." instance=ExtResource( 19 )]
+position = Vector2( 696, 48 )
+rotation = -0.014172
+
+[node name="Microscopio" type="Node2D" parent="."]
+z_index = 410
+script = ExtResource( 1 )
+
+[node name="SpriteMicro" type="TextureButton" parent="Microscopio" groups=["Botoes"]]
+anchor_bottom = 1.0
+margin_left = 59.0
+margin_top = 260.0
+margin_right = 136.0
+margin_bottom = 401.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture_normal = ExtResource( 9 )
+expand = true
+flip_h = true
+script = ExtResource( 2 )
+
+[node name="Botao Micro" type="TextureButton" parent="Microscopio" groups=["Botoes"]]
+margin_left = 50.0
+margin_top = 469.0
+margin_right = 153.0
+margin_bottom = 572.0
+texture_normal = ExtResource( 8 )
+flip_h = true
+script = ExtResource( 2 )
+
+[node name="dim" type="ColorRect" parent="Microscopio"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -17.0
+margin_top = -6.0
+margin_right = 1054.0
+margin_bottom = 609.0
+color = Color( 0.109804, 0.0784314, 0.0588235, 0.780392 )
+
+[node name="Selecione" type="NinePatchRect" parent="Microscopio"]
+margin_left = 246.0
+margin_top = 42.0
+margin_right = 563.0
+margin_bottom = 142.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 15 )
+patch_margin_left = 53
+patch_margin_top = 50
+patch_margin_right = 52
+patch_margin_bottom = 50
+
+[node name="Selecione" type="Label" parent="Microscopio/Selecione"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -11.0
+margin_right = 112.0
+margin_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_colors/font_color = Color( 0.176471, 0.12549, 0.0980392, 1 )
+text = "Selecione uma amostra"
+align = 1
+valign = 1
+
+[node name="Remover" type="Button" parent="Microscopio/Selecione"]
+margin_left = -4.0
+margin_right = 30.0
+margin_bottom = 32.0
+rect_rotation = -3.50888
+rect_scale = Vector2( 0.7, 0.7 )
+theme = ExtResource( 6 )
+custom_colors/font_color = Color( 0.768627, 0.690196, 0.596078, 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
+text = "X"
+
+[node name="Frasco 1" type="TextureButton" parent="Microscopio"]
+margin_left = 235.0
+margin_top = 167.0
+margin_right = 278.0
+margin_bottom = 262.0
+rect_scale = Vector2( 0.8, 0.8 )
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture_normal = ExtResource( 9 )
+expand = true
+
+[node name="Frasco 2" type="TextureButton" parent="Microscopio"]
+margin_left = 386.0
+margin_top = 167.0
+margin_right = 429.0
+margin_bottom = 262.0
+rect_scale = Vector2( 0.8, 0.8 )
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture_normal = ExtResource( 9 )
+expand = true
+
+[node name="Frasco 3" type="TextureButton" parent="Microscopio"]
+margin_left = 539.0
+margin_top = 167.0
+margin_right = 582.0
+margin_bottom = 262.0
+rect_scale = Vector2( 0.8, 0.8 )
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture_normal = ExtResource( 9 )
+expand = true
+
+[node name="Observando" type="Node2D" parent="."]
+visible = false
+z_index = 420
+script = ExtResource( 21 )
+
+[node name="dim" type="ColorRect" parent="Observando"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 1025.0
+margin_bottom = 601.0
+color = Color( 0.109804, 0.0784314, 0.0588235, 0.956863 )
+
+[node name="laranja" type="Sprite" parent="Observando"]
+position = Vector2( 512, 300 )
+z_index = 400
+texture = SubResource( 7 )
+
+[node name="bacterias" type="Node2D" parent="Observando/laranja"]
+
+[node name="Bacs" parent="Observando/laranja/bacterias" instance=ExtResource( 20 )]
+position = Vector2( 0, 0 )
+
+[node name="Bacs2" parent="Observando/laranja/bacterias" instance=ExtResource( 20 )]
+position = Vector2( 0, 0 )
+
+[node name="Bacs3" parent="Observando/laranja/bacterias" instance=ExtResource( 20 )]
+position = Vector2( 0, 0 )
+
+[node name="Label" type="Label" parent="Observando"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 312.0
+margin_top = 35.0
+margin_right = 712.0
+margin_bottom = 102.0
+grow_horizontal = 2
+rect_pivot_offset = Vector2( 200, 0 )
+theme = ExtResource( 6 )
+custom_colors/font_color = Color( 0.882812, 0.846225, 0.782806, 1 )
+custom_fonts/font = ExtResource( 18 )
+text = "Não tem seres vivos!"
+align = 1
+valign = 1
+
+[node name="MenuBancada" type="Node2D" parent="."]
+z_index = 401
+
+[node name="VoltarMenu" type="TextureButton" parent="MenuBancada"]
+unique_name_in_owner = true
+margin_left = 25.0
+margin_top = 136.0
+margin_right = 124.0
+margin_bottom = 176.0
+texture_normal = ExtResource( 17 )
+expand = true
+
+[node name="MenuAcessibilidade" type="TextureButton" parent="MenuBancada"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 959.0
+margin_top = 535.0
+margin_right = 1009.0
+margin_bottom = 585.0
+texture_normal = ExtResource( 23 )
+texture_hover = ExtResource( 24 )
+expand = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Popups" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="CanvasLayer/Popups"]
+unique_name_in_owner = true
+margin_left = 1087.0
+margin_top = 255.0
+margin_right = 1422.0
+margin_bottom = 329.0
+theme = ExtResource( 6 )
+window_title = "Confirme Por Favor..."
+dialog_text = "Deseja voltar ao Menu Inicial?"
+script = ExtResource( 25 )
+
+[node name="EscolhaHipotese" type="Popup" parent="CanvasLayer/Popups"]
+unique_name_in_owner = true
+margin_left = 148.0
+margin_top = -554.0
+margin_right = 729.0
+margin_bottom = -367.0
+popup_exclusive = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Popups/EscolhaHipotese"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 612.0
+margin_bottom = 400.0
+color = Color( 0, 0, 0, 0.894118 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Popups/EscolhaHipotese"]
+anchor_top = -0.152
+anchor_right = 1.0
+anchor_bottom = 1.152
+margin_top = -0.0759983
+margin_bottom = 0.0759888
+rect_pivot_offset = Vector2( 284, 229 )
+texture = ExtResource( 15 )
+patch_margin_left = 47
+patch_margin_top = 51
+patch_margin_right = 45
+patch_margin_bottom = 51
+
+[node name="Label" type="Label" parent="CanvasLayer/Popups/EscolhaHipotese/NinePatchRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -116.5
+margin_top = 34.5
+margin_right = 116.5
+margin_bottom = 59.5
+text = "Escolha uma Hipótese"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Popups/EscolhaHipotese/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.139
+anchor_right = 0.5
+anchor_bottom = 0.797
+margin_left = -224.5
+margin_top = 52.084
+margin_right = 224.5
+margin_bottom = 1.53198
+grow_horizontal = 2
+custom_constants/separation = 18
+alignment = 1
+
+[node name="Bio" type="Button" parent="CanvasLayer/Popups/EscolhaHipotese/NinePatchRect/VBoxContainer"]
+unique_name_in_owner = true
+margin_right = 449.0
+margin_bottom = 45.0
+grow_horizontal = 2
+focus_mode = 1
+size_flags_vertical = 3
+text = "Vida NÃO pode surgir espontaneamente"
+
+[node name="Abio" type="Button" parent="CanvasLayer/Popups/EscolhaHipotese/NinePatchRect/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 63.0
+margin_right = 449.0
+margin_bottom = 109.0
+grow_horizontal = 2
+focus_mode = 1
+size_flags_vertical = 3
+text = "Vida PODE surgir espontaneamente"
+
+[connection signal="AtualizaHipotese" from="." to="Caderno" method="AtualizaHipotese"]
+[connection signal="VisaoMic" from="Microscopio" to="Observando" method="VisaoMic"]
+[connection signal="button_up" from="Microscopio/SpriteMicro" to="Microscopio" method="ObservarFrasco"]
+[connection signal="button_up" from="Microscopio/Botao Micro" to="Microscopio" method="ObservarFrasco"]
+[connection signal="button_up" from="Microscopio/Selecione/Remover" to="Microscopio" method="DesistirMicro"]
+[connection signal="button_up" from="Microscopio/Frasco 1" to="Microscopio" method="MostrarResultado" binds= [ "Bequer A" ]]
+[connection signal="button_up" from="Microscopio/Frasco 2" to="Microscopio" method="MostrarResultado" binds= [ "Bequer B" ]]
+[connection signal="button_up" from="Microscopio/Frasco 3" to="Microscopio" method="MostrarResultado" binds= [ "Bequer C" ]]
+[connection signal="button_up" from="MenuBancada/VoltarMenu" to="." method="VoltarMenu"]
+[connection signal="button_up" from="MenuBancada/MenuAcessibilidade" to="." method="MenuAcessibilidade"]
+[connection signal="confirmed" from="CanvasLayer/Popups/ConfirmationDialog" to="." method="ConfirmouEscolha"]
+[connection signal="button_up" from="CanvasLayer/Popups/EscolhaHipotese/NinePatchRect/VBoxContainer/Bio" to="." method="Biogenese"]
+[connection signal="button_up" from="CanvasLayer/Popups/EscolhaHipotese/NinePatchRect/VBoxContainer/Abio" to="." method="Abiogenese"]

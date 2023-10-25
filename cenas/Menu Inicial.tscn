@@ -150,6 +150,7 @@ texture_normal = ExtResource( 9 )
 texture_hover = ExtResource( 8 )
 expand = true
 
+[connection signal="button_up" from="VBoxContainer/Jogar Redi" to="." method="MudarCenaRedi"]
 [connection signal="button_up" from="VBoxContainer/Jogar Pasteur" to="." method="MudarCenaPasteur"]
 [connection signal="button_up" from="VBoxContainer/Jogar Pasteur2" to="." method="MudarCenaPasteur"]
 [connection signal="button_up" from="MenuAcessibilidade" to="." method="MenuAcessibilidade"]

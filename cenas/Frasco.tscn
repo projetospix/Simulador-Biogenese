@@ -30,12 +30,12 @@
 [ext_resource path="res://sprites/botões/btn_quebrar_disabled.png" type="Texture" id=28]
 [ext_resource path="res://sprites/botões/btn_tampar_hover.png" type="Texture" id=29]
 
-[sub_resource type="Gradient" id=1]
+[sub_resource type="Gradient" id=29]
 offsets = PoolRealArray( 0, 1, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0 )
 
 [sub_resource type="GradientTexture2D" id=22]
-gradient = SubResource( 1 )
+gradient = SubResource( 29 )
 width = 20
 height = 20
 fill = 1

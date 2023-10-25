@@ -16,3 +16,7 @@ func TextoAcessivel(b):
 	else:
 		self.theme = load("res://fontes-e-temas/renascença.tres")
 		
+
+
+func MudarCenaRedi():
+	get_tree().change_scene("res://cenas/CenárioRedi.tscn")
