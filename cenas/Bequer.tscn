@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/botoesGenerico.gd" type="Script" id=1]
 [ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=2]
 [ext_resource path="res://sprites/plaquinha.png" type="Texture" id=3]
 [ext_resource path="res://scripts/Bequer.gd" type="Script" id=4]
 [ext_resource path="res://sprites/Redi/Bequer.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Redi/Bequer_Gaze.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Redi/Bequer_Rolha.png" type="Texture" id=7]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 1, 1 )
@@ -47,9 +49,20 @@ expand_margin_top = 1.0
 [node name="Bequer" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Bequer" type="Sprite" parent="."]
+unique_name_in_owner = true
 position = Vector2( -1, -27 )
 texture = ExtResource( 5 )
+
+[node name="Bequer Gaze" type="Sprite" parent="."]
+unique_name_in_owner = true
+position = Vector2( -1, -27 )
+texture = ExtResource( 6 )
+
+[node name="Bequer Rolha" type="Sprite" parent="."]
+unique_name_in_owner = true
+position = Vector2( -1, -27 )
+texture = ExtResource( 7 )
 
 [node name="NovoFX" type="CPUParticles2D" parent="."]
 position = Vector2( 0, -66 )
@@ -127,4 +140,26 @@ theme_type_variation = "Manuscrito"
 text = "Nome"
 align = 1
 
+[node name="Tampar Gaze" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Tampar Com Gaze"
+
+[node name="Tampar Rolha" type="Button" parent="."]
+margin_left = 70.0
+margin_top = -55.0
+margin_right = 82.0
+margin_bottom = -35.0
+text = "Tampar Com Rolha"
+
+[node name="Destampar" type="Button" parent="."]
+margin_left = -89.0
+margin_top = -47.0
+margin_right = -77.0
+margin_bottom = -27.0
+text = "Destampar"
+
 [connection signal="button_up" from="Remover" to="." method="RemoverFrasco"]
+[connection signal="pressed" from="Tampar Gaze" to="." method="TamparComGaze"]
+[connection signal="button_up" from="Tampar Rolha" to="." method="TamparComRolha"]
+[connection signal="button_up" from="Destampar" to="." method="Destampar"]

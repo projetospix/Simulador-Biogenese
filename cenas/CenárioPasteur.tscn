@@ -299,11 +299,12 @@ z_index = 401
 [node name="VoltarMenu" type="TextureButton" parent="MenuBancada"]
 unique_name_in_owner = true
 margin_left = 25.0
-margin_top = 136.0
+margin_top = 99.0
 margin_right = 124.0
 margin_bottom = 176.0
 texture_normal = ExtResource( 17 )
 expand = true
+stretch_mode = 4
 
 [node name="MenuAcessibilidade" type="TextureButton" parent="MenuBancada"]
 modulate = Color( 1, 1, 1, 0.588235 )

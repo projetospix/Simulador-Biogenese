@@ -12,7 +12,7 @@ func MudarFonte(button_pressed):
 		texto_acessivel = true
 	else:
 		get_tree().call_group("Acessiveis", "TextoAcessivel", false)
-		var texto_acessivel = false
+		texto_acessivel = false
 		
 		
 

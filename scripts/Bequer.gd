@@ -3,12 +3,24 @@ extends Node2D
 export var nome_frasco = 'Bequer'
 var adicionar_frasco = load("res://cenas/AdicionarFrasco.tscn")
 
+export var Estado_Atual = {
+	'tampado': 'destampado',
+	'contaminado': 'contaminado'
+}
+
 func _ready():
 	$NovoFX.emitting = true
 	$Etiqueta.text = nome_frasco
 	Globais.Sequencia_Acao[nome_frasco] = []
 	Globais.Microscopio[nome_frasco] = []
 	Globais.Estado[nome_frasco] = false
+	$"%Bequer".visible = true
+	$"%Bequer Gaze".visible = false
+	$"%Bequer Rolha".visible = false
+	$Destampar.visible = false
+	$"Tampar Gaze".visible = true
+	$"Tampar Rolha".visible = true
+	get_tree().call_group('MetodosNoCaderno', 'AparecerFrasco', nome_frasco)
 
 func RemoverFrasco():
 	var instancia_adicionar = adicionar_frasco.instance()
@@ -21,4 +33,42 @@ func RemoverFrasco():
 	#get_tree().call_group('MetodosNoCaderno', 'LimpaIconesFrasco', nome_frasco)
 	#get_tree().call_group('ResultadosNoCaderno', 'LimpaIconesFrasco', nome_frasco)	
 	queue_free()
+	
+
+func TamparComGaze():
+	$"%Bequer".visible = false
+	$"%Bequer Gaze".visible = true
+	$"%Bequer Rolha".visible = false
+	$"Tampar Gaze".visible = false
+	$"Tampar Rolha".visible = false
+	$Destampar.visible = true
+	Estado_Atual.tampado = 'Gaze'
+	Globais.Sequencia_Acao[nome_frasco].append('g')
+	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
+
+
+
+func TamparComRolha():
+	$"%Bequer".visible = false
+	$"%Bequer Gaze".visible = false
+	$"%Bequer Rolha".visible = true
+	$"Tampar Gaze".visible = false
+	$"Tampar Rolha".visible = false
+	$Destampar.visible = true
+	Estado_Atual.tampado = 'Rolha'
+	Globais.Sequencia_Acao[nome_frasco].append('r')
+	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
+
+
+
+func Destampar():
+	$"%Bequer".visible = true
+	$"%Bequer Gaze".visible = false
+	$"%Bequer Rolha".visible = false
+	$"Tampar Gaze".visible = true
+	$"Tampar Rolha".visible = true
+	$Destampar.visible = false
+	Estado_Atual.tampado = 'destampado'
+	Globais.Sequencia_Acao[nome_frasco].append('d')
+	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
 	
