@@ -136,7 +136,6 @@ size_flags_horizontal = 5
 size_flags_vertical = 5
 texture_normal = ExtResource( 9 )
 expand = true
-flip_h = true
 script = ExtResource( 2 )
 
 [node name="Botao Micro" type="TextureButton" parent="Microscopio" groups=["Botoes"]]
@@ -145,7 +144,6 @@ margin_top = 469.0
 margin_right = 153.0
 margin_bottom = 572.0
 texture_normal = ExtResource( 8 )
-flip_h = true
 script = ExtResource( 2 )
 
 [node name="dim" type="ColorRect" parent="Microscopio"]
@@ -212,6 +210,7 @@ size_flags_horizontal = 5
 size_flags_vertical = 5
 texture_normal = ExtResource( 9 )
 expand = true
+stretch_mode = 5
 
 [node name="Frasco 2" type="TextureButton" parent="Microscopio"]
 margin_left = 386.0
@@ -223,6 +222,7 @@ size_flags_horizontal = 5
 size_flags_vertical = 5
 texture_normal = ExtResource( 9 )
 expand = true
+stretch_mode = 5
 
 [node name="Frasco 3" type="TextureButton" parent="Microscopio"]
 margin_left = 539.0
@@ -234,6 +234,7 @@ size_flags_horizontal = 5
 size_flags_vertical = 5
 texture_normal = ExtResource( 9 )
 expand = true
+stretch_mode = 5
 
 [node name="Observando" type="Node2D" parent="."]
 visible = false
@@ -288,13 +289,11 @@ z_index = 401
 
 [node name="VoltarMenu" type="TextureButton" parent="MenuBancada"]
 unique_name_in_owner = true
-margin_left = 25.0
-margin_top = 99.0
-margin_right = 124.0
-margin_bottom = 176.0
+margin_left = 10.0
+margin_top = 83.0
+margin_right = 130.0
+margin_bottom = 177.0
 texture_normal = ExtResource( 17 )
-expand = true
-stretch_mode = 4
 
 [node name="MenuAcessibilidade" type="TextureButton" parent="MenuBancada"]
 modulate = Color( 1, 1, 1, 0.588235 )
