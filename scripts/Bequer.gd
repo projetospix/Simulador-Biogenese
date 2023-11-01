@@ -5,7 +5,6 @@ var adicionar_frasco = load("res://cenas/AdicionarFrasco.tscn")
 
 export var Estado_Atual = {
 	'tampado': 'destampado',
-	'contaminado': 'contaminado'
 }
 
 func _ready():
@@ -25,18 +24,12 @@ func _ready():
 
 
 func Passar_Tempo():
-	if Estado_Atual.contaminado == 'pré contaminado':
-		Estado_Atual.contaminado = 'contaminado'
-		Globais.Estado[nome_frasco] = true
-	if Estado_Atual.contaminado == 'estéril' and Estado_Atual.tampado == 'destampado':
-		Estado_Atual.contaminado = 'contaminado'
-		Globais.Estado[nome_frasco] = true
-	if Estado_Atual.contaminado == 'estéril' and Estado_Atual.tampado == 'tampado':
-		Estado_Atual.contaminado = 'descontaminado'
-		Globais.Estado[nome_frasco] = false
-	if Estado_Atual.contaminado == 'contaminado':
-		Estado_Atual.contaminado = 'contaminado'
-		Globais.Estado[nome_frasco] = true
+	if Estado_Atual.tampado == 'destampado':
+		Globais.Estado[nome_frasco] = 0
+	if Estado_Atual.tampado == 'Gaze':
+		Globais.Estado[nome_frasco] = 1
+	if Estado_Atual.contaminado == 'Rolha':
+		Globais.Estado[nome_frasco] = 2
 	Globais.Sequencia_Acao[nome_frasco].append('p')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
 

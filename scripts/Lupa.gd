@@ -24,15 +24,15 @@ func ObservarFrasco():
 			var tween = create_tween()
 			tween.tween_property($Selecione,"rect_position",Vector2(246,50),0.2)
 			tween.parallel().tween_property($dim,"modulate",Color.white,0.2)
-			if Globais.Sequencia_Acao.has("Bequer A"):
+			if Globais.Sequencia_Acao.has("Frasco A"):
 				$"Frasco 1".rect_position.y -= 20
 				$"Frasco 1".visible = true
 				tween.parallel().tween_property($"Frasco 1","rect_position:y", $"Frasco 1".rect_position.y+20 ,0.2)	
-			if Globais.Sequencia_Acao.has("Bequer B"):
+			if Globais.Sequencia_Acao.has("Frasco B"):
 				$"Frasco 2".rect_position.y -= 20
 				$"Frasco 2".visible = true
 				tween.parallel().tween_property($"Frasco 2","rect_position:y", $"Frasco 2".rect_position.y+20 ,0.2)
-			if Globais.Sequencia_Acao.has("Bequer C"):
+			if Globais.Sequencia_Acao.has("Frasco C"):
 				$"Frasco 3".rect_position.y -= 20
 				$"Frasco 3".visible = true
 				tween.parallel().tween_property($"Frasco 3","rect_position:y", $"Frasco 3".rect_position.y+20 ,0.2)
