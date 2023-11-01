@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scripts/botoesGenerico.gd" type="Script" id=1]
 [ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=2]
@@ -7,6 +7,15 @@
 [ext_resource path="res://sprites/Redi/Bequer.png" type="Texture" id=5]
 [ext_resource path="res://sprites/Redi/Bequer_Gaze.png" type="Texture" id=6]
 [ext_resource path="res://sprites/Redi/Bequer_Rolha.png" type="Texture" id=7]
+[ext_resource path="res://sprites/botões/btn_destampar_redi.jpg" type="Texture" id=8]
+[ext_resource path="res://sprites/botões/btn_destampar_redi_disabled.jpg" type="Texture" id=9]
+[ext_resource path="res://sprites/botões/btn_destampar_redi_hover.jpg" type="Texture" id=10]
+[ext_resource path="res://sprites/botões/btn_rolha_redi_hover.jpg" type="Texture" id=11]
+[ext_resource path="res://sprites/botões/btn_gaze_redi_disabled.jpg" type="Texture" id=12]
+[ext_resource path="res://sprites/botões/btn_rolha_redi_disabled.jpg" type="Texture" id=13]
+[ext_resource path="res://sprites/botões/btn_gaze_redi.jpg" type="Texture" id=14]
+[ext_resource path="res://sprites/botões/btn_gaze_redi_hover.jpg" type="Texture" id=15]
+[ext_resource path="res://sprites/botões/btn_rolha_redi.jpg" type="Texture" id=16]
 
 [sub_resource type="ArrayMesh" id=7]
 surfaces/0 = {
@@ -185,38 +194,46 @@ theme_type_variation = "Manuscrito"
 text = "Nome"
 align = 1
 
-[node name="Tampar Gaze" type="Button" parent="."]
+[node name="Tampar Gaze" type="TextureButton" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -64.0
-margin_top = 98.0
-margin_right = 64.0
-margin_bottom = 118.0
-text = "Tampar Com Gaze"
+margin_left = -29.0
+margin_top = 65.0
+margin_right = 29.0
+margin_bottom = 125.0
+texture_normal = ExtResource( 14 )
+texture_hover = ExtResource( 15 )
+texture_disabled = ExtResource( 12 )
+stretch_mode = 3
 
-[node name="Tampar Rolha" type="Button" parent="."]
+[node name="Tampar Rolha" type="TextureButton" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -65.5
-margin_top = 124.0
-margin_right = 65.5
-margin_bottom = 144.0
-text = "Tampar Com Rolha"
+margin_left = -29.0
+margin_top = 129.0
+margin_right = 29.0
+margin_bottom = 187.0
+texture_normal = ExtResource( 16 )
+texture_hover = ExtResource( 11 )
+texture_disabled = ExtResource( 13 )
 
-[node name="Destampar" type="Button" parent="."]
+[node name="Destampar" type="TextureButton" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -41.0
-margin_top = 113.0
-margin_right = 41.0
-margin_bottom = 133.0
-text = "Destampar"
+margin_left = -29.0
+margin_top = 94.0
+margin_right = 29.0
+margin_bottom = 152.0
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 10 )
+texture_disabled = ExtResource( 9 )
+stretch_mode = 3
 
 [connection signal="button_up" from="Remover" to="." method="RemoverFrasco"]
 [connection signal="pressed" from="Tampar Gaze" to="." method="TamparComGaze"]
