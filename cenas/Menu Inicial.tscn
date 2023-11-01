@@ -81,18 +81,19 @@ alignment = 1
 
 [node name="Jogar Redi" type="Button" parent="VBoxContainer"]
 margin_right = 260.0
-margin_bottom = 61.0
+margin_bottom = 101.0
 size_flags_vertical = 3
-text = "Simulador Redi"
+text = "Frasco com carne"
 
 [node name="Jogar Pasteur" type="Button" parent="VBoxContainer"]
-margin_top = 81.0
+margin_top = 121.0
 margin_right = 260.0
-margin_bottom = 142.0
+margin_bottom = 223.0
 size_flags_vertical = 3
-text = "Simulador Pasteur"
+text = "Frasco com caldo"
 
 [node name="Jogar Pasteur2" type="Button" parent="VBoxContainer"]
+visible = false
 margin_top = 162.0
 margin_right = 260.0
 margin_bottom = 223.0
