@@ -46,7 +46,7 @@ corner_radius_bottom_left = 10
 corner_detail = 7
 expand_margin_top = 1.0
 
-[node name="Bequer" type="Node2D"]
+[node name="Bequer" type="Node2D" groups=["Frascos", "MetodosNoCaderno"]]
 script = ExtResource( 4 )
 
 [node name="Bequer" type="Sprite" parent="."]

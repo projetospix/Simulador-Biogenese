@@ -105,17 +105,17 @@ texture = ExtResource( 7 )
 
 [node name="Add 3" parent="Bancada" instance=ExtResource( 5 )]
 position = Vector2( 554, 400 )
-nome_frasco = "Bequer C"
+nome_frasco = "Frasco C"
 caminhoDaCena = "res://cenas/Bequer.tscn"
 
 [node name="Add 2" parent="Bancada" instance=ExtResource( 5 )]
 position = Vector2( 401, 400 )
-nome_frasco = "Bequer B"
+nome_frasco = "Frasco B"
 caminhoDaCena = "res://cenas/Bequer.tscn"
 
 [node name="Add 1" parent="Bancada" instance=ExtResource( 5 )]
 position = Vector2( 250, 400 )
-nome_frasco = "Bequer A"
+nome_frasco = "Frasco A"
 caminhoDaCena = "res://cenas/Bequer.tscn"
 
 [node name="Caderno" parent="." instance=ExtResource( 19 )]

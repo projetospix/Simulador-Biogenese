@@ -26,10 +26,19 @@ func EscreverMetodo(nome_frasco):
 			"r":
 				instancia = metodo_t_rolha.instance()
 				$Icones.add_child(instancia)
+			"R":
+				instancia = metodo_t_rolha.instance()
+				$Icones.add_child(instancia)	
 			"c":
 				instancia = metodo_t_cisne.instance()
 				$Icones.add_child(instancia)
+			"G":
+				instancia = metodo_t_cisne.instance()
+				$Icones.add_child(instancia)	
 			"d":
+				instancia = metodo_destampou.instance()
+				$Icones.add_child(instancia)
+			"D":
 				instancia = metodo_destampou.instance()
 				$Icones.add_child(instancia)
 			"q":
@@ -61,4 +70,5 @@ func AparecerFrasco(nome_frasco):
 	if nome_frasco == frasco:		
 		var tween = create_tween()		
 		tween.tween_property($"%Label","percent_visible",1.0,0.3).set_delay(0.3)
+		
 		

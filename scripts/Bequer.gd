@@ -22,6 +22,26 @@ func _ready():
 	$"Tampar Rolha".visible = true
 	get_tree().call_group('MetodosNoCaderno', 'AparecerFrasco', nome_frasco)
 
+
+
+func Passar_Tempo():
+	if Estado_Atual.contaminado == 'pré contaminado':
+		Estado_Atual.contaminado = 'contaminado'
+		Globais.Estado[nome_frasco] = true
+	if Estado_Atual.contaminado == 'estéril' and Estado_Atual.tampado == 'destampado':
+		Estado_Atual.contaminado = 'contaminado'
+		Globais.Estado[nome_frasco] = true
+	if Estado_Atual.contaminado == 'estéril' and Estado_Atual.tampado == 'tampado':
+		Estado_Atual.contaminado = 'descontaminado'
+		Globais.Estado[nome_frasco] = false
+	if Estado_Atual.contaminado == 'contaminado':
+		Estado_Atual.contaminado = 'contaminado'
+		Globais.Estado[nome_frasco] = true
+	Globais.Sequencia_Acao[nome_frasco].append('p')
+	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
+
+
+
 func RemoverFrasco():
 	var instancia_adicionar = adicionar_frasco.instance()
 	instancia_adicionar.position = self.position
@@ -35,6 +55,7 @@ func RemoverFrasco():
 	queue_free()
 	
 
+
 func TamparComGaze():
 	$"%Bequer".visible = false
 	$"%Bequer Gaze".visible = true
@@ -43,7 +64,7 @@ func TamparComGaze():
 	$"Tampar Rolha".visible = false
 	$Destampar.visible = true
 	Estado_Atual.tampado = 'Gaze'
-	Globais.Sequencia_Acao[nome_frasco].append('g')
+	Globais.Sequencia_Acao[nome_frasco].append('G')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
 
 
@@ -56,7 +77,7 @@ func TamparComRolha():
 	$"Tampar Rolha".visible = false
 	$Destampar.visible = true
 	Estado_Atual.tampado = 'Rolha'
-	Globais.Sequencia_Acao[nome_frasco].append('r')
+	Globais.Sequencia_Acao[nome_frasco].append('R')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
 
 
@@ -69,6 +90,6 @@ func Destampar():
 	$"Tampar Rolha".visible = true
 	$Destampar.visible = false
 	Estado_Atual.tampado = 'destampado'
-	Globais.Sequencia_Acao[nome_frasco].append('d')
+	Globais.Sequencia_Acao[nome_frasco].append('D')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
 	
