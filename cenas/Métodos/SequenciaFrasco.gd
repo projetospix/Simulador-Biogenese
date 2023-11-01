@@ -10,6 +10,9 @@ var metodo_quebrou = preload("res://cenas/Métodos/MétodoQuebrou.tscn")
 var metodo_passou_o_tempo= preload("res://cenas/Métodos/MétodoPassouOTempo.tscn")
 var metodo_contaminado= preload("res://cenas/Métodos/MétodoContaminado.tscn")
 var metodo_descontaminado = preload("res://cenas/Métodos/MétodoDescontaminado.tscn")
+var metodo_destampou_redi = preload("res://cenas/Métodos/MétodoDestampouRedi.tscn")
+var metodo_t_rolha_r = preload("res://cenas/Métodos/MétodoTampouComRolhaRedi.tscn")
+var metodo_t_gaze = preload("res://cenas/Métodos/MétodoTampouComGazeRedi.tscn")
 
 func _ready():
 	$"%Label".text = frasco
@@ -27,19 +30,19 @@ func EscreverMetodo(nome_frasco):
 				instancia = metodo_t_rolha.instance()
 				$Icones.add_child(instancia)
 			"R":
-				instancia = metodo_t_rolha.instance()
+				instancia = metodo_t_rolha_r.instance()
 				$Icones.add_child(instancia)	
 			"c":
 				instancia = metodo_t_cisne.instance()
 				$Icones.add_child(instancia)
 			"G":
-				instancia = metodo_t_cisne.instance()
+				instancia = metodo_t_gaze.instance()
 				$Icones.add_child(instancia)	
 			"d":
 				instancia = metodo_destampou.instance()
 				$Icones.add_child(instancia)
 			"D":
-				instancia = metodo_destampou.instance()
+				instancia = metodo_destampou_redi.instance()
 				$Icones.add_child(instancia)
 			"q":
 				instancia = metodo_quebrou.instance()
