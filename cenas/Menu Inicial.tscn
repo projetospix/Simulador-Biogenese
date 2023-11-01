@@ -151,6 +151,13 @@ texture_normal = ExtResource( 9 )
 texture_hover = ExtResource( 8 )
 expand = true
 
+[node name="Label2" type="Label" parent="."]
+margin_left = 36.0
+margin_top = 38.0
+margin_right = 195.0
+margin_bottom = 63.0
+text = "O jala é gostoso"
+
 [connection signal="button_up" from="VBoxContainer/Jogar Redi" to="." method="MudarCenaRedi"]
 [connection signal="button_up" from="VBoxContainer/Jogar Pasteur" to="." method="MudarCenaPasteur"]
 [connection signal="button_up" from="VBoxContainer/Jogar Pasteur2" to="." method="MudarCenaPasteur"]
