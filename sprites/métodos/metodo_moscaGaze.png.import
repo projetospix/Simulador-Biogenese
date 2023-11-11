@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/btn_lupa.png-8840791a13fb2b1f774db54e2b8b18c4.stex"
+path="res://.import/metodo_moscaGaze.png-8d82aeede5e90bce63212d2ab6c54362.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Redi/btn_lupa.png"
-dest_files=[ "res://.import/btn_lupa.png-8840791a13fb2b1f774db54e2b8b18c4.stex" ]
+source_file="res://sprites/métodos/metodo_moscaGaze.png"
+dest_files=[ "res://.import/metodo_moscaGaze.png-8d82aeede5e90bce63212d2ab6c54362.stex" ]
 
 [params]
 

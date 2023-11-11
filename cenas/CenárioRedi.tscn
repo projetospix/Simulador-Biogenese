@@ -7,7 +7,7 @@
 [ext_resource path="res://cenas/AdicionarFrasco.tscn" type="PackedScene" id=5]
 [ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=6]
 [ext_resource path="res://sprites/bancada.png" type="Texture" id=7]
-[ext_resource path="res://sprites/Redi/btn_lupa.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Redi/btn_lupa.jpg" type="Texture" id=8]
 [ext_resource path="res://sprites/Redi/Lupa.png" type="Texture" id=9]
 [ext_resource path="res://sprites/placona.png" type="Texture" id=15]
 [ext_resource path="res://sprites/papel_de_parede.png" type="Texture" id=16]
@@ -144,6 +144,8 @@ margin_top = 469.0
 margin_right = 153.0
 margin_bottom = 572.0
 texture_normal = ExtResource( 8 )
+expand = true
+stretch_mode = 3
 script = ExtResource( 2 )
 
 [node name="dim" type="ColorRect" parent="Microscopio"]

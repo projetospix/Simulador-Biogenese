@@ -13,6 +13,9 @@ var metodo_descontaminado = preload("res://cenas/Métodos/MétodoDescontaminado.
 var metodo_destampou_redi = preload("res://cenas/Métodos/MétodoDestampouRedi.tscn")
 var metodo_t_rolha_r = preload("res://cenas/Métodos/MétodoTampouComRolhaRedi.tscn")
 var metodo_t_gaze = preload("res://cenas/Métodos/MétodoTampouComGazeRedi.tscn")
+var mosca_na_carne = preload("res://cenas/Métodos/MétodoDestampouRedi.tscn")
+var mosca_na_gaze = preload("res://cenas/Métodos/MétodoTampouComRolhaRedi.tscn")
+var sem_mosca = preload("res://cenas/Métodos/MétodoTampouComGazeRedi.tscn")
 
 func _ready():
 	$"%Label".text = frasco
@@ -56,6 +59,15 @@ func EscreverMetodo(nome_frasco):
 			"2":
 				instancia = metodo_descontaminado.instance()
 				$Icones.add_child(instancia)	
+			"3":
+				instancia = mosca_na_carne.instance()
+				$Icones.add_child(instancia)
+			"4":
+				instancia = mosca_na_gaze.instance()
+				$Icones.add_child(instancia)
+			"5":
+				instancia = sem_mosca.instance()
+				$Icones.add_child(instancia)		
 		var tween = create_tween()
 		tween.tween_property(instancia, "modulate", Color.white, 0.3).set_delay(0.2)
 		get_tree().call_group("Discussao", "AcharFrase")

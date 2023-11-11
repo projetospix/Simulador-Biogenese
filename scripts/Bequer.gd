@@ -12,7 +12,7 @@ func _ready():
 	$Etiqueta.text = nome_frasco
 	Globais.Sequencia_Acao[nome_frasco] = []
 	Globais.Microscopio[nome_frasco] = []
-	Globais.Estado[nome_frasco] = false
+	Globais.Estado[nome_frasco] = 5
 	$"%Bequer".visible = true
 	$"%Bequer Gaze".visible = false
 	$"%Bequer Rolha".visible = false
@@ -23,13 +23,11 @@ func _ready():
 
 
 
-func Passar_Tempo():
-	if Estado_Atual.tampado == 'destampado':
-		Globais.Estado[nome_frasco] = 0
-	if Estado_Atual.tampado == 'Gaze':
-		Globais.Estado[nome_frasco] = 1
-	if Estado_Atual.contaminado == 'Rolha':
-		Globais.Estado[nome_frasco] = 2
+func Passar_Tempo(): 
+	if Estado_Atual.tampado == 'destampado' :
+		Globais.Estado[nome_frasco] = 3 #3 seria mosca na carne
+	if Estado_Atual.tampado == 'Gaze' and Globais.Estado[nome_frasco] != 3:
+		Globais.Estado[nome_frasco] = 4 #4 seria mosca na gaze
 	Globais.Sequencia_Acao[nome_frasco].append('p')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
 

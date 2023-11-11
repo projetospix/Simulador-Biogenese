@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lupa.png-dec7e99f752f515ba0a14ff31f005508.stex"
+path="res://.import/metodo_moscaCarne.png-57ee4f75a2600a68181f52814fa15d20.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Redi/lupa.png"
-dest_files=[ "res://.import/lupa.png-dec7e99f752f515ba0a14ff31f005508.stex" ]
+source_file="res://sprites/métodos/metodo_moscaCarne.png"
+dest_files=[ "res://.import/metodo_moscaCarne.png-57ee4f75a2600a68181f52814fa15d20.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lupa.png-dec7e99f752f515ba0a14ff31f005508.stex"
+path="res://.import/metodo_semMosca.png-50599f55d63603da220893b0e4a907da.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Redi/lupa.png"
-dest_files=[ "res://.import/lupa.png-dec7e99f752f515ba0a14ff31f005508.stex" ]
+source_file="res://sprites/métodos/metodo_semMosca.png"
+dest_files=[ "res://.import/metodo_semMosca.png-50599f55d63603da220893b0e4a907da.stex" ]
 
 [params]
 

@@ -59,10 +59,12 @@ func DesistirMicro():
 
 func MostrarResultado(frasco):
 	Globais.Microscopio[frasco].append(Globais.Estado[frasco])
-	if Globais.Estado[frasco] == true:
-		Globais.Sequencia_Acao[frasco].append('1')
+	if Globais.Estado[frasco] == 3:
+		Globais.Sequencia_Acao[frasco].append('3')
+	elif Globais.Estado[frasco] == 4:
+		Globais.Sequencia_Acao[frasco].append('4')
 	else:
-		Globais.Sequencia_Acao[frasco].append('2')	
+		Globais.Sequencia_Acao[frasco].append('5')	
 	emit_signal("VisaoMic", frasco)
 	
 	DesistirMicro()

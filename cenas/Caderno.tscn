@@ -140,6 +140,18 @@ text = "Frasco permanece descontaminado
 se estiver tampado"
 percent_visible = 0.0
 
+[node name="Conclusao4" type="Label" parent="Control/Discussao/VBox"]
+margin_top = 90.0
+margin_right = 285.0
+margin_bottom = 113.0
+size_flags_horizontal = 9
+theme_type_variation = "Manuscrito"
+custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
+custom_constants/line_spacing = -5
+text = "Moscas aparecem na carne quando 
+frasco fica aberto"
+percent_visible = 0.0
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 visible = false
 margin_right = 40.0
