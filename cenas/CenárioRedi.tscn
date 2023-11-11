@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scripts/Lupa.gd" type="Script" id=1]
 [ext_resource path="res://scripts/botoesGenerico.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://sprites/bancada.png" type="Texture" id=7]
 [ext_resource path="res://sprites/Redi/btn_lupa.jpg" type="Texture" id=8]
 [ext_resource path="res://sprites/Redi/Lupa.png" type="Texture" id=9]
+[ext_resource path="res://sprites/livro_hover.png" type="Texture" id=10]
 [ext_resource path="res://sprites/placona.png" type="Texture" id=15]
 [ext_resource path="res://sprites/papel_de_parede.png" type="Texture" id=16]
 [ext_resource path="res://sprites/livro.png" type="Texture" id=17]
@@ -121,6 +122,7 @@ caminhoDaCena = "res://cenas/Bequer.tscn"
 [node name="Caderno" parent="." instance=ExtResource( 19 )]
 position = Vector2( 696, 48 )
 rotation = -0.014172
+cenario = "Redi"
 
 [node name="Microscopio" type="Node2D" parent="."]
 z_index = 410
@@ -128,14 +130,16 @@ script = ExtResource( 1 )
 
 [node name="SpriteMicro" type="TextureButton" parent="Microscopio" groups=["Botoes"]]
 anchor_bottom = 1.0
-margin_left = 59.0
-margin_top = 260.0
-margin_right = 136.0
-margin_bottom = 401.0
+margin_left = 40.0
+margin_top = 288.0
+margin_right = 117.0
+margin_bottom = 429.0
+rect_rotation = -21.5271
 size_flags_horizontal = 5
 size_flags_vertical = 5
 texture_normal = ExtResource( 9 )
 expand = true
+stretch_mode = 4
 script = ExtResource( 2 )
 
 [node name="Botao Micro" type="TextureButton" parent="Microscopio" groups=["Botoes"]]
@@ -156,7 +160,7 @@ margin_left = -17.0
 margin_top = -6.0
 margin_right = 1054.0
 margin_bottom = 609.0
-color = Color( 0.109804, 0.0784314, 0.0588235, 0.780392 )
+color = Color( 0.0705882, 0.129412, 0.172549, 0.780392 )
 
 [node name="Selecione" type="NinePatchRect" parent="Microscopio"]
 margin_left = 246.0
@@ -296,6 +300,7 @@ margin_top = 83.0
 margin_right = 130.0
 margin_bottom = 177.0
 texture_normal = ExtResource( 17 )
+texture_hover = ExtResource( 10 )
 
 [node name="MenuAcessibilidade" type="TextureButton" parent="MenuBancada"]
 modulate = Color( 1, 1, 1, 0.588235 )

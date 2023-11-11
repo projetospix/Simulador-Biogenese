@@ -1,5 +1,11 @@
 extends Label
 
+func _ready() -> void:
+	if get_node('../..') .cenario == 'Redi':
+		$VBox.get_node("Conclusao1").queue_free()
+		$VBox.get_node("Conclusao2").queue_free()
+		$VBox.get_node("Conclusao3").queue_free()
+
 var logicaParaFrases = {
 	"Conclusao1": "1f[^p]*2", #Frasco fervido fica descontaminado
 	"Conclusao2": "r[^d]*2+p+2", #Frasco permanece descontaminado se estiver tampado

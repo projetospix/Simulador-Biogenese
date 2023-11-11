@@ -41,8 +41,8 @@ func RemoverFrasco():
 	self.get_parent().add_child(instancia_adicionar)
 	Globais.Sequencia_Acao.erase(nome_frasco)
 	Globais.Microscopio.erase(nome_frasco)
-	#get_tree().call_group('MetodosNoCaderno', 'LimpaIconesFrasco', nome_frasco)
-	#get_tree().call_group('ResultadosNoCaderno', 'LimpaIconesFrasco', nome_frasco)	
+	get_tree().call_group('MetodosNoCaderno', 'LimpaIconesFrasco', nome_frasco)
+	get_tree().call_group('ResultadosNoCaderno', 'LimpaIconesFrasco', nome_frasco)	
 	queue_free()
 	
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scripts/Microscopio.gd" type="Script" id=1]
 [ext_resource path="res://scripts/botoesGenerico.gd" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://cenas/Caderno.tscn" type="PackedScene" id=19]
 [ext_resource path="res://cenas/bacterias.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scripts/Observando.gd" type="Script" id=21]
+[ext_resource path="res://sprites/livro_hover.png" type="Texture" id=22]
 [ext_resource path="res://sprites/botao acesso universal.png" type="Texture" id=23]
 [ext_resource path="res://sprites/botao acesso universal_hover.png" type="Texture" id=24]
 [ext_resource path="res://scripts/ConfirmationDialog.gd" type="Script" id=25]
@@ -303,6 +304,7 @@ margin_top = 83.0
 margin_right = 130.0
 margin_bottom = 177.0
 texture_normal = ExtResource( 17 )
+texture_hover = ExtResource( 22 )
 stretch_mode = 4
 
 [node name="MenuAcessibilidade" type="TextureButton" parent="MenuBancada"]

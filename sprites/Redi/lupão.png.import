@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lupa.png-b87e48acb4e4c3e1a899163d3325fd88.stex"
+path="res://.import/lupão.png-ff1502b8e34bdbdae526fb82170f8a5e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Redi/Lupa.png"
-dest_files=[ "res://.import/Lupa.png-b87e48acb4e4c3e1a899163d3325fd88.stex" ]
+source_file="res://sprites/Redi/lupão.png"
+dest_files=[ "res://.import/lupão.png-ff1502b8e34bdbdae526fb82170f8a5e.stex" ]
 
 [params]
 

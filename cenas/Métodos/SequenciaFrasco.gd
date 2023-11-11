@@ -13,9 +13,9 @@ var metodo_descontaminado = preload("res://cenas/Métodos/MétodoDescontaminado.
 var metodo_destampou_redi = preload("res://cenas/Métodos/MétodoDestampouRedi.tscn")
 var metodo_t_rolha_r = preload("res://cenas/Métodos/MétodoTampouComRolhaRedi.tscn")
 var metodo_t_gaze = preload("res://cenas/Métodos/MétodoTampouComGazeRedi.tscn")
-var mosca_na_carne = preload("res://cenas/Métodos/MétodoDestampouRedi.tscn")
-var mosca_na_gaze = preload("res://cenas/Métodos/MétodoTampouComRolhaRedi.tscn")
-var sem_mosca = preload("res://cenas/Métodos/MétodoTampouComGazeRedi.tscn")
+var mosca_na_carne = preload("res://cenas/Métodos/MétodoMoscaCarne.tscn")
+var mosca_na_gaze = preload("res://cenas/Métodos/MétodoMoscaGaze.tscn")
+var sem_mosca = preload("res://cenas/Métodos/MétodoSemMosca.tscn")
 
 func _ready():
 	$"%Label".text = frasco

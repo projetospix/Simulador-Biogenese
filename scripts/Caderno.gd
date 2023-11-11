@@ -1,5 +1,7 @@
 extends Node2D
 
+export var cenario = "Pasteur"
+
 func _ready():
 	$"%TextoHipotese".percent_visible = 0.0
 	TextoAcessivel(MenuAcessibilidade.texto_acessivel)

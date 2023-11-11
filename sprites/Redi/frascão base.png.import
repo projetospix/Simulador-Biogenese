@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lupa.png-b87e48acb4e4c3e1a899163d3325fd88.stex"
+path="res://.import/frascão base.png-8b3280d3f22b2c05df945ff4c2dcc693.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Redi/Lupa.png"
-dest_files=[ "res://.import/Lupa.png-b87e48acb4e4c3e1a899163d3325fd88.stex" ]
+source_file="res://sprites/Redi/frascão base.png"
+dest_files=[ "res://.import/frascão base.png-8b3280d3f22b2c05df945ff4c2dcc693.stex" ]
 
 [params]
 
