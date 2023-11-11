@@ -3,9 +3,8 @@ extends Node2D
 export var nome_frasco = 'Bequer'
 var adicionar_frasco = load("res://cenas/AdicionarFrasco.tscn")
 
-export var Estado_Atual = {
-	'tampado': 'destampado',
-}
+export var Estado_Atual := 'destampado'
+
 
 func _ready():
 	$NovoFX.emitting = true
@@ -20,14 +19,17 @@ func _ready():
 	$"Tampar Gaze".visible = true
 	$"Tampar Rolha".visible = true
 	get_tree().call_group('MetodosNoCaderno', 'AparecerFrasco', nome_frasco)
+	Globais.Tampas[nome_frasco] = Estado_Atual
 
 
 
 func Passar_Tempo(): 
-	if Estado_Atual.tampado == 'destampado' :
+	if Estado_Atual == 'destampado' :
 		Globais.Estado[nome_frasco] = 3 #3 seria mosca na carne
-	if Estado_Atual.tampado == 'Gaze' and Globais.Estado[nome_frasco] != 3:
+	if Estado_Atual == 'Gaze' and Globais.Estado[nome_frasco] != 3:
 		Globais.Estado[nome_frasco] = 4 #4 seria mosca na gaze
+	if Estado_Atual == 'Rolha' and Globais.Estado[nome_frasco] != 3:
+		Globais.Estado[nome_frasco] = 5 #5 = sem mosca
 	Globais.Sequencia_Acao[nome_frasco].append('p')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
 
@@ -54,10 +56,11 @@ func TamparComGaze():
 	$"Tampar Gaze".visible = false
 	$"Tampar Rolha".visible = false
 	$Destampar.visible = true
-	Estado_Atual.tampado = 'Gaze'
+	Estado_Atual = 'Gaze'
 	Globais.Sequencia_Acao[nome_frasco].append('G')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
-
+	Globais.Tampas[nome_frasco] = Estado_Atual
+	
 
 
 func TamparComRolha():
@@ -67,10 +70,11 @@ func TamparComRolha():
 	$"Tampar Gaze".visible = false
 	$"Tampar Rolha".visible = false
 	$Destampar.visible = true
-	Estado_Atual.tampado = 'Rolha'
+	Estado_Atual = 'Rolha'
 	Globais.Sequencia_Acao[nome_frasco].append('R')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
-
+	Globais.Tampas[nome_frasco] = Estado_Atual
+	
 
 
 func Destampar():
@@ -80,7 +84,8 @@ func Destampar():
 	$"Tampar Gaze".visible = true
 	$"Tampar Rolha".visible = true
 	$Destampar.visible = false
-	Estado_Atual.tampado = 'destampado'
+	Estado_Atual = 'destampado'
 	Globais.Sequencia_Acao[nome_frasco].append('D')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
+	Globais.Tampas[nome_frasco] = Estado_Atual
 	

@@ -9,7 +9,6 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 	var random = rng.randf_range(0.08, 1.2)
-	print(random)
 	var random2 = random
 	if random > 1.0:
 		random2 = random * 1.5

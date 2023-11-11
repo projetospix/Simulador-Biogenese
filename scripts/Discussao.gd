@@ -19,7 +19,6 @@ var conclusoesQueJaForam = []
 var regex = RegEx.new()
 
 func AcharFrase():
-	print(Globais.Sequencia_Acao)
 	for conclusao in logicaParaFrases:
 		if not conclusao in conclusoesQueJaForam:
 			regex.compile(logicaParaFrases[conclusao])

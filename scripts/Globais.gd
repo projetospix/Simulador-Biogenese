@@ -2,10 +2,8 @@ extends Node
 
 export var Sequencia_Acao = {}
 
-export var Estado = {
-	
-}
+export var Estado = {}
 
-var Microscopio = {
-	
-}
+var Microscopio = {}
+
+var Tampas = {}

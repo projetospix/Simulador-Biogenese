@@ -1,5 +1,7 @@
 extends Node2D
 
+var cenaLupa = preload("res://cenas/Observando Redi.tscn")
+
 var observando = false #para poder dispensar mic com esc
 signal VisaoMic(contaminado)
 
@@ -58,15 +60,23 @@ func DesistirMicro():
 	$dim.visible = false
 
 func MostrarResultado(frasco):
-	Globais.Microscopio[frasco].append(Globais.Estado[frasco])
-	if Globais.Estado[frasco] == 3:
-		Globais.Sequencia_Acao[frasco].append('3')
-	elif Globais.Estado[frasco] == 4:
-		Globais.Sequencia_Acao[frasco].append('4')
-	else:
-		Globais.Sequencia_Acao[frasco].append('5')	
-	emit_signal("VisaoMic", frasco)
+	var lupa = cenaLupa.instance()
 	
+	lupa.tampa = Globais.Tampas[frasco]
+	
+	Globais.Microscopio[frasco].append(Globais.Estado[frasco])
+	
+	if Globais.Estado[frasco] == 3: #mosca na carne
+		Globais.Sequencia_Acao[frasco].append('3')
+		lupa.moscaCarne = true
+	elif Globais.Estado[frasco] == 4: # mosca na gaze
+		Globais.Sequencia_Acao[frasco].append('4')
+		lupa.moscaTampa = true
+	else: # sem mosca
+		Globais.Sequencia_Acao[frasco].append('5')
+		
+	lupa.frasco = frasco
+	add_child(lupa)
 	DesistirMicro()
 
 

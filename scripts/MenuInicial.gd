@@ -2,6 +2,11 @@ extends Control
 
 func _ready():
 	TextoAcessivel(MenuAcessibilidade.texto_acessivel)
+	Globais.Sequencia_Acao = {}
+	Globais.Estado = {}
+	Globais.Tampas = {}
+	Globais.Microscopio = {}
+	
 
 func MudarCenaPasteur():
 # warning-ignore:return_value_discarded

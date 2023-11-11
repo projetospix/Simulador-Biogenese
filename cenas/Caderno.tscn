@@ -86,7 +86,7 @@ margin_top = -1.0
 margin_right = -222.0
 margin_bottom = 21.0
 theme_type_variation = "Manuscrito"
-text = "Discussão"
+text = "Conclusões"
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": true

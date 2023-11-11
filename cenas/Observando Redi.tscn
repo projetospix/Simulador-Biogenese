@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://sprites/Redi/lupão.png" type="Texture" id=1]
 [ext_resource path="res://sprites/Redi/mosca.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://sprites/Redi/frascão base.png" type="Texture" id=5]
 [ext_resource path="res://sprites/Redi/frascão gaze.png" type="Texture" id=6]
 [ext_resource path="res://scripts/Observando Redi.gd" type="Script" id=7]
+[ext_resource path="res://fontes-e-temas/renascença.tres" type="Theme" id=8]
+[ext_resource path="res://fontes-e-temas/fonteArvo32.tres" type="DynamicFont" id=9]
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -61,7 +63,7 @@ surfaces/0 = {
 }
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 92.7631, 44.8525 )
+extents = Vector2( 103.976, 66.2592 )
 
 [sub_resource type="ArrayMesh" id=12]
 surfaces/0 = {
@@ -93,7 +95,7 @@ fill_from = Vector2( 0.5, 0.5 )
 fill_to = Vector2( 0.55, 0.55 )
 
 [sub_resource type="CircleShape2D" id=10]
-radius = 75.1332
+radius = 55.0364
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 113, 296 )
@@ -119,7 +121,7 @@ modulate = Color( 0.0235294, 0.121569, 0.117647, 0.152941 )
 light_mask = 512
 position = Vector2( 0, -2 )
 
-[node name="FrascãoBase" type="MeshInstance2D" parent="Frasco2"]
+[node name="Base" type="MeshInstance2D" parent="Frasco2"]
 use_parent_material = true
 position = Vector2( 515, 409 )
 mesh = SubResource( 1 )
@@ -128,7 +130,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="FrascãoAberto" type="MeshInstance2D" parent="Frasco2"]
+[node name="Aberto" type="MeshInstance2D" parent="Frasco2"]
 visible = false
 use_parent_material = true
 position = Vector2( 515, 216 )
@@ -138,7 +140,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="FrascãoGaze" type="MeshInstance2D" parent="Frasco2"]
+[node name="Gaze" type="MeshInstance2D" parent="Frasco2"]
+visible = false
 use_parent_material = true
 position = Vector2( 515, 216 )
 mesh = SubResource( 3 )
@@ -147,7 +150,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="FrascãoRolha" type="MeshInstance2D" parent="Frasco2"]
+[node name="Rolha" type="MeshInstance2D" parent="Frasco2"]
 visible = false
 use_parent_material = true
 position = Vector2( 515, 216 )
@@ -160,7 +163,7 @@ __meta__ = {
 [node name="Frasco" type="Node2D" parent="."]
 light_mask = 512
 
-[node name="FrascãoBase" type="MeshInstance2D" parent="Frasco"]
+[node name="Base" type="MeshInstance2D" parent="Frasco"]
 light_mask = 512
 use_parent_material = true
 position = Vector2( 515, 409 )
@@ -170,7 +173,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="FrascãoAberto" type="MeshInstance2D" parent="Frasco"]
+[node name="Aberto" type="MeshInstance2D" parent="Frasco"]
 visible = false
 light_mask = 512
 use_parent_material = true
@@ -181,7 +184,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="FrascãoGaze" type="MeshInstance2D" parent="Frasco"]
+[node name="Gaze" type="MeshInstance2D" parent="Frasco"]
+visible = false
 light_mask = 512
 use_parent_material = true
 position = Vector2( 515, 216 )
@@ -191,7 +195,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="FrascãoRolha" type="MeshInstance2D" parent="Frasco"]
+[node name="Rolha" type="MeshInstance2D" parent="Frasco"]
 visible = false
 light_mask = 512
 use_parent_material = true
@@ -208,12 +212,12 @@ position = Vector2( 499, 453 )
 scale = Vector2( 0.431287, 0.431287 )
 texture = ExtResource( 2 )
 
-[node name="Area2D2" type="Area2D" parent="MoscaCarne"]
-position = Vector2( -9.27478, 34.7795 )
-scale = Vector2( 1.13729, 1.13729 )
+[node name="DetectarMoscaCarne" type="Area2D" parent="."]
+position = Vector2( 495, 468 )
+scale = Vector2( 0.490497, 0.490497 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoscaCarne/Area2D2"]
-position = Vector2( -1.01953, -22.4263 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectarMoscaCarne"]
+position = Vector2( 10.1938, -43.8329 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 11 )
 
@@ -223,15 +227,18 @@ position = Vector2( 514, 177 )
 scale = Vector2( 0.490497, 0.490497 )
 texture = ExtResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="MoscaGaze"]
+[node name="DetectarMoscaGaze" type="Area2D" parent="."]
+position = Vector2( 514, 177 )
+scale = Vector2( 0.490497, 0.490497 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoscaGaze/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectarMoscaGaze"]
 position = Vector2( -1.01953, -22.4263 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 11 )
 
 [node name="lupa" type="KinematicBody2D" parent="."]
-position = Vector2( 419, 363 )
+position = Vector2( 340, 426 )
+scale = Vector2( 0.8, 0.8 )
 
 [node name="Lupão" type="MeshInstance2D" parent="lupa"]
 position = Vector2( -27, -53 )
@@ -278,3 +285,34 @@ shape = SubResource( 9 )
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="limite lupa"]
 position = Vector2( 508, 666 )
 shape = SubResource( 9 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 22.0
+margin_top = 24.0
+margin_right = 541.0
+margin_bottom = 63.0
+grow_horizontal = 2
+rect_pivot_offset = Vector2( 200, 0 )
+theme = ExtResource( 8 )
+custom_colors/font_color = Color( 0.176471, 0.12549, 0.0980392, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
+custom_fonts/font = ExtResource( 9 )
+text = "Não tem moscas na tampa!"
+valign = 1
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 22.0
+margin_top = 76.0
+margin_right = 541.0
+margin_bottom = 115.0
+grow_horizontal = 2
+rect_pivot_offset = Vector2( 200, 0 )
+theme = ExtResource( 8 )
+custom_colors/font_color = Color( 0.176471, 0.12549, 0.0980392, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
+custom_fonts/font = ExtResource( 9 )
+text = "Não tem  moscas na tampa!"
+valign = 1
+
+[connection signal="area_entered" from="DetectarMoscaCarne" to="." method="_on_DetectarMoscaCarne"]
+[connection signal="area_entered" from="DetectarMoscaGaze" to="." method="_on_DetectarMoscaGaze"]
