@@ -113,7 +113,7 @@ margin_bottom = 14.0
 size_flags_horizontal = 9
 theme_type_variation = "Manuscrito"
 custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
-text = "Frasco fervido fica descontaminado "
+text = "Frasco fervido fica descontaminado."
 percent_visible = 0.0
 
 [node name="Conclusao3" type="Label" parent="Control/Discussao/VBox"]
@@ -124,7 +124,7 @@ size_flags_horizontal = 9
 theme_type_variation = "Manuscrito"
 custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
 custom_constants/line_spacing = -5
-text = "Frasco destampado contamina com o tempo"
+text = "Frasco destampado contamina com o tempo."
 autowrap = true
 percent_visible = 0.0
 
@@ -137,7 +137,7 @@ theme_type_variation = "Manuscrito"
 custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
 custom_constants/line_spacing = -5
 text = "Frasco permanece descontaminado
-se estiver tampado"
+se estiver tampado."
 percent_visible = 0.0
 
 [node name="Conclusao4" type="Label" parent="Control/Discussao/VBox"]
@@ -150,6 +150,30 @@ custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
 custom_constants/line_spacing = -5
 text = "Moscas aparecem na carne quando 
 frasco fica aberto"
+percent_visible = 0.0
+
+[node name="Conclusao5" type="Label" parent="Control/Discussao/VBox"]
+margin_top = 123.0
+margin_right = 285.0
+margin_bottom = 146.0
+size_flags_horizontal = 9
+theme_type_variation = "Manuscrito"
+custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
+custom_constants/line_spacing = -5
+text = "Com a gaze, moscas não aparecem
+na carne, mas estão na gaze."
+percent_visible = 0.0
+
+[node name="Conclusao6" type="Label" parent="Control/Discussao/VBox"]
+margin_top = 156.0
+margin_right = 285.0
+margin_bottom = 179.0
+size_flags_horizontal = 9
+theme_type_variation = "Manuscrito"
+custom_colors/font_color = Color( 0.0509804, 0.121569, 0.356863, 1 )
+custom_constants/line_spacing = -5
+text = "Com a rolha, moscas não
+são avistadas."
 percent_visible = 0.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]

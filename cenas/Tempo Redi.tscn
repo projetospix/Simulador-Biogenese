@@ -6,6 +6,6 @@
 
 [node name="Adiantar Tempo" parent="." index="4"]
 margin_left = 85.0
-margin_top = 124.0
+margin_top = 42.0
 margin_right = 130.0
-margin_bottom = 153.0
+margin_bottom = 71.0

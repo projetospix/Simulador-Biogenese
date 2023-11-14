@@ -10,8 +10,9 @@ var logicaParaFrases = {
 	"Conclusao1": "1f[^p]*2", #Frasco fervido fica descontaminado
 	"Conclusao2": "r[^d]*2+p+2", #Frasco permanece descontaminado se estiver tampado
 	"Conclusao3": "2+p+1", #Frasco destampado contamina com o tempo
-	"Conclusao4": "5p3" #Moscas aparecem na carne quando frasco fica aberto
-	
+	"Conclusao4": "5p3", #Moscas aparecem na carne quando frasco fica aberto
+	"Conclusao5": "5p4", #Com a gaze, moscas não aparecem na carne
+	"Conclusao6": "5p5" #Com a rolha, moscas não são avistadas
 }
 
 var conclusoesQueJaForam = []
