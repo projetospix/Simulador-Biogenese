@@ -8,16 +8,6 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "CanvasLayer",
-"class": "Colorblindness",
-"language": "GDScript",
-"path": "res://addons/paulloz.colorblindness/colorblindness.gd"
-} ]
-_global_script_class_icons={
-"Colorblindness": "res://addons/paulloz.colorblindness/colorblindness.svg"
-}
-
 [application]
 
 config/name="Experimentos clássicos Biogênese"
