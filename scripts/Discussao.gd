@@ -1,15 +1,19 @@
 extends Label
 
 func _ready() -> void:
-	if get_node('../..') .cenario == 'Redi':
+	if get_node('../..').cenario == 'Redi':
 		$VBox.get_node("Conclusao1").queue_free()
 		$VBox.get_node("Conclusao2").queue_free()
 		$VBox.get_node("Conclusao3").queue_free()
+		$VBox.get_node("Conclusao7").queue_free()
+		$VBox.get_node("Conclusao8").queue_free()
 
 var logicaParaFrases = {
 	"Conclusao1": "1f[^p]*2", #Frasco fervido fica descontaminado
 	"Conclusao2": "r[^d]*2+p+2", #Frasco permanece descontaminado se estiver tampado
 	"Conclusao3": "2+p+1", #Frasco destampado contamina com o tempo
+	"Conclusao7": "c[^q]*2+p+2", #Frasco permanece descontaminado se estiver com cisne
+	"Conclusao8": "2.*q2*p+1", #Frasco quebrado contamina com o tempo
 	"Conclusao4": "5p3", #Moscas aparecem na carne quando frasco fica aberto
 	"Conclusao5": "5p4", #Com a gaze, moscas não aparecem na carne
 	"Conclusao6": "5p5" #Com a rolha, moscas não são avistadas
