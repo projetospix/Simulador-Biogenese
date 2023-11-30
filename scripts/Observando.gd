@@ -1,7 +1,11 @@
 extends Node2D
 
+export var contaminado := true
+export var frasco := ''
+
 func _ready() -> void:
 	resetar()
+	VisaoMic()
 	
 func resetar():
 	self.visible = false
@@ -14,8 +18,7 @@ func resetar():
 	$Label.text = "Não tem seres vivos"
 	$laranja/bacterias.modulate = Color.transparent
 
-func VisaoMic(frasco) -> void:
-	var contaminado = Globais.Estado[frasco]
+func VisaoMic() -> void:
 	if contaminado:
 		$Label.text = "Tem seres vivos!"
 		$laranja/bacterias.visible = true
@@ -30,8 +33,8 @@ func VisaoMic(frasco) -> void:
 	
 	tween.tween_property(self, "modulate", Color.transparent, 0.5).set_delay(1.7)
 	tween.parallel().tween_property($laranja/bacterias, "modulate", Color.transparent, 0.3).set_delay(1.7)
-	tween.tween_callback(self, "resetar")
 	tween.tween_callback(self, "escreverCaderno",[frasco])
+	tween.tween_callback(self, "queue_free")
 	
 	
 func escreverCaderno(frasco):

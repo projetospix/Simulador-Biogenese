@@ -43,7 +43,6 @@ offsets = PoolRealArray( 0.73991, 0.874439 )
 colors = PoolColorArray( 1, 1, 1, 1, 0.662745, 0.662745, 0.662745, 0 )
 
 [node name="bactérias" type="Node2D"]
-position = Vector2( -79, 221 )
 
 [node name="laranja" type="Sprite" parent="."]
 visible = false

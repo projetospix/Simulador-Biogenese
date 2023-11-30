@@ -1,5 +1,7 @@
 extends Node2D
 
+var cenaMic = preload("res://cenas/Observando Pasteur.tscn")
+
 var observando = false #para poder dispensar mic com esc
 signal VisaoMic(contaminado)
 
@@ -58,11 +60,16 @@ func DesistirMicro():
 	$dim.visible = false
 
 func MostrarResultado(frasco):
+	var cena = cenaMic.instance()
 	Globais.Microscopio[frasco].append(Globais.Estado[frasco])
 	if Globais.Estado[frasco] == true:
 		Globais.Sequencia_Acao[frasco].append('1')
+		cena.contaminado = true
 	else:
 		Globais.Sequencia_Acao[frasco].append('2')	
-	emit_signal("VisaoMic", frasco)
-	
+		cena.contaminado = false
+		
+	cena.frasco = frasco
+		
+	add_child(cena)
 	DesistirMicro()

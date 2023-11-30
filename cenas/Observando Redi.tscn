@@ -218,7 +218,6 @@ scale = Vector2( 0.490497, 0.490497 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectarMoscaCarne"]
 position = Vector2( 10.1938, -43.8329 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 11 )
 
 [node name="MoscaGaze" type="Sprite" parent="."]
@@ -233,7 +232,6 @@ scale = Vector2( 0.490497, 0.490497 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectarMoscaGaze"]
 position = Vector2( -1.01953, -22.4263 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 11 )
 
 [node name="lupa" type="KinematicBody2D" parent="."]
