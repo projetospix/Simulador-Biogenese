@@ -16,7 +16,7 @@ var logicaParaFrases = {
 	"Conclusao8": "2.*q2*p+1", #Frasco quebrado contamina com o tempo
 	"Conclusao4": "5p3", #Moscas aparecem na carne quando frasco fica aberto
 	"Conclusao5": "5p4", #Com a gaze, moscas não aparecem na carne
-	"Conclusao6": "5p5" #Com a rolha, moscas não são avistadas
+	"Conclusao6": "p5" #Com a rolha, moscas não são avistadas
 }
 
 var conclusoesQueJaForam = []
