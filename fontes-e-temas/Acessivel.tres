@@ -1,8 +1,6 @@
-[gd_resource type="Theme" load_steps=14 format=2]
+[gd_resource type="Theme" load_steps=12 format=2]
 
 [ext_resource path="res://fontes-e-temas/fonteLexend14.tres" type="DynamicFont" id=2]
-[ext_resource path="res://sprites/check-true.png" type="Texture" id=3]
-[ext_resource path="res://sprites/check-false.png" type="Texture" id=4]
 [ext_resource path="res://fontes-e-temas/LexendGiga-Regular.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=13]
@@ -90,9 +88,9 @@ CheckBox/colors/font_color_hover_pressed = Color( 0.0784314, 0.054902, 0.0235294
 CheckBox/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 CheckBox/constants/hseparation = 20
 CheckBox/fonts/font = SubResource( 10 )
-CheckBox/icons/checked = ExtResource( 3 )
+CheckBox/icons/checked = null
 CheckBox/icons/checked_disabled = null
-CheckBox/icons/unchecked = ExtResource( 4 )
+CheckBox/icons/unchecked = null
 CheckBox/styles/hover = SubResource( 11 )
 CheckBox/styles/normal = SubResource( 12 )
 Fonts/fonts/normal = ExtResource( 2 )

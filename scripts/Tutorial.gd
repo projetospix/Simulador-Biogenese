@@ -3,13 +3,27 @@ extends Control
 var etapas = [
 	{
 		"texto": "Bem vindo ao seu laboratório.\nVamos aprender a usar este simulador?\nAperte em avançar",
-		"destacados": [],
+		"setaVisivel": false,
+		"posicaoSeta": Vector2.ZERO,
+		"angulo": 0,
+		"visiveis": []
 	},
 	{
 		"texto": "Vamos começar adicionando um frasco.\nAperte no botão \"+\" na bancada\nQuando conseguir clique em \"avançar\"",
-		"destacados": ["%Bancada"],
+		"setaVisivel": true,
+		"posicaoSeta": Vector2(200, 200),
+		"angulo": 180,
+		"visiveis": ["%Bancada"]
+	},
+	{
+		"texto": "Blablabla",
+		"setaVisivel": true,
+		"posicaoSeta": Vector2.ZERO,
+		"angulo": 0,
+		"visiveis": []
 	}
 ]
+
 var etapa_atual := 0
 var todos_nos = []
 var hipotese = ""
@@ -24,20 +38,18 @@ func _ready():
 	$Microscopio.visible = false
 	$"Bancada/Add 2".visible = false
 	$"Bancada/Add 3".visible = false
+	$"%Bancada".visible = false
 	TextoAcessivel(MenuAcessibilidade.texto_acessivel)
 	
 func defineEtapa(etapa: int):
-	get_parent().move_child($Node2D,1)
-	$Node2D/texto_do_tutorial.text = etapas[etapa].texto
-	for node in etapas[etapa_atual].destacados:
+	var essa_etapa = etapas[etapa]
+	$Node2D/texto_do_tutorial.text = essa_etapa.texto
+	for node in essa_etapa.visiveis:
 		var no = get_node(node)
-		no.queue_free()
-		parents[no].add_child(no)
-	for node in etapas[etapa].destacados:
-		var no = get_node(node)
-		parents[no] = no.get_parent()
-		no.get_parent().remove_child(no)
-		$Node2D/vemca.add_child(no)
+		no.visible = true
+	
+	$Node2D/Seta.rect_position = essa_etapa["posicaoSeta"]
+	$Node2D/Seta.rect_rotation = essa_etapa["angulo"]
 	etapa_atual = etapa
 
 func obterFilhos(ref):
