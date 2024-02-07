@@ -51,7 +51,7 @@ func _input(_event: InputEvent) -> void:
 		queue_free()
 
 
-func _on_DetectarMoscaGaze(area: Area2D) -> void:
+func _on_DetectarMoscaGaze(_area: Area2D) -> void:
 	if moscaTampa:
 		$Label.text = 'Tem moscas e larvas na gaze!'
 	else:
@@ -59,7 +59,7 @@ func _on_DetectarMoscaGaze(area: Area2D) -> void:
 	var tween = create_tween()
 	tween.tween_property($Label,"percent_visible",1.0, 0.5).set_delay(0.2)
 	
-func _on_DetectarMoscaCarne(area: Area2D) -> void:
+func _on_DetectarMoscaCarne(_area: Area2D) -> void:
 	if moscaCarne:
 		$Label2.text = 'Tem moscas e larvas na carne!'
 	else:

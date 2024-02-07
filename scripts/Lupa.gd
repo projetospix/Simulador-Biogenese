@@ -3,7 +3,6 @@ extends Node2D
 var cenaLupa = preload("res://cenas/Observando Redi.tscn")
 
 var observando = false #para poder dispensar mic com esc
-signal VisaoMic(contaminado)
 
 func _ready():
 	$Selecione.visible = false

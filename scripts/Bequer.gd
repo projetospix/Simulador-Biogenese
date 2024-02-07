@@ -5,6 +5,8 @@ var adicionar_frasco = load("res://cenas/AdicionarFrasco.tscn")
 
 export var Estado_Atual := 'destampado'
 
+export var tutorial := false
+
 
 func _ready():
 	$NovoFX.emitting = true
@@ -17,7 +19,8 @@ func _ready():
 	$"%Bequer Rolha".visible = false
 	$Destampar.visible = false
 	$"Tampar Gaze".visible = true
-	$"Tampar Rolha".visible = true
+	if not tutorial:
+		$"Tampar Rolha".visible = true
 	get_tree().call_group('MetodosNoCaderno', 'AparecerFrasco', nome_frasco)
 	Globais.Tampas[nome_frasco] = Estado_Atual
 
@@ -55,7 +58,8 @@ func TamparComGaze():
 	$"%Bequer Rolha".visible = false
 	$"Tampar Gaze".visible = false
 	$"Tampar Rolha".visible = false
-	$Destampar.visible = true
+	if not tutorial:
+		$Destampar.visible = true
 	Estado_Atual = 'Gaze'
 	Globais.Sequencia_Acao[nome_frasco].append('G')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
@@ -69,7 +73,8 @@ func TamparComRolha():
 	$"%Bequer Rolha".visible = true
 	$"Tampar Gaze".visible = false
 	$"Tampar Rolha".visible = false
-	$Destampar.visible = true
+	if not tutorial:
+		$Destampar.visible = true
 	Estado_Atual = 'Rolha'
 	Globais.Sequencia_Acao[nome_frasco].append('R')
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
