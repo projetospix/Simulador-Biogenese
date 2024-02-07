@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scripts/Lupa.gd" type="Script" id=1]
 [ext_resource path="res://scripts/botoesGenerico.gd" type="Script" id=2]
@@ -10,7 +10,10 @@
 [ext_resource path="res://sprites/Redi/btn_lupa.jpg" type="Texture" id=8]
 [ext_resource path="res://sprites/Redi/lupão.png" type="Texture" id=9]
 [ext_resource path="res://sprites/livro_hover.png" type="Texture" id=10]
-[ext_resource path="res://fontes-e-temas/fonteArvo32.tres" type="DynamicFont" id=11]
+[ext_resource path="res://sprites/seta.png" type="Texture" id=11]
+[ext_resource path="res://cenas/Bequer.tscn" type="PackedScene" id=12]
+[ext_resource path="res://sprites/botões/btn_novo_hover.png" type="Texture" id=13]
+[ext_resource path="res://sprites/botões/btn_novo.png" type="Texture" id=14]
 [ext_resource path="res://sprites/placona.png" type="Texture" id=15]
 [ext_resource path="res://sprites/papel_de_parede.png" type="Texture" id=16]
 [ext_resource path="res://sprites/livro.png" type="Texture" id=17]
@@ -84,6 +87,7 @@ margin_right = 103.0
 margin_bottom = 102.0
 
 [node name="Caderno" parent="." instance=ExtResource( 19 )]
+visible = false
 position = Vector2( 696, 48 )
 rotation = -0.014172
 cenario = "Redi"
@@ -98,21 +102,48 @@ mesh = SubResource( 9 )
 texture = ExtResource( 7 )
 
 [node name="Add 3" parent="Bancada" instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 554, 400 )
 nome_frasco = "Frasco C"
 caminhoDaCena = "res://cenas/Bequer.tscn"
 
 [node name="Add 2" parent="Bancada" instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 401, 400 )
 nome_frasco = "Frasco B"
 caminhoDaCena = "res://cenas/Bequer.tscn"
+
+[node name="Bequer" parent="Bancada" instance=ExtResource( 12 )]
+visible = false
+position = Vector2( 250, 400 )
+
+[node name="Bequer Rolha" parent="Bancada/Bequer/Sprites" index="2"]
+visible = false
+
+[node name="Remover" parent="Bancada/Bequer" index="3"]
+visible = false
+
+[node name="Tampar Rolha" parent="Bancada/Bequer" index="6"]
+visible = false
 
 [node name="Add 1" parent="Bancada" instance=ExtResource( 5 )]
 position = Vector2( 250, 400 )
 nome_frasco = "Frasco A"
 caminhoDaCena = "res://cenas/Bequer.tscn"
 
+[node name="Botao Mais Falso" type="TextureButton" parent="Bancada/Add 1"]
+margin_left = -52.0
+margin_top = 71.0
+margin_right = 68.0
+margin_bottom = 175.0
+texture_normal = ExtResource( 14 )
+texture_hover = ExtResource( 13 )
+
+[node name="Botao Mais" parent="Bancada/Add 1" index="1"]
+visible = false
+
 [node name="Microscopio" type="Node2D" parent="."]
+unique_name_in_owner = true
 z_index = 410
 script = ExtResource( 1 )
 
@@ -179,6 +210,7 @@ align = 1
 valign = 1
 
 [node name="Remover" type="Button" parent="Microscopio/Selecione"]
+visible = false
 margin_left = -4.0
 margin_right = 30.0
 margin_bottom = 32.0
@@ -296,17 +328,18 @@ text = "Avançar"
 
 [node name="vemca" type="Node2D" parent="Node2D"]
 
-[node name="Seta" type="Label" parent="Node2D"]
-margin_left = 90.0
-margin_top = 178.0
-margin_right = 130.0
-margin_bottom = 203.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 11 )
-text = "->"
+[node name="Seta" type="Sprite" parent="Node2D"]
+position = Vector2( -1, 0 )
+z_index = 999
+texture = ExtResource( 11 )
 
 [connection signal="AtualizaHipotese" from="." to="Caderno" method="AtualizaHipotese"]
+[connection signal="button_up" from="Tempo Redi/Adiantar Tempo" to="." method="_on_Adiantar_Tempo_button_up"]
+[connection signal="button_up" from="Bancada/Bequer/Tampar Gaze" to="." method="_on_Tampar_button_up"]
+[connection signal="button_up" from="Bancada/Bequer/Tampar Rolha" to="." method="_on_Tampar_button_up"]
+[connection signal="button_up" from="Bancada/Bequer/Destampar" to="." method="_on_Destampar_button_up"]
+[connection signal="button_up" from="Bancada/Add 1/Botao Mais Falso" to="." method="_on_Botao_Mais_Falso_button_up"]
+[connection signal="button_up" from="Microscopio/SpriteMicro" to="." method="_on_SpriteMicro_button_up"]
 [connection signal="button_up" from="Microscopio/SpriteMicro" to="Microscopio" method="ObservarFrasco"]
 [connection signal="button_up" from="Microscopio/Botao Micro" to="Microscopio" method="ObservarFrasco"]
 [connection signal="button_up" from="Microscopio/Selecione/Remover" to="Microscopio" method="DesistirMicro"]
@@ -317,3 +350,7 @@ text = "->"
 [connection signal="button_up" from="MenuBancada/MenuAcessibilidade" to="." method="MenuAcessibilidade"]
 [connection signal="confirmed" from="CanvasLayer/Popups/ConfirmationDialog" to="." method="ConfirmouEscolha"]
 [connection signal="button_up" from="Node2D/avancar" to="." method="_on_avancar"]
+
+[editable path="Tempo Redi"]
+[editable path="Bancada/Bequer"]
+[editable path="Bancada/Add 1"]

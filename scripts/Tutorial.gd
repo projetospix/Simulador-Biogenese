@@ -4,21 +4,42 @@ var etapas = [
 	{
 		"texto": "Bem vindo ao seu laboratório.\nVamos aprender a usar este simulador?\nAperte em avançar",
 		"setaVisivel": false,
-		"posicaoSeta": Vector2.ZERO,
+		"posicaoSeta": Vector2(-200, -200),
 		"angulo": 0,
 		"visiveis": []
 	},
 	{
-		"texto": "Vamos começar adicionando um frasco.\nAperte no botão \"+\" na bancada\nQuando conseguir clique em \"avançar\"",
+		"texto": "Vamos começar adicionando um frasco.\nAperte no botão \"+\" na bancada",
 		"setaVisivel": true,
-		"posicaoSeta": Vector2(200, 200),
+		"posicaoSeta": Vector2(371, 522),
 		"angulo": 180,
 		"visiveis": ["%Bancada"]
 	},
 	{
-		"texto": "Blablabla",
+		"texto": "Escolha a tampa com a gaze",
 		"setaVisivel": true,
-		"posicaoSeta": Vector2.ZERO,
+		"posicaoSeta": Vector2(108, 459),
+		"angulo": 15,
+		"visiveis": ["%Bancada/Bequer"]
+	},
+	{
+		"texto": "Faça o tempo passar clicando no relógio",
+		"setaVisivel": true,
+		"posicaoSeta": Vector2(99, 231),
+		"angulo": -33,
+		"visiveis": []
+	},
+	{
+		"texto": "Clique na lupa para visualizar o resultado",
+		"setaVisivel": true,
+		"posicaoSeta": Vector2(195, 195),
+		"angulo": 129,
+		"visiveis": ["%Microscopio"]
+	},
+	{
+		"texto": "Mova o mouse para ver com a lupa e clique para sair do tutorial",
+		"setaVisivel": true,
+		"posicaoSeta": Vector2(-200, -200),
 		"angulo": 0,
 		"visiveis": []
 	}
@@ -41,6 +62,7 @@ func _ready():
 	$"%Bancada".visible = false
 	TextoAcessivel(MenuAcessibilidade.texto_acessivel)
 	
+	
 func defineEtapa(etapa: int):
 	var essa_etapa = etapas[etapa]
 	$Node2D/texto_do_tutorial.text = essa_etapa.texto
@@ -48,8 +70,9 @@ func defineEtapa(etapa: int):
 		var no = get_node(node)
 		no.visible = true
 	
-	$Node2D/Seta.rect_position = essa_etapa["posicaoSeta"]
-	$Node2D/Seta.rect_rotation = essa_etapa["angulo"]
+	$Node2D/Seta.position = essa_etapa["posicaoSeta"]
+	$Node2D/Seta.rotation_degrees = essa_etapa["angulo"]
+	
 	etapa_atual = etapa
 
 func obterFilhos(ref):
@@ -64,6 +87,7 @@ func _on_avancar() -> void:
 	defineEtapa(etapa_atual + 1)
 	if etapa_atual == len(etapas)-1:
 		$Node2D/avancar.disabled = true
+	$Node2D/avancar.visible = false
 
 
 func VoltarMenu():
@@ -87,4 +111,26 @@ func TextoAcessivel(b):
 		self.theme = load("res://fontes-e-temas/renascença.tres")
 		$"%Popups".theme = load("res://fontes-e-temas/renascença.tres")
 		$Caderno.rotation_degrees = -0.8
+	
+func _on_Botao_Mais_Falso_button_up():
+	defineEtapa(etapa_atual + 1)
+	$"Bancada/Add 1".visible = false
 
+
+func _on_Tampar_button_up():
+	defineEtapa(etapa_atual + 1)
+
+
+func _on_Destampar_button_up():
+	defineEtapa(2)
+
+
+func _on_Adiantar_Tempo_button_up():
+	if etapa_atual == 3:
+		defineEtapa(etapa_atual + 1)
+
+
+func _on_SpriteMicro_button_up():
+	$"%Bancada".visible = false
+	defineEtapa(etapa_atual + 1)
+	$Node2D.z_index = 415

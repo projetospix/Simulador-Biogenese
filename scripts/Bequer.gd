@@ -89,3 +89,7 @@ func Destampar():
 	get_tree().call_group('MetodosNoCaderno', 'EscreverMetodo', nome_frasco)
 	Globais.Tampas[nome_frasco] = Estado_Atual
 	
+
+
+func _on_Tampar_Rolha_button_up():
+	pass # Replace with function body.
