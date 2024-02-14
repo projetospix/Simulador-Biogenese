@@ -131,7 +131,6 @@ func _on_Tampar_button_up():
 	defineEtapa(etapa_atual + 1)
 
 
-
 func _on_Adiantar_Tempo_button_up():
 	if etapa_atual == 3:
 		var tween_tempo = create_tween()
@@ -144,4 +143,9 @@ func _on_Adiantar_Tempo_button_up():
 func _on_SpriteMicro_button_up():
 	$"%Bancada".visible = false
 	defineEtapa(etapa_atual + 1)
+	$Microscopio/SpriteMicro.visible = false
+	$"Microscopio/Botao Micro".rect_position = Vector2(-999,-999)
+	$"Tempo Redi".visible = false
+	$"%VoltarMenu".rect_position = Vector2(104,240)
+	$"%VoltarMenu".rect_size = Vector2(347,141)
 	$Node2D.z_index = 415

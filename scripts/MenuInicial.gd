@@ -25,3 +25,7 @@ func TextoAcessivel(b):
 
 func MudarCenaRedi():
 	get_tree().change_scene("res://cenas/CenárioRedi.tscn")
+
+
+func MudarCenaTutorial() -> void:
+	get_tree().change_scene("res://cenas/Tutorial.tscn")

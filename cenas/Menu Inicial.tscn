@@ -118,26 +118,25 @@ margin_bottom = 178.0
 custom_constants/separation = 20
 alignment = 1
 
-[node name="Jogar Redi" type="Button" parent="VBoxContainer"]
+[node name="tutorial" type="Button" parent="VBoxContainer"]
 margin_right = 260.0
-margin_bottom = 101.0
+margin_bottom = 61.0
+size_flags_vertical = 3
+text = "Tutorial"
+
+[node name="Jogar Redi" type="Button" parent="VBoxContainer"]
+margin_top = 81.0
+margin_right = 260.0
+margin_bottom = 142.0
 size_flags_vertical = 3
 text = "Frasco com carne"
 
 [node name="Jogar Pasteur" type="Button" parent="VBoxContainer"]
-margin_top = 121.0
-margin_right = 260.0
-margin_bottom = 223.0
-size_flags_vertical = 3
-text = "Frasco com caldo"
-
-[node name="Jogar Pasteur2" type="Button" parent="VBoxContainer"]
-visible = false
 margin_top = 162.0
 margin_right = 260.0
 margin_bottom = 223.0
 size_flags_vertical = 3
-text = "Modo campanha"
+text = "Frasco com caldo"
 
 [node name="Frasco3xpng" type="MeshInstance2D" parent="."]
 position = Vector2( 153, 531 )
@@ -193,7 +192,7 @@ texture_normal = ExtResource( 9 )
 texture_hover = ExtResource( 8 )
 expand = true
 
+[connection signal="button_up" from="VBoxContainer/tutorial" to="." method="MudarCenaTutorial"]
 [connection signal="button_up" from="VBoxContainer/Jogar Redi" to="." method="MudarCenaRedi"]
 [connection signal="button_up" from="VBoxContainer/Jogar Pasteur" to="." method="MudarCenaPasteur"]
-[connection signal="button_up" from="VBoxContainer/Jogar Pasteur2" to="." method="MudarCenaPasteur"]
 [connection signal="button_up" from="MenuAcessibilidade" to="." method="MenuAcessibilidade"]
