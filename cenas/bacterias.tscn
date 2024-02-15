@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://sprites/bac.webp" type="Texture" id=1]
 
@@ -25,23 +25,28 @@ particles_anim_h_frames = 6
 particles_anim_v_frames = 1
 particles_anim_loop = true
 
+[sub_resource type="Curve" id=14]
+_data = [ Vector2( 0, 0.6375 ), 0.0, 1.40693, 0, 0, Vector2( 0.496154, 0.946591 ), -0.021294, -0.021294, 0, 0, Vector2( 1, 0 ), -0.93182, 0.0, 0, 0 ]
+
 [sub_resource type="Gradient" id=10]
 offsets = PoolRealArray( 0.73991, 0.874439 )
 colors = PoolColorArray( 1, 1, 1, 1, 0.662745, 0.662745, 0.662745, 0 )
 
 [node name="bactérias" type="Node2D"]
+light_mask = 1024
 
 [node name="Position2D" type="Position2D" parent="."]
+light_mask = 1024
 rotation = -0.00238459
 script = SubResource( 12 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Position2D"]
-light_mask = 2
+light_mask = 1024
 material = SubResource( 13 )
-position = Vector2( 78.4862, -203.813 )
+position = Vector2( 53.3456, -144.873 )
 emitting = false
 amount = 4
-lifetime = 7.0
+lifetime = 4.5
 preprocess = 1.0
 local_coords = false
 texture = ExtResource( 1 )
@@ -55,6 +60,7 @@ orbit_velocity_random = 0.12
 tangential_accel = 3.0
 scale_amount = 0.25
 scale_amount_random = 0.2
+scale_amount_curve = SubResource( 14 )
 color_ramp = SubResource( 10 )
 anim_speed = 25.4
 
